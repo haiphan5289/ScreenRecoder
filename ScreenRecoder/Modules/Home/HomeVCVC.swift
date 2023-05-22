@@ -79,6 +79,21 @@ extension HomeVCVC {
                                       cellType: HomeCell.self)) {(row, element, cell) in
                 cell.bindModel(model: element)
             }.disposed(by: disposeBag)
+        
+        self.tableView.rx.itemSelected
+            .withUnretained(self)
+            .bind { owner, idx in
+                guard let type = HomeType(rawValue: idx.row) else {
+                    return
+                }
+                switch type {
+                case .screen:
+                    let vc = ScreenRecorderVC.createVC()
+                    owner.navigationController?.pushViewController(vc)
+                case .commentary, .facecam, .liveStream, .videoEditor: break
+                }
+                
+            }.disposed(by: disposeBag)
     }
 }
 extension HomeVCVC: UITableViewDelegate {

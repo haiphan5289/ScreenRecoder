@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import RxSwift
+import EasyBaseCodes
 
 class BaseVC: UIViewController {
     
@@ -37,6 +38,13 @@ class BaseVC: UIViewController {
             }
         }
         self.navigationController?.isNavigationBarHidden = navigationType == .hide
+    }
+    
+    func customRightButton(imgArrow: UIImage){
+        buttonRight.setImage(imgArrow, for: .normal)
+        buttonRight.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -16)
+        let leftBarButton = UIBarButtonItem(customView: buttonRight)
+        navigationItem.rightBarButtonItem = leftBarButton
     }
     
 }

@@ -44,7 +44,6 @@
 		93334D582A1276BB0099DFDF /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93334D0D2A1276B80099DFDF /* UIFontExtensions.swift */; };
 		93334D592A1276BB0099DFDF /* UIDatePickerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93334D0E2A1276B80099DFDF /* UIDatePickerExtensions.swift */; };
 		93334D5A2A1276BB0099DFDF /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93334D0F2A1276B80099DFDF /* UITextField+Extensions.swift */; };
-		93334D5B2A1276BB0099DFDF /* KeyboardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93334D112A1276B90099DFDF /* KeyboardInfo.swift */; };
 		93334D5C2A1276BB0099DFDF /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93334D132A1276BB0099DFDF /* UIApplication+Extension.swift */; };
 		93334D5D2A1276BB0099DFDF /* Obserable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93334D142A1276BB0099DFDF /* Obserable+Extension.swift */; };
 		93334D5E2A1276BB0099DFDF /* RowDetailGeneric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93334D152A1276BB0099DFDF /* RowDetailGeneric.swift */; };
@@ -92,6 +91,11 @@
 		93ADA5BF2A0FBE5A00E16B5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93ADA5BD2A0FBE5A00E16B5D /* Main.storyboard */; };
 		93ADA5C12A0FBE5D00E16B5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93ADA5C02A0FBE5D00E16B5D /* Assets.xcassets */; };
 		93ADA5C42A0FBE5D00E16B5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93ADA5C22A0FBE5D00E16B5D /* LaunchScreen.storyboard */; };
+		93C0C3122A1A4E1100CB48D6 /* RecordFinishVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93C0C30F2A1A4E1000CB48D6 /* RecordFinishVC.xib */; };
+		93C0C3132A1A4E1100CB48D6 /* RecordFinishVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0C3102A1A4E1000CB48D6 /* RecordFinishVM.swift */; };
+		93C0C3142A1A4E1100CB48D6 /* RecordFinishVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0C3112A1A4E1000CB48D6 /* RecordFinishVC.swift */; };
+		93C0C3182A1A53B400CB48D6 /* VideoEditorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93C0C3172A1A53B400CB48D6 /* VideoEditorView.xib */; };
+		93C0C31A2A1A53C400CB48D6 /* VideoEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0C3192A1A53C400CB48D6 /* VideoEditorView.swift */; };
 		93DE103A2A1881EC005E1CD0 /* TabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DE10392A1881EC005E1CD0 /* TabbarVC.swift */; };
 		93DE103F2A188263005E1CD0 /* HomeVCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93DE103C2A188263005E1CD0 /* HomeVCVC.xib */; };
 		93DE10402A188263005E1CD0 /* HomeVCVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DE103D2A188263005E1CD0 /* HomeVCVM.swift */; };
@@ -112,6 +116,9 @@
 		93DE10822A18BE1D005E1CD0 /* ManageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DE10812A18BE1D005E1CD0 /* ManageApp.swift */; };
 		93DE10862A18BE9E005E1CD0 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DE10842A18BE9E005E1CD0 /* HomeCell.swift */; };
 		93DE10872A18BE9E005E1CD0 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93DE10852A18BE9E005E1CD0 /* HomeCell.xib */; };
+		93DE108C2A1A4124005E1CD0 /* ScreenRecorderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93DE10892A1A4124005E1CD0 /* ScreenRecorderVC.xib */; };
+		93DE108D2A1A4124005E1CD0 /* ScreenRecorderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DE108A2A1A4124005E1CD0 /* ScreenRecorderVM.swift */; };
+		93DE108E2A1A4124005E1CD0 /* ScreenRecorderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DE108B2A1A4124005E1CD0 /* ScreenRecorderVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,7 +160,6 @@
 		93334D0D2A1276B80099DFDF /* UIFontExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
 		93334D0E2A1276B80099DFDF /* UIDatePickerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDatePickerExtensions.swift; sourceTree = "<group>"; };
 		93334D0F2A1276B80099DFDF /* UITextField+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
-		93334D112A1276B90099DFDF /* KeyboardInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInfo.swift; sourceTree = "<group>"; };
 		93334D132A1276BB0099DFDF /* UIApplication+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		93334D142A1276BB0099DFDF /* Obserable+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Obserable+Extension.swift"; sourceTree = "<group>"; };
 		93334D152A1276BB0099DFDF /* RowDetailGeneric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowDetailGeneric.swift; sourceTree = "<group>"; };
@@ -203,6 +209,11 @@
 		93ADA5C02A0FBE5D00E16B5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93ADA5C32A0FBE5D00E16B5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93ADA5C52A0FBE5D00E16B5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93C0C30F2A1A4E1000CB48D6 /* RecordFinishVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordFinishVC.xib; sourceTree = "<group>"; };
+		93C0C3102A1A4E1000CB48D6 /* RecordFinishVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordFinishVM.swift; sourceTree = "<group>"; };
+		93C0C3112A1A4E1000CB48D6 /* RecordFinishVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordFinishVC.swift; sourceTree = "<group>"; };
+		93C0C3172A1A53B400CB48D6 /* VideoEditorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoEditorView.xib; sourceTree = "<group>"; };
+		93C0C3192A1A53C400CB48D6 /* VideoEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEditorView.swift; sourceTree = "<group>"; };
 		93DE10392A1881EC005E1CD0 /* TabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarVC.swift; sourceTree = "<group>"; };
 		93DE103C2A188263005E1CD0 /* HomeVCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVCVC.xib; sourceTree = "<group>"; };
 		93DE103D2A188263005E1CD0 /* HomeVCVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCVM.swift; sourceTree = "<group>"; };
@@ -223,6 +234,9 @@
 		93DE10812A18BE1D005E1CD0 /* ManageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageApp.swift; sourceTree = "<group>"; };
 		93DE10842A18BE9E005E1CD0 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		93DE10852A18BE9E005E1CD0 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
+		93DE10892A1A4124005E1CD0 /* ScreenRecorderVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScreenRecorderVC.xib; sourceTree = "<group>"; };
+		93DE108A2A1A4124005E1CD0 /* ScreenRecorderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRecorderVM.swift; sourceTree = "<group>"; };
+		93DE108B2A1A4124005E1CD0 /* ScreenRecorderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRecorderVC.swift; sourceTree = "<group>"; };
 		F99BC643D2A88446E3F676B6 /* Pods-ScreenRecoder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScreenRecoder.release.xcconfig"; path = "Target Support Files/Pods-ScreenRecoder/Pods-ScreenRecoder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -295,14 +309,6 @@
 				93334D0F2A1276B80099DFDF /* UITextField+Extensions.swift */,
 			);
 			path = UIKit;
-			sourceTree = "<group>";
-		};
-		93334D102A1276B90099DFDF /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				93334D112A1276B90099DFDF /* KeyboardInfo.swift */,
-			);
-			path = Helper;
 			sourceTree = "<group>";
 		};
 		93334D122A1276BB0099DFDF /* Library */ = {
@@ -395,6 +401,8 @@
 		93ABCBCC2A17B75600E5608B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				93C0C30E2A1A4DEA00CB48D6 /* RecordFinish */,
+				93DE10882A1A410B005E1CD0 /* ScreenRecorder */,
 				93DE103B2A188256005E1CD0 /* Home */,
 				93ABCBCD2A17B76400E5608B /* Tabbar */,
 			);
@@ -434,9 +442,9 @@
 				93DE10532A188C3E005E1CD0 /* Resource */,
 				93DE10472A18847E005E1CD0 /* SwiftGen */,
 				93334CEA2A1276B80099DFDF /* Categories */,
-				93334D102A1276B90099DFDF /* Helper */,
 				93334D7F2A1277960099DFDF /* Common */,
 				93334D122A1276BB0099DFDF /* Library */,
+				93C0C3152A1A538C00CB48D6 /* Views */,
 				93DE10422A188272005E1CD0 /* Base */,
 				93DE10802A18BE04005E1CD0 /* ManageApp */,
 				93ABCBCC2A17B75600E5608B /* Modules */,
@@ -449,6 +457,33 @@
 				93ADA5C52A0FBE5D00E16B5D /* Info.plist */,
 			);
 			path = ScreenRecoder;
+			sourceTree = "<group>";
+		};
+		93C0C30E2A1A4DEA00CB48D6 /* RecordFinish */ = {
+			isa = PBXGroup;
+			children = (
+				93C0C30F2A1A4E1000CB48D6 /* RecordFinishVC.xib */,
+				93C0C3102A1A4E1000CB48D6 /* RecordFinishVM.swift */,
+				93C0C3112A1A4E1000CB48D6 /* RecordFinishVC.swift */,
+			);
+			path = RecordFinish;
+			sourceTree = "<group>";
+		};
+		93C0C3152A1A538C00CB48D6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				93C0C3162A1A539A00CB48D6 /* VideoEditor */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		93C0C3162A1A539A00CB48D6 /* VideoEditor */ = {
+			isa = PBXGroup;
+			children = (
+				93C0C3172A1A53B400CB48D6 /* VideoEditorView.xib */,
+				93C0C3192A1A53C400CB48D6 /* VideoEditorView.swift */,
+			);
+			path = VideoEditor;
 			sourceTree = "<group>";
 		};
 		93DE103B2A188256005E1CD0 /* Home */ = {
@@ -577,6 +612,16 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		93DE10882A1A410B005E1CD0 /* ScreenRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				93DE10892A1A4124005E1CD0 /* ScreenRecorderVC.xib */,
+				93DE108A2A1A4124005E1CD0 /* ScreenRecorderVM.swift */,
+				93DE108B2A1A4124005E1CD0 /* ScreenRecorderVC.swift */,
+			);
+			path = ScreenRecorder;
+			sourceTree = "<group>";
+		};
 		A569A65B25CBF8FAAADA41F6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -647,12 +692,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				93DE103F2A188263005E1CD0 /* HomeVCVC.xib in Resources */,
+				93C0C3182A1A53B400CB48D6 /* VideoEditorView.xib in Resources */,
 				93DE10462A18845A005E1CD0 /* swiftgen.yml in Resources */,
 				93DE10632A188C8E005E1CD0 /* FontsFree-Net-SFProDisplay-Bold.ttf in Resources */,
 				93DE10642A188C8E005E1CD0 /* FontsFree-Net-SFProText-Semibold.ttf in Resources */,
 				93DE10872A18BE9E005E1CD0 /* HomeCell.xib in Resources */,
 				93DE10622A188C8E005E1CD0 /* FontsFree-Net-SFProText-Regular.ttf in Resources */,
 				93DE10612A188C8E005E1CD0 /* FontsFree-Net-SFProText-Medium.ttf in Resources */,
+				93DE108C2A1A4124005E1CD0 /* ScreenRecorderVC.xib in Resources */,
+				93C0C3122A1A4E1100CB48D6 /* RecordFinishVC.xib in Resources */,
 				93ADA5C42A0FBE5D00E16B5D /* LaunchScreen.storyboard in Resources */,
 				93ADA5C12A0FBE5D00E16B5D /* Assets.xcassets in Resources */,
 				93ADA5BF2A0FBE5A00E16B5D /* Main.storyboard in Resources */,
@@ -708,6 +756,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93DE108E2A1A4124005E1CD0 /* ScreenRecorderVC.swift in Sources */,
 				93DE107B2A18BBEA005E1CD0 /* NavigationProtocol.swift in Sources */,
 				93334D5A2A1276BB0099DFDF /* UITextField+Extensions.swift in Sources */,
 				93334D5C2A1276BB0099DFDF /* UIApplication+Extension.swift in Sources */,
@@ -732,6 +781,7 @@
 				93334D5F2A1276BB0099DFDF /* UIFont+Extension.swift in Sources */,
 				93334D3E2A1276BB0099DFDF /* UIView+Extension.swift in Sources */,
 				93334D382A1276BB0099DFDF /* UITableViewExtensions.swift in Sources */,
+				93C0C3142A1A4E1100CB48D6 /* RecordFinishVC.swift in Sources */,
 				93334D482A1276BB0099DFDF /* UIActivityExtensions.swift in Sources */,
 				93334D662A1276BB0099DFDF /* ViewControllerExtension.swift in Sources */,
 				93ADA5BC2A0FBE5A00E16B5D /* ViewController.swift in Sources */,
@@ -743,6 +793,7 @@
 				93DE10402A188263005E1CD0 /* HomeVCVM.swift in Sources */,
 				93334D672A1276BB0099DFDF /* Collection+Extension.swift in Sources */,
 				93DE10862A18BE9E005E1CD0 /* HomeCell.swift in Sources */,
+				93DE108D2A1A4124005E1CD0 /* ScreenRecorderVM.swift in Sources */,
 				93334D4C2A1276BB0099DFDF /* UINavigationControllerExtensions.swift in Sources */,
 				93DE10492A1884BA005E1CD0 /* Assets-Gen.swift in Sources */,
 				93334D642A1276BB0099DFDF /* UITextViewExtension.swift in Sources */,
@@ -788,7 +839,7 @@
 				93DE10772A18BBEA005E1CD0 /* BaseNavigationColor.swift in Sources */,
 				93334D7E2A1276BB0099DFDF /* DateExtension.swift in Sources */,
 				93334D3A2A1276BB0099DFDF /* UIScrollViewExtensions.swift in Sources */,
-				93334D5B2A1276BB0099DFDF /* KeyboardInfo.swift in Sources */,
+				93C0C3132A1A4E1100CB48D6 /* RecordFinishVM.swift in Sources */,
 				93334D532A1276BB0099DFDF /* UIButtonExtensions.swift in Sources */,
 				93334D8E2A1277960099DFDF /* ResultURLModel.swift in Sources */,
 				93334D432A1276BB0099DFDF /* UIStoryboardExtensions.swift in Sources */,
@@ -798,6 +849,7 @@
 				93334D552A1276BB0099DFDF /* UIImageViewExtensions.swift in Sources */,
 				93334D5D2A1276BB0099DFDF /* Obserable+Extension.swift in Sources */,
 				93DE107A2A18BBEA005E1CD0 /* ShowAlertProtocol.swift in Sources */,
+				93C0C31A2A1A53C400CB48D6 /* VideoEditorView.swift in Sources */,
 				93334D582A1276BB0099DFDF /* UIFontExtensions.swift in Sources */,
 				93334D7B2A1276BB0099DFDF /* PushNotificationHandler.swift in Sources */,
 				93334D722A1276BB0099DFDF /* PropertyWapper.swift in Sources */,
