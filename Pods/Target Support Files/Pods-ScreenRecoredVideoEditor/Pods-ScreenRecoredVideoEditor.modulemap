@@ -1,0 +1,6 @@
+framework module Pods_ScreenRecoredVideoEditor {
+  umbrella header "Pods-ScreenRecoredVideoEditor-umbrella.h"
+
+  export *
+  module * { export * }
+}
