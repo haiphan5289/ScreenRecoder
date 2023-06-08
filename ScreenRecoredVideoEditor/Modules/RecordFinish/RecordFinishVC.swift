@@ -11,16 +11,21 @@ import UIKit
 import RxCocoa
 import RxSwift
 import EasyBaseCodes
+import AVFoundation
 
-class RecordFinishVC: BaseVC {
+class RecordFinishVC: BaseVC, PlayVideoProtocel {
     
+    var inputURL: URL?
     // Add here outlets
     @IBOutlet weak var sectionContentView: UIView!
     @IBOutlet weak var videoEditorContent: UIView!
     @IBOutlet weak var videoEditorButton: UIButton!
+    @IBOutlet weak var contentVideo: UIView!
     private let videoEditorView: VideoEditorView = .loadXib()
     // Add here your view model
     private var viewModel: RecordFinishVM = RecordFinishVM()
+    private let videoPlayView: VideoPlayView = .loadXib()
+    private var playVideo: AVPlayer = AVPlayer()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
@@ -47,6 +52,14 @@ extension RecordFinishVC {
         videoEditorContent.addSubview(videoEditorView)
         videoEditorView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+        contentVideo.addSubview(videoPlayView)
+        videoPlayView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        if let url = inputURL {
+            videoPlayView.setBgImage(url: url)
         }
     }
     

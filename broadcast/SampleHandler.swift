@@ -53,7 +53,8 @@ class SampleHandler: RPBroadcastSampleHandler {
         }
         do {
             try writer?.start()
-            self.userDefault?.set(3, forKey: "broadcast")
+            self.userDefault?.set(ConstantApp.UserDefaultType.startRecord.value,
+                                  forKey: ConstantApp.UserDefaultType.startRecord.key)
             self.userDefault?.synchronize()
         } catch {
             finishBroadcastWithError(error)
@@ -144,7 +145,8 @@ class SampleHandler: RPBroadcastSampleHandler {
                 at: outputURL,
                 to: destination
             )
-            self.userDefault?.set(4, forKey: "broadcast")
+            self.userDefault?.set(ConstantApp.UserDefaultType.finishRecord.value,
+                                  forKey: ConstantApp.UserDefaultType.finishRecord.key)
             self.userDefault?.synchronize()
         } catch {
             debugPrint("ERROR", error)

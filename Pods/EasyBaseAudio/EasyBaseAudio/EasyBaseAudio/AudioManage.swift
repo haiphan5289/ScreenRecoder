@@ -13,6 +13,11 @@ import MediaPlayer
 
 public class AudioManage {
     
+    public enum AudioManageErrorType: Error {
+        case unknown
+        case copyError(String)
+    }
+    
     enum StatusApp {
         case bg, foreground
     }
@@ -271,6 +276,50 @@ public class AudioManage {
             try FileManager.default.removeItem(atPath: filePath.path!)
         }catch{
             fatalError("Unable to delete file: \(error) : \(#function).")
+        }
+    }
+    
+    //MARK: READ APP GROUP
+    public func read(appGroupName: String,
+                     folder: String,
+                     folderFinish: String,
+                     completion: ((URL) -> Void),
+                     failure: ((String) -> Void)) {
+        let fileManager = FileManager.default
+        guard let container = fileManager.containerURL(
+                forSecurityApplicationGroupIdentifier: appGroupName
+            )?.appendingPathComponent("\(folder)/"),
+              let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            return
+        }
+        
+        do {
+            let contents = try fileManager.contentsOfDirectory(atPath: container.path)
+            for path in contents {
+                guard !path.hasSuffix(".plist") else {
+                    print("file at path \(path) is plist, exiting")
+                    return
+                }
+                let fileURL = container.appendingPathComponent(path)
+                var isDirectory: ObjCBool = false
+                guard fileManager.fileExists(atPath: fileURL.path, isDirectory: &isDirectory) else {
+                    return
+                }
+                guard !isDirectory.boolValue else {
+                    return
+                }
+                let destinationURL = documentsDirectory.appendingPathComponent("\(folderFinish)/" + path)
+                do {
+                    try fileManager.copyItem(at: fileURL, to: destinationURL)
+                    print("Successfully copied \(fileURL)", "to: ", destinationURL)
+                    completion(destinationURL)
+                } catch {
+                    print("error copying \(fileURL) to \(destinationURL)", error)
+                    failure(error.localizedDescription)
+                }
+            }
+        } catch {
+            print("contents, \(error)")
         }
     }
     

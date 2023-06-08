@@ -10,8 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecordFinishVC" customModule="ScreenRecoder" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecordFinishVC" customModule="ScreenRecoredVideoEditor" customModuleProvider="target">
             <connections>
+                <outlet property="contentVideo" destination="1Kb-D1-sxK" id="sFN-dA-ZiC"/>
                 <outlet property="sectionContentView" destination="k2O-DA-UVb" id="JjS-hd-QCj"/>
                 <outlet property="videoEditorButton" destination="EJC-4x-pPp" id="7Ng-fr-s6T"/>
                 <outlet property="videoEditorContent" destination="JEH-MG-AdO" id="tvd-zU-Y18"/>
@@ -28,7 +29,24 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0U-UR-yF7">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Kb-D1-sxK">
+                                    <rect key="frame" x="50" y="10" width="314" height="689"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="16"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" name="F8F8F8"/>
+                            <constraints>
+                                <constraint firstItem="1Kb-D1-sxK" firstAttribute="leading" secondItem="h0U-UR-yF7" secondAttribute="leading" constant="50" id="MPb-3k-BTt"/>
+                                <constraint firstAttribute="bottom" secondItem="1Kb-D1-sxK" secondAttribute="bottom" constant="26" id="RZS-gg-DZC"/>
+                                <constraint firstItem="1Kb-D1-sxK" firstAttribute="top" secondItem="h0U-UR-yF7" secondAttribute="top" constant="10" id="VQX-4X-UOQ"/>
+                                <constraint firstAttribute="trailing" secondItem="1Kb-D1-sxK" secondAttribute="trailing" constant="50" id="qfV-Th-v5N"/>
+                            </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OhP-Ev-rjm">
                             <rect key="frame" x="0.0" y="725" width="414" height="123"/>

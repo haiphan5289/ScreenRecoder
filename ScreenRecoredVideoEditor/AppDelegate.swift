@@ -17,15 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        ConstantApp.FolderName.allCases.forEach { folder in
-            AudioManage.shared.createFolder(path: folder.rawValue, success: nil, failure: nil)
-        }
-        
-        ConstantApp.shared.removeFilesFolder()
+        startApp()
         
         moveToTabbar()
         
         return true
+    }
+    
+    private func startApp() {
+        ConstantApp.FolderName.allCases.forEach { folder in
+            AudioManage.shared.createFolder(path: folder.rawValue, success: nil, failure: nil)
+        }
+        AudioManage.shared.removeFilesFolder(name: ConstantApp.FolderName.folderRecordFinish.rawValue)
+        ConstantApp.shared.removeFilesFolder()
     }
 
     private func moveToTabbar() {

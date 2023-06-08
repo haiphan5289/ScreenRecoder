@@ -47,11 +47,7 @@ extension PlayVideoProtocel {
     func playVideo(url: URL, videoView: UIView, playVideo: inout AVPlayer) {
         playVideo = AVPlayer(url: url)
         let playerLayer = AVPlayerLayer(player: playVideo)
-        let width = videoView.frame.height * 9 / 16
-        playerLayer.frame = CGRect(x: (videoView.frame.width / 2) - (width / 2),
-                                   y: videoView.frame.origin.y,
-                                   width: width,
-                                   height: videoView.frame.height)
+        playerLayer.frame = videoView.frame
         playerLayer.videoGravity = AVLayerVideoGravity.resize
         videoView.layoutIfNeeded()
         playerLayer.layoutIfNeeded()

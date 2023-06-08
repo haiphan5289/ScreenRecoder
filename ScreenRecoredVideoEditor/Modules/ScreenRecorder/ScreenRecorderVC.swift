@@ -7,9 +7,11 @@
 
 import UIKit
 import ReplayKit
+import EasyBaseAudio
 
 class ScreenRecorderVC: UIViewController {
     
+    @IBOutlet weak var imgBroadCast: UIImageView!
     lazy var broadcastPickerView: RPSystemBroadcastPickerView = {
         let view = RPSystemBroadcastPickerView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -36,57 +38,60 @@ class ScreenRecorderVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapRecord(_:)))
-        gesture.numberOfTapsRequired = 1
-        gesture.cancelsTouchesInView = false
-        self.view.addGestureRecognizer(gesture)
-        
-        setupBroadCastView()
-        
-        valueObserver = userDefaultBroadcast?.observe(\.broadcast, options: [.initial, .new], changeHandler: { userDefaults, valueChange in
-            print("===== valueObserver \(valueChange.newValue)")
-            if let value = valueChange.newValue {
-                print()
-                if value == 1 {
-                    
-                } else {
-                    self.read()
-                }
-            }
-        })
-
-    }
-    
-    @IBAction func action(_ sender: Any) {
+        setupUI()
+        setupRX()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        read()
-        
-        observations.append(
-            notificationCenter.addObserver(
-                forName: UIApplication.willEnterForegroundNotification,
-                object: nil,
-                queue: nil
-            ) { [weak self] _ in
-                self?.read()
-            }
-        )
+//        read()
+//
+//        observations.append(
+//            notificationCenter.addObserver(
+//                forName: UIApplication.willEnterForegroundNotification,
+//                object: nil,
+//                queue: nil
+//            ) { [weak self] _ in
+//                self?.read()
+//            }
+//        )
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        observations.forEach(notificationCenter.removeObserver(_:))
+//        observations.forEach(notificationCenter.removeObserver(_:))
+    }
+    
+    
+    
+}
+
+extension ScreenRecorderVC {
+    
+    private func setupUI() {
+        setupBroadCastView()
+        setupRecord()
+    }
+    
+    private func setupRX() {
+        valueObserver = userDefaultBroadcast?.observe(\.broadcast,
+                                                       options: [.initial, .new],
+                                                       changeHandler: { [weak self] userDefaults, valueChange in
+            guard let self = self, let value = valueChange.newValue else { return }
+            if value == ConstantApp.UserDefaultType.startRecord.value  {
+                
+            } else {
+                self.read()
+            }
+        })
     }
     
     private func setupBroadCastView() {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapRecord(_:)))
         gesture.numberOfTapsRequired = 1
         gesture.cancelsTouchesInView = false
-        self.view.addGestureRecognizer(gesture)
+        self.imgBroadCast.addGestureRecognizer(gesture)
     }
     
     @objc func didTapRecord(_ tap: UIGestureRecognizer) {
@@ -95,73 +100,32 @@ class ScreenRecorderVC: UIViewController {
         }
     }
     
+    
     private func setupRecord() {
         self.view.addSubview(self.broadcastPickerView)
         NSLayoutConstraint.activate([
-            self.broadcastPickerView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            self.broadcastPickerView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            self.broadcastPickerView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            self.broadcastPickerView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            self.broadcastPickerView.leadingAnchor.constraint(equalTo: self.imgBroadCast.leadingAnchor),
+            self.broadcastPickerView.topAnchor.constraint(equalTo: self.imgBroadCast.topAnchor),
+            self.broadcastPickerView.trailingAnchor.constraint(equalTo: self.imgBroadCast.trailingAnchor),
+            self.broadcastPickerView.bottomAnchor.constraint(equalTo: self.imgBroadCast.bottomAnchor)
         ])
     }
     
-    
     private func read() {
-        let fileManager = FileManager.default
-        var mediaURLs: [URL] = []
-        if let container = fileManager
-            .containerURL(
-                forSecurityApplicationGroupIdentifier: ConstantApp.appGroupName
-            )?.appendingPathComponent("\(ConstantApp.FolderName.folderBroadcast)/") {
-
-            let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-            do {
-                let contents = try fileManager.contentsOfDirectory(atPath: container.path)
-                for path in contents {
-                    guard !path.hasSuffix(".plist") else {
-                        print("file at path \(path) is plist, exiting")
-                        return
-                    }
-                    let fileURL = container.appendingPathComponent(path)
-                    var isDirectory: ObjCBool = false
-                    guard fileManager.fileExists(atPath: fileURL.path, isDirectory: &isDirectory) else {
-                        return
-                    }
-                    guard !isDirectory.boolValue else {
-                        return
-                    }
-                    let destinationURL = documentsDirectory.appendingPathComponent("\(ConstantApp.FolderName.folderRecordFinish)/" + path)
-                    do {
-                        try fileManager.copyItem(at: fileURL, to: destinationURL)
-                        print("Successfully copied \(fileURL)", "to: ", destinationURL)
-                    } catch {
-                        print("error copying \(fileURL) to \(destinationURL)", error)
-                    }
-                    mediaURLs.append(destinationURL)
-                }
-            } catch {
-                print("contents, \(error)")
-            }
+        AudioManage.shared.read(appGroupName: ConstantApp.appGroupName,
+                                             folder: ConstantApp.FolderName.folderBroadcast.rawValue,
+                                folderFinish: ConstantApp.FolderName.folderRecordFinish.rawValue) { outputURL in
+            print(outputURL)
+            let vc = RecordFinishVC.createVC()
+            vc.inputURL = outputURL
+            self.navigationController?.pushViewController(vc)
+        } failure: { error in
+            print(error)
         }
-        
-//        mediaURLs.first.map {
-//            let asset: AVURLAsset = .init(url: $0)
-//            let item: AVPlayerItem = .init(asset: asset)
-//
-//            let movie: AVMutableMovie = .init(url: $0)
-//            for track in movie.tracks {
-//                print("track", track)
-//            }
-//
-//            let player: AVPlayer = .init(playerItem: item)
-//            let playerViewController: AVPlayerViewController = .init()
-//            playerViewController.player = player
-//            present(playerViewController, animated: true, completion: { [player = playerViewController.player] in
-//                player?.play()
-//            })
-//        }
+
     }
 }
+
 
 extension UIView {
     
@@ -181,10 +145,9 @@ extension UIView {
     }
     
 }
-
 extension UserDefaults {
     @objc dynamic var broadcast: Int {
-        return integer(forKey: "broadcast")
+        return integer(forKey: ConstantApp.UserDefaultType.startRecord.key)
     }
     @objc dynamic var stream: Int {
         return integer(forKey: "stream")

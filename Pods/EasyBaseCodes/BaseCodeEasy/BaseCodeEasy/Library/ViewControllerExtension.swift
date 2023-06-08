@@ -129,7 +129,9 @@ public extension UIViewController {
         buttonLeft.contentEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
         let leftBarButton = UIBarButtonItem(customView: buttonLeft)
         navigationItem.leftBarButtonItem = leftBarButton
-        leftBarButton.addTargetForAction(self, action: #selector(handleClickBackNavigation))
+        buttonLeft.addTarget(self,
+                             action: #selector(handleClickBackNavigation),
+                             for: .touchUpInside)
     }
     
     @objc func handleClickBackNavigation() {

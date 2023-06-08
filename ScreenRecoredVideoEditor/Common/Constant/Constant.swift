@@ -14,6 +14,23 @@ final class ConstantApp {
         case folderBroadcast, folderRecordFinish
     }
     
+    enum UserDefaultType {
+        case startRecord, finishRecord
+        
+        var key: String {
+            return "broadcast"
+        }
+        
+        var value: Int {
+            switch self {
+            case .startRecord: return 1
+            case .finishRecord: return 2
+            }
+        }
+        
+    }
+    
+    
     static var shared = ConstantApp()
     
     private init() {}
