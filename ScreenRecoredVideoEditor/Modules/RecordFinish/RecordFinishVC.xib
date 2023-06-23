@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecordFinishVC" customModule="ScreenRecoredVideoEditor" customModuleProvider="target">
             <connections>
                 <outlet property="contentVideo" destination="1Kb-D1-sxK" id="sFN-dA-ZiC"/>
+                <outlet property="faceCamButton" destination="kqb-KM-Sq2" id="vvs-HM-2Sw"/>
                 <outlet property="sectionContentView" destination="k2O-DA-UVb" id="JjS-hd-QCj"/>
                 <outlet property="videoEditorButton" destination="EJC-4x-pPp" id="7Ng-fr-s6T"/>
                 <outlet property="videoEditorContent" destination="JEH-MG-AdO" id="tvd-zU-Y18"/>

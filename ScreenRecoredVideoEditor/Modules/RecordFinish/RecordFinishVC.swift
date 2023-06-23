@@ -12,8 +12,9 @@ import RxCocoa
 import RxSwift
 import EasyBaseCodes
 import AVFoundation
+import EasyBaseAudio
 
-class RecordFinishVC: BaseVC, PlayVideoProtocel {
+class RecordFinishVC: BaseVC, PlayVideoProtocel, NavigationProtocol {
     
     var inputURL: URL?
     // Add here outlets
@@ -22,6 +23,7 @@ class RecordFinishVC: BaseVC, PlayVideoProtocel {
     @IBOutlet weak var videoEditorButton: UIButton!
     @IBOutlet weak var contentVideo: UIView!
     private let videoEditorView: VideoEditorView = .loadXib()
+    @IBOutlet weak var faceCamButton: UIButton!
     // Add here your view model
     private var viewModel: RecordFinishVM = RecordFinishVM()
     private let videoPlayView: VideoPlayView = .loadXib()
@@ -59,12 +61,36 @@ extension RecordFinishVC {
         }
         
         if let url = inputURL {
-            videoPlayView.setBgImage(url: url)
+            videoPlayView.playURL(url: url)
         }
     }
     
     private func setupRX() {
         // Add here the setup for the RX
+        faceCamButton.rx.tap
+            .withUnretained(self)
+            .bind { owner, _ in
+                guard let inputURL = owner.inputURL else {
+                    return
+                }
+                owner.moveToFaceCame(inputURL: inputURL)
+            }.disposed(by: disposeBag)
+        
+        buttonRight.rx.tap
+            .withUnretained(self)
+            .bind { owner, _ in
+                owner.showAlert(title: "Confirm Delete",
+                                message: "This action can't be undone. Do you want to continue?",
+                                buttonTitles: ["Cancel", "Delete"],
+                                highlightedButtonIndex: 1) { index in
+                    if index == 1 {
+                        AudioManage.shared.removeFilesFolder(name: ConstantApp.FolderName.folderRecordFinish.rawValue)
+                        ConstantApp.shared.removeFilesFolder()
+                        owner.navigationController?.popViewController()
+                    }
+                }
+            }.disposed(by: disposeBag)
+        
         videoEditorButton.rx.tap
             .withUnretained(self)
             .bind { owner, _ in

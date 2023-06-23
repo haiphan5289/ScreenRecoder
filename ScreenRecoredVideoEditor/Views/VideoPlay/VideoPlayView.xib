@@ -50,6 +50,12 @@
                         </view>
                     </subviews>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4My-9W-XFH">
+                    <rect key="frame" x="159" y="195.33333333333334" width="75" height="34.333333333333343"/>
+                    <color key="backgroundColor" red="0.0" green="0.45882352939999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -57,6 +63,8 @@
                 <constraint firstItem="1ep-2V-0si" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="17M-9w-Xeh"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1ep-2V-0si" secondAttribute="trailing" id="HxE-YZ-88P"/>
                 <constraint firstItem="1ep-2V-0si" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="cMp-am-es7"/>
+                <constraint firstItem="4My-9W-XFH" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="lzK-9d-r33"/>
+                <constraint firstItem="4My-9W-XFH" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="wgx-Dk-zoP"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="1ep-2V-0si" secondAttribute="bottom" id="zOa-Jv-dU0"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

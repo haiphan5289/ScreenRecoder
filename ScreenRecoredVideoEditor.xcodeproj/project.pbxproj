@@ -10,6 +10,13 @@
 		421B7AD1046F77D61996D225 /* Pods_BroadCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E03D2C17C567B7B28866EAE /* Pods_BroadCast.framework */; };
 		668FB62CC5F5E8C461E98E73 /* Pods_BroadCastSetupUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4561AA083BC4F84FDD64CC6C /* Pods_BroadCastSetupUI.framework */; };
 		93550A972A321351007E30A4 /* video_check.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 93550A962A321351007E30A4 /* video_check.mp4 */; };
+		93550A9C2A322013007E30A4 /* FaceCamVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93550A992A322013007E30A4 /* FaceCamVC.xib */; };
+		93550A9D2A322013007E30A4 /* FaceCamVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93550A9A2A322013007E30A4 /* FaceCamVM.swift */; };
+		93550A9E2A322013007E30A4 /* FaceCamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93550A9B2A322013007E30A4 /* FaceCamVC.swift */; };
+		93550AA02A3227BB007E30A4 /* AVPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93550A9F2A3227BB007E30A4 /* AVPlayerManager.swift */; };
+		93550AA92A3233F0007E30A4 /* OTResizableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93550AA72A3233F0007E30A4 /* OTResizableView.swift */; };
+		93550AAA2A3233F0007E30A4 /* OTGripPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93550AA82A3233F0007E30A4 /* OTGripPointView.swift */; };
+		93550AAC2A32345A007E30A4 /* CameraPreviewLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93550AAB2A32345A007E30A4 /* CameraPreviewLayer.swift */; };
 		93B21B602A30C3A000689D0F /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B0D2A30C39700689D0F /* Storage.swift */; };
 		93B21B612A30C3A000689D0F /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B0E2A30C39700689D0F /* AppSettings.swift */; };
 		93B21B632A30C3A000689D0F /* GetHeightSafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B112A30C39700689D0F /* GetHeightSafeArea.swift */; };
@@ -119,6 +126,7 @@
 		93B21BFE2A30E70B00689D0F /* ResultURLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21BFD2A30E70A00689D0F /* ResultURLModel.swift */; };
 		93B21C042A30EB7900689D0F /* VideoPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21C032A30EB7900689D0F /* VideoPlayView.swift */; };
 		93B21C062A30EB8200689D0F /* VideoPlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93B21C052A30EB8200689D0F /* VideoPlayView.xib */; };
+		93B91FA92A45E9D8001BC81E /* SetupCameraManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B91FA82A45E9D8001BC81E /* SetupCameraManage.swift */; };
 		93CC36472A234CDB00DC2E4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CC36462A234CDB00DC2E4D /* AppDelegate.swift */; };
 		93CC36492A234CDB00DC2E4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CC36482A234CDB00DC2E4D /* SceneDelegate.swift */; };
 		93CC364B2A234CDB00DC2E4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CC364A2A234CDB00DC2E4D /* ViewController.swift */; };
@@ -180,6 +188,13 @@
 		5C0409E054BDDBC055242B46 /* Pods-ScreenRecoredVideoEditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScreenRecoredVideoEditor.debug.xcconfig"; path = "Target Support Files/Pods-ScreenRecoredVideoEditor/Pods-ScreenRecoredVideoEditor.debug.xcconfig"; sourceTree = "<group>"; };
 		5D9E4F98B303094021C688A2 /* Pods-ScreenRecoredVideoEditor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScreenRecoredVideoEditor.release.xcconfig"; path = "Target Support Files/Pods-ScreenRecoredVideoEditor/Pods-ScreenRecoredVideoEditor.release.xcconfig"; sourceTree = "<group>"; };
 		93550A962A321351007E30A4 /* video_check.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_check.mp4; sourceTree = "<group>"; };
+		93550A992A322013007E30A4 /* FaceCamVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaceCamVC.xib; sourceTree = "<group>"; };
+		93550A9A2A322013007E30A4 /* FaceCamVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCamVM.swift; sourceTree = "<group>"; };
+		93550A9B2A322013007E30A4 /* FaceCamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCamVC.swift; sourceTree = "<group>"; };
+		93550A9F2A3227BB007E30A4 /* AVPlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerManager.swift; sourceTree = "<group>"; };
+		93550AA72A3233F0007E30A4 /* OTResizableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTResizableView.swift; sourceTree = "<group>"; };
+		93550AA82A3233F0007E30A4 /* OTGripPointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTGripPointView.swift; sourceTree = "<group>"; };
+		93550AAB2A32345A007E30A4 /* CameraPreviewLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewLayer.swift; sourceTree = "<group>"; };
 		93B21B0D2A30C39700689D0F /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		93B21B0E2A30C39700689D0F /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		93B21B112A30C39700689D0F /* GetHeightSafeArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetHeightSafeArea.swift; sourceTree = "<group>"; };
@@ -287,6 +302,7 @@
 		93B21BFD2A30E70A00689D0F /* ResultURLModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultURLModel.swift; sourceTree = "<group>"; };
 		93B21C032A30EB7900689D0F /* VideoPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayView.swift; sourceTree = "<group>"; };
 		93B21C052A30EB8200689D0F /* VideoPlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPlayView.xib; sourceTree = "<group>"; };
+		93B91FA82A45E9D8001BC81E /* SetupCameraManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCameraManage.swift; sourceTree = "<group>"; };
 		93CC36432A234CDB00DC2E4D /* ScreenRecoredVideoEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenRecoredVideoEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93CC36462A234CDB00DC2E4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93CC36482A234CDB00DC2E4D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -343,6 +359,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		93550A982A321FFD007E30A4 /* FaceCam */ = {
+			isa = PBXGroup;
+			children = (
+				93550A992A322013007E30A4 /* FaceCamVC.xib */,
+				93550A9A2A322013007E30A4 /* FaceCamVM.swift */,
+				93550A9B2A322013007E30A4 /* FaceCamVC.swift */,
+			);
+			path = FaceCam;
+			sourceTree = "<group>";
+		};
+		93550AA62A3233F0007E30A4 /* OTResizableView */ = {
+			isa = PBXGroup;
+			children = (
+				93550AAB2A32345A007E30A4 /* CameraPreviewLayer.swift */,
+				93550AA72A3233F0007E30A4 /* OTResizableView.swift */,
+				93550AA82A3233F0007E30A4 /* OTGripPointView.swift */,
+			);
+			path = OTResizableView;
+			sourceTree = "<group>";
+		};
 		93B21B0B2A30C39700689D0F /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,6 +512,7 @@
 		93B21BAD2A30C43B00689D0F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				93550A982A321FFD007E30A4 /* FaceCam */,
 				93B21BAE2A30C43B00689D0F /* RecordFinish */,
 				93B21BB22A30C43B00689D0F /* Home */,
 				93B21BB92A30C43B00689D0F /* Tabbar */,
@@ -553,6 +590,10 @@
 		93B21BC42A30C44800689D0F /* ManageApp */ = {
 			isa = PBXGroup;
 			children = (
+				93B91FA72A45E9C4001BC81E /* SetupCamera */,
+				93E056392A4355B400CA91F0 /* CustomViews */,
+				93550AA62A3233F0007E30A4 /* OTResizableView */,
+				93550A9F2A3227BB007E30A4 /* AVPlayerManager.swift */,
 				93B21BC52A30C44800689D0F /* ManageApp.swift */,
 			);
 			path = ManageApp;
@@ -665,6 +706,14 @@
 			path = VideoPlay;
 			sourceTree = "<group>";
 		};
+		93B91FA72A45E9C4001BC81E /* SetupCamera */ = {
+			isa = PBXGroup;
+			children = (
+				93B91FA82A45E9D8001BC81E /* SetupCameraManage.swift */,
+			);
+			path = SetupCamera;
+			sourceTree = "<group>";
+		};
 		93CC363A2A234CDB00DC2E4D = {
 			isa = PBXGroup;
 			children = (
@@ -745,6 +794,13 @@
 				93CC36722A234DBA00DC2E4D /* Info.plist */,
 			);
 			path = BroadCastSetupUI;
+			sourceTree = "<group>";
+		};
+		93E056392A4355B400CA91F0 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		B6A489465EDC66ABF062BC22 /* Pods */ = {
@@ -874,6 +930,7 @@
 				93B21C062A30EB8200689D0F /* VideoPlayView.xib in Resources */,
 				93CC36502A234CDD00DC2E4D /* Assets.xcassets in Resources */,
 				93B21BE82A30C45700689D0F /* swiftgen.yml in Resources */,
+				93550A9C2A322013007E30A4 /* FaceCamVC.xib in Resources */,
 				93B21BEE2A30C45700689D0F /* FontsFree-Net-SFProText-Semibold.ttf in Resources */,
 				93550A972A321351007E30A4 /* video_check.mp4 in Resources */,
 				93CC364E2A234CDB00DC2E4D /* Main.storyboard in Resources */,
@@ -994,6 +1051,8 @@
 			files = (
 				93B21BF42A30C45700689D0F /* ShowAlertProtocol.swift in Sources */,
 				93B21BDE2A30C45700689D0F /* RecordFinishVC.swift in Sources */,
+				93B91FA92A45E9D8001BC81E /* SetupCameraManage.swift in Sources */,
+				93550AAC2A32345A007E30A4 /* CameraPreviewLayer.swift in Sources */,
 				93CC364B2A234CDB00DC2E4D /* ViewController.swift in Sources */,
 				93B21B712A30C3A000689D0F /* Collection+Extension.swift in Sources */,
 				93B21BAA2A30C3A000689D0F /* UIFontExtensions.swift in Sources */,
@@ -1027,6 +1086,7 @@
 				93B21BA82A30C3A000689D0F /* UIRefreshControlExtensions.swift in Sources */,
 				93B21BE92A30C45700689D0F /* VideoEditorView.swift in Sources */,
 				93B21B902A30C3A000689D0F /* UIView+Extension.swift in Sources */,
+				93550AAA2A3233F0007E30A4 /* OTGripPointView.swift in Sources */,
 				93B21B8D2A30C3A000689D0F /* UILayoutPriorityExtensions.swift in Sources */,
 				93B21BEC2A30C45700689D0F /* Assets-Gen.swift in Sources */,
 				93B21BE32A30C45700689D0F /* HomeVCVM.swift in Sources */,
@@ -1049,6 +1109,8 @@
 				93B21B9E2A30C3A000689D0F /* UINavigationControllerExtensions.swift in Sources */,
 				93B21B822A30C3A000689D0F /* StringExtension.swift in Sources */,
 				93B21B772A30C3A000689D0F /* DecimalNumber+Extension.swift in Sources */,
+				93550A9D2A322013007E30A4 /* FaceCamVM.swift in Sources */,
+				93550A9E2A322013007E30A4 /* FaceCamVC.swift in Sources */,
 				93B21B702A30C3A000689D0F /* ViewControllerExtension.swift in Sources */,
 				93B21C042A30EB7900689D0F /* VideoPlayView.swift in Sources */,
 				93B21B8B2A30C3A000689D0F /* UIEdgeInsetsExtensions.swift in Sources */,
@@ -1069,6 +1131,7 @@
 				93B21B6C2A30C3A000689D0F /* UILableExtension.swift in Sources */,
 				93B21B692A30C3A000689D0F /* UIFont+Extension.swift in Sources */,
 				93B21B7F2A30C3A000689D0F /* Font+Extension.swift in Sources */,
+				93550AA02A3227BB007E30A4 /* AVPlayerManager.swift in Sources */,
 				93B21B662A30C3A000689D0F /* UIApplication+Extension.swift in Sources */,
 				93B21BF92A30C8A100689D0F /* Constant.swift in Sources */,
 				93B21B6E2A30C3A000689D0F /* UITextViewExtension.swift in Sources */,
@@ -1089,6 +1152,7 @@
 				93B21B6F2A30C3A000689D0F /* NumberExtension.swift in Sources */,
 				93B21B922A30C3A000689D0F /* UIImage+Extensions.swift in Sources */,
 				93B21B912A30C3A000689D0F /* UICollectionViewExtensions.swift in Sources */,
+				93550AA92A3233F0007E30A4 /* OTResizableView.swift in Sources */,
 				93B21B8C2A30C3A000689D0F /* UIScrollViewExtensions.swift in Sources */,
 				93B21B932A30C3A000689D0F /* UITextViewExtensions.swift in Sources */,
 			);

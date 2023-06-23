@@ -10,4 +10,14 @@ import Foundation
 
 protocol NavigationProtocol {}
 extension NavigationProtocol {
+    
+    func moveToFaceCame(inputURL: URL) {
+        guard let topVC = ManageApp.shared.topViewController() else {
+            return
+        }
+        let faceCameVc = FaceCamVC.createVC()
+        faceCameVc.inoutURL = inputURL
+        topVC.navigationController?.pushViewController(faceCameVc)
+    }
+    
 }

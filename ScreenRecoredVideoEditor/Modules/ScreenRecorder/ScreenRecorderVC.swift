@@ -119,8 +119,9 @@ extension ScreenRecorderVC {
             let vc = RecordFinishVC.createVC()
             vc.inputURL = outputURL
             self.navigationController?.pushViewController(vc)
-        } failure: { error in
-            print(error)
+        } failure: { [weak self] error in
+            guard let self = self else { return }
+            self.showAlert(title: nil, message: error)
         }
 
     }
