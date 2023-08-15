@@ -11,8 +11,9 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class HomeVCVC: BaseVC, SetupTableView {
+class HomeVCVC: BaseVC, SetupTableView, NavigationProtocol {
     
+    var imagePicker: ImagePicker!
     
     enum HomeType: Int, CaseIterable {
         case liveStream, screen, facecam, videoEditor, commentary
@@ -70,6 +71,7 @@ extension HomeVCVC {
         setupTableView(tableView: tableView,
                        delegate: self,
                        name: HomeCell.self)
+        imagePicker = ImagePicker(presentationController: self, delegate: self)
     }
     
     private func setupRX() {
@@ -83,16 +85,16 @@ extension HomeVCVC {
         self.tableView.rx.itemSelected
             .withUnretained(self)
             .bind { owner, idx in
-                guard let type = HomeType(rawValue: idx.row) else {
-                    return
-                }
-                switch type {
-                case .screen:
-                    let vc = ScreenRecorderVC.createVC()
-                    owner.navigationController?.pushViewController(vc)
-                case .commentary, .facecam, .liveStream, .videoEditor: break
-                }
-                
+//                guard let type = HomeType(rawValue: idx.row) else {
+//                    return
+//                }
+//                switch type {
+//                case .screen:
+//                    let vc = ScreenRecorderVC.createVC()
+//                    owner.navigationController?.pushViewController(vc)
+//                case .commentary, .facecam, .liveStream, .videoEditor: break
+//                }
+                owner.imagePicker.presentGallery(type: ["public.movie"])
             }.disposed(by: disposeBag)
     }
 }
@@ -100,5 +102,18 @@ extension HomeVCVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.1
+    }
+}
+extension HomeVCVC: ImagePickerDelegate {
+    func didSelect(image: UIImage?) {
+        //
+    }
+    
+    func didSelectVideo(url: URL) {
+//        self.moveToFaceCame(inputURL: url)
+        let faceCameVc = FacecamVC.createVC()
+        faceCameVc.modalPresentationStyle = .fullScreen
+        faceCameVc.videoURL = url
+        self.present(faceCameVc, animated: true, completion: nil)
     }
 }

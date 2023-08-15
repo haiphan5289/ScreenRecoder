@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol NavigationProtocol {}
 extension NavigationProtocol {
@@ -15,9 +16,11 @@ extension NavigationProtocol {
         guard let topVC = ManageApp.shared.topViewController() else {
             return
         }
-        let faceCameVc = FaceCamVC.createVC()
-        faceCameVc.inoutURL = inputURL
-        topVC.navigationController?.pushViewController(faceCameVc)
+//        let faceCameVc = CheckFaceCamVC.createVC()
+//        faceCameVc.videoURL = inputURL
+//        let navigation: UINavigationController = UINavigationController(rootViewController: faceCameVc)
+////        topVC.navigationController?.pushViewController(faceCameVc)
+//        topVC.present(navigation, animated: true)
     }
     
 }

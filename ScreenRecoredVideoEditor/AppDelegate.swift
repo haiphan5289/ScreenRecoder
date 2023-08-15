@@ -7,12 +7,14 @@
 
 import UIKit
 import EasyBaseAudio
+import FaceCamFW
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     var window: UIWindow?
+    weak var mainView: ApplicationStateObserver?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

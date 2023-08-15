@@ -38,6 +38,8 @@ pod 'Alamofire', '~> 5.2.2'
   pod 'EasyBaseCodes'
   pod 'EasyBaseAudio'
   pod 'SwiftLint'
+  pod 'FaceCamFW'
+  pod 'SwiftOverlays', '~> 5.0.1'
 
   post_install do |installer|
       installer.generated_projects.each do |project|

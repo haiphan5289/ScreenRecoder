@@ -659,6 +659,7 @@ PODS:
   - EasyBaseAudio (2.0.1)
   - EasyBaseCodes (1.1.2)
   - Eureka (5.4.0)
+  - FaceCamFW (1.0.4)
   - FDWaveformView (5.0.1)
   - Firebase (10.9.0):
     - Firebase/Core (= 10.9.0)
@@ -868,6 +869,7 @@ PODS:
   - SVProgressHUD (2.2.5)
   - SwiftGen (6.6.2)
   - SwiftLint (0.52.2)
+  - SwiftOverlays (5.0.1)
   - SwiftyGif (5.4.4)
   - SwiftyJSON (5.0.1)
   - SwiftyStoreKit (0.16.1)
@@ -883,6 +885,7 @@ DEPENDENCIES:
   - EasyBaseAudio
   - EasyBaseCodes
   - Eureka
+  - FaceCamFW
   - FDWaveformView
   - Firebase
   - Firebase/Firestore
@@ -901,6 +904,7 @@ DEPENDENCIES:
   - SVProgressHUD
   - SwiftGen
   - SwiftLint
+  - SwiftOverlays (~> 5.0.1)
   - SwiftyJSON
   - SwiftyStoreKit
   - UIDropDown
@@ -921,6 +925,7 @@ SPEC REPOS:
     - EasyBaseAudio
     - EasyBaseCodes
     - Eureka
+    - FaceCamFW
     - FDWaveformView
     - Firebase
     - FirebaseABTesting
@@ -959,6 +964,7 @@ SPEC REPOS:
     - SVProgressHUD
     - SwiftGen
     - SwiftLint
+    - SwiftOverlays
     - SwiftyGif
     - SwiftyJSON
     - SwiftyStoreKit
@@ -979,6 +985,7 @@ SPEC CHECKSUMS:
   EasyBaseAudio: 1c9b7a6ad0d8a84a5d53e353598102b6e8b50289
   EasyBaseCodes: a6df84b38dac55376c8bba93c8fcc0372a126e62
   Eureka: fadaa9fa3d6e402d3c60f78f24edf3d7bafc9c29
+  FaceCamFW: cd4a62cc5385bbb723cbb0945e162dba219a5722
   FDWaveformView: c188be613947273cc83d6f0056505f60e6c4b9ac
   Firebase: bd152f0f3d278c4060c5c71359db08ebcfd5a3e2
   FirebaseABTesting: 005b70969e2817e2a1e631e8dba29134a04c0622
@@ -1017,6 +1024,7 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
   SwiftLint: 1ac76dac888ca05cb0cf24d0c85887ec1209961d
+  SwiftOverlays: ab459ea9194b0e96aaccaa00e9ead1bf6d46eef1
   SwiftyGif: 93a1cc87bf3a51916001cf8f3d63835fb64c819f
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
@@ -1024,6 +1032,6 @@ SPEC CHECKSUMS:
   ViewAnimator: a9ceed80266e00fd435ec4fb99b2df64d580d0e4
   WMSegmentControl: 15120246d0fdbb7530d7fa03e90c3ec6f4fa85bd
 
-PODFILE CHECKSUM: b2912c653a0f43df81d8de68262c549f2a6e9708
+PODFILE CHECKSUM: aa43c08700a038eb2f12eeaed63a077f9ab4e87f
 
 COCOAPODS: 1.12.1

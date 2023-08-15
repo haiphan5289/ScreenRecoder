@@ -3,6 +3,12 @@
 <plist version="1.0">
 <dict>
     
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>Our application needs permission to write photos...</string>
+    
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Need microphone access for uploading audio</string>
+    
     <key>NSCameraUsageDescription</key>
     <string>Camera usage description</string>
     

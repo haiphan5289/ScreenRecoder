@@ -10,13 +10,17 @@
 		421B7AD1046F77D61996D225 /* Pods_BroadCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E03D2C17C567B7B28866EAE /* Pods_BroadCast.framework */; };
 		668FB62CC5F5E8C461E98E73 /* Pods_BroadCastSetupUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4561AA083BC4F84FDD64CC6C /* Pods_BroadCastSetupUI.framework */; };
 		93550A972A321351007E30A4 /* video_check.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 93550A962A321351007E30A4 /* video_check.mp4 */; };
-		93550A9C2A322013007E30A4 /* FaceCamVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93550A992A322013007E30A4 /* FaceCamVC.xib */; };
+		93550A9C2A322013007E30A4 /* FacecamVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93550A992A322013007E30A4 /* FacecamVC.xib */; };
 		93550A9D2A322013007E30A4 /* FaceCamVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93550A9A2A322013007E30A4 /* FaceCamVM.swift */; };
 		93550A9E2A322013007E30A4 /* FaceCamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93550A9B2A322013007E30A4 /* FaceCamVC.swift */; };
 		93550AA02A3227BB007E30A4 /* AVPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93550A9F2A3227BB007E30A4 /* AVPlayerManager.swift */; };
 		93550AA92A3233F0007E30A4 /* OTResizableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93550AA72A3233F0007E30A4 /* OTResizableView.swift */; };
 		93550AAA2A3233F0007E30A4 /* OTGripPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93550AA82A3233F0007E30A4 /* OTGripPointView.swift */; };
 		93550AAC2A32345A007E30A4 /* CameraPreviewLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93550AAB2A32345A007E30A4 /* CameraPreviewLayer.swift */; };
+		9389BF102A83D1A700FDE30B /* CheckAudioVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9389BF0D2A83D1A700FDE30B /* CheckAudioVC.xib */; };
+		9389BF112A83D1A700FDE30B /* CheckAudioVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389BF0E2A83D1A700FDE30B /* CheckAudioVM.swift */; };
+		9389BF122A83D1A700FDE30B /* CheckAudioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389BF0F2A83D1A700FDE30B /* CheckAudioVC.swift */; };
+		93AED4B02A47FAE300215827 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AED4AF2A47FAE300215827 /* ImagePicker.swift */; };
 		93B21B602A30C3A000689D0F /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B0D2A30C39700689D0F /* Storage.swift */; };
 		93B21B612A30C3A000689D0F /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B0E2A30C39700689D0F /* AppSettings.swift */; };
 		93B21B632A30C3A000689D0F /* GetHeightSafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B112A30C39700689D0F /* GetHeightSafeArea.swift */; };
@@ -126,7 +130,20 @@
 		93B21BFE2A30E70B00689D0F /* ResultURLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21BFD2A30E70A00689D0F /* ResultURLModel.swift */; };
 		93B21C042A30EB7900689D0F /* VideoPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21C032A30EB7900689D0F /* VideoPlayView.swift */; };
 		93B21C062A30EB8200689D0F /* VideoPlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93B21C052A30EB8200689D0F /* VideoPlayView.xib */; };
+		93B7C7612A79537000C96B52 /* Toaster in Frameworks */ = {isa = PBXBuildFile; productRef = 93B7C7602A79537000C96B52 /* Toaster */; };
+		93B7C7642A79539E00C96B52 /* PixelSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 93B7C7632A79539E00C96B52 /* PixelSDK */; };
 		93B91FA92A45E9D8001BC81E /* SetupCameraManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B91FA82A45E9D8001BC81E /* SetupCameraManage.swift */; };
+		93B91FAD2A474BFD001BC81E /* DeviceList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93B91FAC2A474BFD001BC81E /* DeviceList.plist */; };
+		93B953452A6ED1C80045E62F /* CocoaLumberjack in Frameworks */ = {isa = PBXBuildFile; productRef = 93B953442A6ED1C80045E62F /* CocoaLumberjack */; };
+		93B953472A6ED1C80045E62F /* CocoaLumberjackSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 93B953462A6ED1C80045E62F /* CocoaLumberjackSwift */; };
+		93B953492A6ED1C80045E62F /* CocoaLumberjackSwiftLogBackend in Frameworks */ = {isa = PBXBuildFile; productRef = 93B953482A6ED1C80045E62F /* CocoaLumberjackSwiftLogBackend */; };
+		93BA318F2A7E4F7C004A0D2B /* MixerConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BA31812A7E4F7C004A0D2B /* MixerConvert.m */; };
+		93BA31922A7E4F7C004A0D2B /* Selections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BA31862A7E4F7C004A0D2B /* Selections.swift */; };
+		93BA31942A7E4F7C004A0D2B /* ScreencasterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BA31882A7E4F7C004A0D2B /* ScreencasterDelegate.swift */; };
+		93BA31952A7E4F7C004A0D2B /* VideoPostprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BA31892A7E4F7C004A0D2B /* VideoPostprocessor.swift */; };
+		93BA31A12A7E52EB004A0D2B /* SettingsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BA319A2A7E52EB004A0D2B /* SettingsKeys.swift */; };
+		93BA31A32A7E52EB004A0D2B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BA319C2A7E52EB004A0D2B /* Settings.swift */; };
+		93BA31AA2A7E54B5004A0D2B /* DeviceGuru in Frameworks */ = {isa = PBXBuildFile; productRef = 93BA31A92A7E54B5004A0D2B /* DeviceGuru */; };
 		93CC36472A234CDB00DC2E4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CC36462A234CDB00DC2E4D /* AppDelegate.swift */; };
 		93CC36492A234CDB00DC2E4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CC36482A234CDB00DC2E4D /* SceneDelegate.swift */; };
 		93CC364B2A234CDB00DC2E4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CC364A2A234CDB00DC2E4D /* ViewController.swift */; };
@@ -188,13 +205,17 @@
 		5C0409E054BDDBC055242B46 /* Pods-ScreenRecoredVideoEditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScreenRecoredVideoEditor.debug.xcconfig"; path = "Target Support Files/Pods-ScreenRecoredVideoEditor/Pods-ScreenRecoredVideoEditor.debug.xcconfig"; sourceTree = "<group>"; };
 		5D9E4F98B303094021C688A2 /* Pods-ScreenRecoredVideoEditor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScreenRecoredVideoEditor.release.xcconfig"; path = "Target Support Files/Pods-ScreenRecoredVideoEditor/Pods-ScreenRecoredVideoEditor.release.xcconfig"; sourceTree = "<group>"; };
 		93550A962A321351007E30A4 /* video_check.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_check.mp4; sourceTree = "<group>"; };
-		93550A992A322013007E30A4 /* FaceCamVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaceCamVC.xib; sourceTree = "<group>"; };
+		93550A992A322013007E30A4 /* FacecamVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FacecamVC.xib; sourceTree = "<group>"; };
 		93550A9A2A322013007E30A4 /* FaceCamVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCamVM.swift; sourceTree = "<group>"; };
 		93550A9B2A322013007E30A4 /* FaceCamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCamVC.swift; sourceTree = "<group>"; };
 		93550A9F2A3227BB007E30A4 /* AVPlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerManager.swift; sourceTree = "<group>"; };
 		93550AA72A3233F0007E30A4 /* OTResizableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTResizableView.swift; sourceTree = "<group>"; };
 		93550AA82A3233F0007E30A4 /* OTGripPointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTGripPointView.swift; sourceTree = "<group>"; };
 		93550AAB2A32345A007E30A4 /* CameraPreviewLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewLayer.swift; sourceTree = "<group>"; };
+		9389BF0D2A83D1A700FDE30B /* CheckAudioVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckAudioVC.xib; sourceTree = "<group>"; };
+		9389BF0E2A83D1A700FDE30B /* CheckAudioVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAudioVM.swift; sourceTree = "<group>"; };
+		9389BF0F2A83D1A700FDE30B /* CheckAudioVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAudioVC.swift; sourceTree = "<group>"; };
+		93AED4AF2A47FAE300215827 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		93B21B0D2A30C39700689D0F /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		93B21B0E2A30C39700689D0F /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		93B21B112A30C39700689D0F /* GetHeightSafeArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetHeightSafeArea.swift; sourceTree = "<group>"; };
@@ -303,6 +324,21 @@
 		93B21C032A30EB7900689D0F /* VideoPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayView.swift; sourceTree = "<group>"; };
 		93B21C052A30EB8200689D0F /* VideoPlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPlayView.xib; sourceTree = "<group>"; };
 		93B91FA82A45E9D8001BC81E /* SetupCameraManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCameraManage.swift; sourceTree = "<group>"; };
+		93B91FAC2A474BFD001BC81E /* DeviceList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DeviceList.plist; sourceTree = "<group>"; };
+		93BA317D2A7E4F7C004A0D2B /* MixerConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MixerConvert.h; sourceTree = "<group>"; };
+		93BA317E2A7E4F7C004A0D2B /* StreamerEngineProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamerEngineProxy.h; sourceTree = "<group>"; };
+		93BA317F2A7E4F7C004A0D2B /* VideoEncoderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoEncoderConfig.h; sourceTree = "<group>"; };
+		93BA31802A7E4F7C004A0D2B /* AudioEncoderConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioEncoderConfig.h; sourceTree = "<group>"; };
+		93BA31812A7E4F7C004A0D2B /* MixerConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MixerConvert.m; sourceTree = "<group>"; };
+		93BA31822A7E4F7C004A0D2B /* SrtConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SrtConfig.h; sourceTree = "<group>"; };
+		93BA31862A7E4F7C004A0D2B /* Selections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Selections.swift; sourceTree = "<group>"; };
+		93BA31882A7E4F7C004A0D2B /* ScreencasterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreencasterDelegate.swift; sourceTree = "<group>"; };
+		93BA31892A7E4F7C004A0D2B /* VideoPostprocessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPostprocessor.swift; sourceTree = "<group>"; };
+		93BA318D2A7E4F7C004A0D2B /* ConnectionConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionConfig.h; sourceTree = "<group>"; };
+		93BA318E2A7E4F7C004A0D2B /* StreamerEngineDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamerEngineDelegate.h; sourceTree = "<group>"; };
+		93BA319A2A7E52EB004A0D2B /* SettingsKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsKeys.swift; sourceTree = "<group>"; };
+		93BA319C2A7E52EB004A0D2B /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		93BA31AB2A7E7AF3004A0D2B /* ScreenRecoredVideoEditor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScreenRecoredVideoEditor-Bridging-Header.h"; sourceTree = "<group>"; };
 		93CC36432A234CDB00DC2E4D /* ScreenRecoredVideoEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenRecoredVideoEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93CC36462A234CDB00DC2E4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93CC36482A234CDB00DC2E4D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -333,7 +369,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93B7C7612A79537000C96B52 /* Toaster in Frameworks */,
+				93B953452A6ED1C80045E62F /* CocoaLumberjack in Frameworks */,
+				93BA31AA2A7E54B5004A0D2B /* DeviceGuru in Frameworks */,
+				93B7C7642A79539E00C96B52 /* PixelSDK in Frameworks */,
 				B25EDE7810FC15336DA7B68F /* Pods_ScreenRecoredVideoEditor.framework in Frameworks */,
+				93B953492A6ED1C80045E62F /* CocoaLumberjackSwiftLogBackend in Frameworks */,
+				93B953472A6ED1C80045E62F /* CocoaLumberjackSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,9 +404,13 @@
 		93550A982A321FFD007E30A4 /* FaceCam */ = {
 			isa = PBXGroup;
 			children = (
-				93550A992A322013007E30A4 /* FaceCamVC.xib */,
+				93BA31992A7E52EB004A0D2B /* Stream */,
+				93550A992A322013007E30A4 /* FacecamVC.xib */,
 				93550A9A2A322013007E30A4 /* FaceCamVM.swift */,
 				93550A9B2A322013007E30A4 /* FaceCamVC.swift */,
+				9389BF0D2A83D1A700FDE30B /* CheckAudioVC.xib */,
+				9389BF0E2A83D1A700FDE30B /* CheckAudioVM.swift */,
+				9389BF0F2A83D1A700FDE30B /* CheckAudioVC.swift */,
 			);
 			path = FaceCam;
 			sourceTree = "<group>";
@@ -534,6 +580,7 @@
 		93B21BB22A30C43B00689D0F /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				93AED4AF2A47FAE300215827 /* ImagePicker.swift */,
 				93B21BB32A30C43B00689D0F /* HomeVCVC.xib */,
 				93B21BB42A30C43B00689D0F /* HomeVCVC.swift */,
 				93B21BB52A30C43B00689D0F /* Cell */,
@@ -714,6 +761,41 @@
 			path = SetupCamera;
 			sourceTree = "<group>";
 		};
+		93BA317C2A7E4F7C004A0D2B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				93BA317D2A7E4F7C004A0D2B /* MixerConvert.h */,
+				93BA317E2A7E4F7C004A0D2B /* StreamerEngineProxy.h */,
+				93BA317F2A7E4F7C004A0D2B /* VideoEncoderConfig.h */,
+				93BA31802A7E4F7C004A0D2B /* AudioEncoderConfig.h */,
+				93BA31812A7E4F7C004A0D2B /* MixerConvert.m */,
+				93BA31822A7E4F7C004A0D2B /* SrtConfig.h */,
+				93BA31832A7E4F7C004A0D2B /* Broadcast */,
+				93BA318D2A7E4F7C004A0D2B /* ConnectionConfig.h */,
+				93BA318E2A7E4F7C004A0D2B /* StreamerEngineDelegate.h */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		93BA31832A7E4F7C004A0D2B /* Broadcast */ = {
+			isa = PBXGroup;
+			children = (
+				93BA31862A7E4F7C004A0D2B /* Selections.swift */,
+				93BA31882A7E4F7C004A0D2B /* ScreencasterDelegate.swift */,
+				93BA31892A7E4F7C004A0D2B /* VideoPostprocessor.swift */,
+			);
+			path = Broadcast;
+			sourceTree = "<group>";
+		};
+		93BA31992A7E52EB004A0D2B /* Stream */ = {
+			isa = PBXGroup;
+			children = (
+				93BA319A2A7E52EB004A0D2B /* SettingsKeys.swift */,
+				93BA319C2A7E52EB004A0D2B /* Settings.swift */,
+			);
+			path = Stream;
+			sourceTree = "<group>";
+		};
 		93CC363A2A234CDB00DC2E4D = {
 			isa = PBXGroup;
 			children = (
@@ -750,12 +832,15 @@
 				93B21B0B2A30C39700689D0F /* Common */,
 				93B21BC02A30C44400689D0F /* Views */,
 				93B21BAD2A30C43B00689D0F /* Modules */,
+				93BA317C2A7E4F7C004A0D2B /* Helpers */,
 				93CC36462A234CDB00DC2E4D /* AppDelegate.swift */,
 				93CC36482A234CDB00DC2E4D /* SceneDelegate.swift */,
 				93CC364A2A234CDB00DC2E4D /* ViewController.swift */,
+				93BA31AB2A7E7AF3004A0D2B /* ScreenRecoredVideoEditor-Bridging-Header.h */,
 				93CC364C2A234CDB00DC2E4D /* Main.storyboard */,
 				93CC364F2A234CDD00DC2E4D /* Assets.xcassets */,
 				93CC36512A234CDD00DC2E4D /* LaunchScreen.storyboard */,
+				93B91FAC2A474BFD001BC81E /* DeviceList.plist */,
 				93CC36542A234CDD00DC2E4D /* Info.plist */,
 			);
 			path = ScreenRecoredVideoEditor;
@@ -837,6 +922,14 @@
 				93CC36772A234DBA00DC2E4D /* PBXTargetDependency */,
 			);
 			name = ScreenRecoredVideoEditor;
+			packageProductDependencies = (
+				93B953442A6ED1C80045E62F /* CocoaLumberjack */,
+				93B953462A6ED1C80045E62F /* CocoaLumberjackSwift */,
+				93B953482A6ED1C80045E62F /* CocoaLumberjackSwiftLogBackend */,
+				93B7C7602A79537000C96B52 /* Toaster */,
+				93B7C7632A79539E00C96B52 /* PixelSDK */,
+				93BA31A92A7E54B5004A0D2B /* DeviceGuru */,
+			);
 			productName = ScreenRecoredVideoEditor;
 			productReference = 93CC36432A234CDB00DC2E4D /* ScreenRecoredVideoEditor.app */;
 			productType = "com.apple.product-type.application";
@@ -907,6 +1000,12 @@
 				Base,
 			);
 			mainGroup = 93CC363A2A234CDB00DC2E4D;
+			packageReferences = (
+				93B953432A6ED1C80045E62F /* XCRemoteSwiftPackageReference "CocoaLumberjack" */,
+				93B7C75F2A79537000C96B52 /* XCRemoteSwiftPackageReference "Toaster" */,
+				93B7C7622A79539E00C96B52 /* XCRemoteSwiftPackageReference "PixelSDK" */,
+				93BA31A82A7E54B5004A0D2B /* XCRemoteSwiftPackageReference "DeviceGuru" */,
+			);
 			productRefGroup = 93CC36442A234CDB00DC2E4D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -927,10 +1026,12 @@
 				93B21BF02A30C45700689D0F /* FontsFree-Net-SFProDisplay-Bold.ttf in Resources */,
 				93CC36532A234CDD00DC2E4D /* LaunchScreen.storyboard in Resources */,
 				93B21BEA2A30C45700689D0F /* VideoEditorView.xib in Resources */,
+				9389BF102A83D1A700FDE30B /* CheckAudioVC.xib in Resources */,
 				93B21C062A30EB8200689D0F /* VideoPlayView.xib in Resources */,
 				93CC36502A234CDD00DC2E4D /* Assets.xcassets in Resources */,
 				93B21BE82A30C45700689D0F /* swiftgen.yml in Resources */,
-				93550A9C2A322013007E30A4 /* FaceCamVC.xib in Resources */,
+				93B91FAD2A474BFD001BC81E /* DeviceList.plist in Resources */,
+				93550A9C2A322013007E30A4 /* FacecamVC.xib in Resources */,
 				93B21BEE2A30C45700689D0F /* FontsFree-Net-SFProText-Semibold.ttf in Resources */,
 				93550A972A321351007E30A4 /* video_check.mp4 in Resources */,
 				93CC364E2A234CDB00DC2E4D /* Main.storyboard in Resources */,
@@ -1059,6 +1160,7 @@
 				93B21BA62A30C3A000689D0F /* UIApplicationExtensions.swift in Sources */,
 				93B21B762A30C3A000689D0F /* Drive+Extension.swift in Sources */,
 				93B21B7C2A30C3A000689D0F /* PropertyWapper.swift in Sources */,
+				93BA31942A7E4F7C004A0D2B /* ScreencasterDelegate.swift in Sources */,
 				93B21BF22A30C45700689D0F /* BaseVC.swift in Sources */,
 				93B21BA12A30C3A000689D0F /* ActivityExt.swift in Sources */,
 				93B21B602A30C3A000689D0F /* Storage.swift in Sources */,
@@ -1086,7 +1188,9 @@
 				93B21BA82A30C3A000689D0F /* UIRefreshControlExtensions.swift in Sources */,
 				93B21BE92A30C45700689D0F /* VideoEditorView.swift in Sources */,
 				93B21B902A30C3A000689D0F /* UIView+Extension.swift in Sources */,
+				9389BF112A83D1A700FDE30B /* CheckAudioVM.swift in Sources */,
 				93550AAA2A3233F0007E30A4 /* OTGripPointView.swift in Sources */,
+				93BA31A32A7E52EB004A0D2B /* Settings.swift in Sources */,
 				93B21B8D2A30C3A000689D0F /* UILayoutPriorityExtensions.swift in Sources */,
 				93B21BEC2A30C45700689D0F /* Assets-Gen.swift in Sources */,
 				93B21BE32A30C45700689D0F /* HomeVCVM.swift in Sources */,
@@ -1095,6 +1199,7 @@
 				93B21B862A30C3A000689D0F /* ProductViewModel.swift in Sources */,
 				93B21B612A30C3A000689D0F /* AppSettings.swift in Sources */,
 				93B21B6A2A30C3A000689D0F /* UITapgesture+Extension.swift in Sources */,
+				93BA318F2A7E4F7C004A0D2B /* MixerConvert.m in Sources */,
 				93B21BA02A30C3A000689D0F /* UIGestureRecognizerExtensions.swift in Sources */,
 				93B21B882A30C3A000689D0F /* DateExtension.swift in Sources */,
 				93B21BAB2A30C3A000689D0F /* UIDatePickerExtensions.swift in Sources */,
@@ -1103,8 +1208,10 @@
 				93B21B972A30C3A000689D0F /* UISegmentedControlExtensions.swift in Sources */,
 				93CC36492A234CDB00DC2E4D /* SceneDelegate.swift in Sources */,
 				93B21BE02A30C45700689D0F /* HomeVCVC.swift in Sources */,
+				93BA31922A7E4F7C004A0D2B /* Selections.swift in Sources */,
 				93B21B952A30C3A000689D0F /* UIStoryboardExtensions.swift in Sources */,
 				93B21B8F2A30C3A000689D0F /* UIStackViewExtensions.swift in Sources */,
+				93AED4B02A47FAE300215827 /* ImagePicker.swift in Sources */,
 				93B21B872A30C3A000689D0F /* LabelExtension.swift in Sources */,
 				93B21B9E2A30C3A000689D0F /* UINavigationControllerExtensions.swift in Sources */,
 				93B21B822A30C3A000689D0F /* StringExtension.swift in Sources */,
@@ -1116,6 +1223,7 @@
 				93B21B8B2A30C3A000689D0F /* UIEdgeInsetsExtensions.swift in Sources */,
 				93B21B9B2A30C3A000689D0F /* UISliderExtensions.swift in Sources */,
 				93B21BA72A30C3A000689D0F /* UIImageViewExtensions.swift in Sources */,
+				93BA31952A7E4F7C004A0D2B /* VideoPostprocessor.swift in Sources */,
 				93B21B752A30C3A000689D0F /* CustomSegment.swift in Sources */,
 				93B21B642A30C3A000689D0F /* SettingDefaultFont.swift in Sources */,
 				93B21B942A30C3A000689D0F /* UIBarButtonItemExtensions.swift in Sources */,
@@ -1124,6 +1232,8 @@
 				93B21B782A30C3A000689D0F /* ArrayExxtension.swift in Sources */,
 				93B21BA92A30C3A000689D0F /* UIAlertControllerExtensions.swift in Sources */,
 				93B21B802A30C3A000689D0F /* UIViewController+Rx.swift in Sources */,
+				9389BF122A83D1A700FDE30B /* CheckAudioVC.swift in Sources */,
+				93BA31A12A7E52EB004A0D2B /* SettingsKeys.swift in Sources */,
 				93B21BF32A30C45700689D0F /* SetUpBase.swift in Sources */,
 				93B21B832A30C3A000689D0F /* CodableExtension.swift in Sources */,
 				93B21B6B2A30C3A000689D0F /* UIWindow+Extension.swift in Sources */,
@@ -1538,6 +1648,74 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		93B7C75F2A79537000C96B52 /* XCRemoteSwiftPackageReference "Toaster" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Toaster.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		93B7C7622A79539E00C96B52 /* XCRemoteSwiftPackageReference "PixelSDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GottaYotta/PixelSDK.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		93B953432A6ED1C80045E62F /* XCRemoteSwiftPackageReference "CocoaLumberjack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CocoaLumberjack/CocoaLumberjack.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		93BA31A82A7E54B5004A0D2B /* XCRemoteSwiftPackageReference "DeviceGuru" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/InderKumarRathore/DeviceGuru";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		93B7C7602A79537000C96B52 /* Toaster */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93B7C75F2A79537000C96B52 /* XCRemoteSwiftPackageReference "Toaster" */;
+			productName = Toaster;
+		};
+		93B7C7632A79539E00C96B52 /* PixelSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93B7C7622A79539E00C96B52 /* XCRemoteSwiftPackageReference "PixelSDK" */;
+			productName = PixelSDK;
+		};
+		93B953442A6ED1C80045E62F /* CocoaLumberjack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93B953432A6ED1C80045E62F /* XCRemoteSwiftPackageReference "CocoaLumberjack" */;
+			productName = CocoaLumberjack;
+		};
+		93B953462A6ED1C80045E62F /* CocoaLumberjackSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93B953432A6ED1C80045E62F /* XCRemoteSwiftPackageReference "CocoaLumberjack" */;
+			productName = CocoaLumberjackSwift;
+		};
+		93B953482A6ED1C80045E62F /* CocoaLumberjackSwiftLogBackend */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93B953432A6ED1C80045E62F /* XCRemoteSwiftPackageReference "CocoaLumberjack" */;
+			productName = CocoaLumberjackSwiftLogBackend;
+		};
+		93BA31A92A7E54B5004A0D2B /* DeviceGuru */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93BA31A82A7E54B5004A0D2B /* XCRemoteSwiftPackageReference "DeviceGuru" */;
+			productName = DeviceGuru;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 93CC363B2A234CDB00DC2E4D /* Project object */;
 }
