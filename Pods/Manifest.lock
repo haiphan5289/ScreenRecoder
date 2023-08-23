@@ -659,7 +659,7 @@ PODS:
   - EasyBaseAudio (2.0.1)
   - EasyBaseCodes (1.1.2)
   - Eureka (5.4.0)
-  - FaceCamFW (1.0.4)
+  - FaceCamFW (1.0.6)
   - FDWaveformView (5.0.1)
   - Firebase (10.9.0):
     - Firebase/Core (= 10.9.0)
@@ -985,7 +985,7 @@ SPEC CHECKSUMS:
   EasyBaseAudio: 1c9b7a6ad0d8a84a5d53e353598102b6e8b50289
   EasyBaseCodes: a6df84b38dac55376c8bba93c8fcc0372a126e62
   Eureka: fadaa9fa3d6e402d3c60f78f24edf3d7bafc9c29
-  FaceCamFW: cd4a62cc5385bbb723cbb0945e162dba219a5722
+  FaceCamFW: 0e128fde036ad944964be5bd4dfc8e27000c180d
   FDWaveformView: c188be613947273cc83d6f0056505f60e6c4b9ac
   Firebase: bd152f0f3d278c4060c5c71359db08ebcfd5a3e2
   FirebaseABTesting: 005b70969e2817e2a1e631e8dba29134a04c0622
