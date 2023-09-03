@@ -41,7 +41,12 @@ class BaseVC: UIViewController {
         self.navigationController?.isNavigationBarHidden = navigationType == .hide
     }
     
-    func setupBackButton(imgArrow: UIImage?) {
+    func setupFontNavigation() {
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black,
+                                                                        NSAttributedString.Key.font: UIFont.notoSansFont(weight: .bold, size: 18)]
+    }
+    
+    func setupBackButton(imgArrow: UIImage? = Asset.icArrowLeft.image) {
         buttonLeft.setImage(imgArrow, for: .normal)
         buttonLeft.contentEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: -0)
         let leftBarButton = UIBarButtonItem(customView: buttonLeft)

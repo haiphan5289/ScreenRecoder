@@ -11,8 +11,14 @@ import UIKit
 final class ManageApp {
     static var shared = ManageApp()
     
+    private let userDefault = UserDefaults(suiteName: ConstantApp.appGroupName)
+    
     private init() {}
     
+    func launchApp() {
+        self.userDefault?.set(ConstantApp.UserDefaultType.launchApp.value,
+                              forKey: ConstantApp.UserDefaultType.launchApp.key)
+    }
     
     func topViewController(controller: UIViewController? = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController) -> UIViewController? {
         if let navigationController = controller as? UINavigationController {

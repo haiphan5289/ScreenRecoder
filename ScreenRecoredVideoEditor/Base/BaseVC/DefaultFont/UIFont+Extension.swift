@@ -9,6 +9,25 @@
 import Foundation
 import UIKit
 
+extension UIFont {
+    enum NotoSansWeight {
+        case regular, bold, medium, semiBold
+    }
+    static func notoSansFont(weight: NotoSansWeight, size: CGFloat) -> UIFont {
+        switch weight {
+        case .regular:
+            return UIFont.init(name: SettingDefaultFont.DEFAULT_NAME_FONT, size: size) ?? UIFont.systemFont(ofSize: size)
+        case .bold:
+            return UIFont.init(name: SettingDefaultFont.DEFAULT_NAME_BOLD, size: size) ?? UIFont.systemFont(ofSize: size)
+        case .medium:
+            return UIFont.init(name: SettingDefaultFont.DEFAULT_NAME_MEDIUM, size: size) ?? UIFont.systemFont(ofSize: size)
+        case .semiBold:
+            return UIFont.init(name: SettingDefaultFont.DEFAULT_NAME_SEMIBOLD, size: size) ?? UIFont.systemFont(ofSize: size)
+        }
+        
+    }
+}
+
 extension UILabel {
 
     @objc var substituteFontName : String {
@@ -116,15 +135,15 @@ extension UIFont {
         // Avoid method swizzling run twice and revert to original initialize function
         isOverrided = true
 
-        if let systemFontMethod = class_getClassMethod(self, #selector(systemFont(ofSize:))),
-            let mySystemFontMethod = class_getClassMethod(self, #selector(mySystemFont(ofSize:))) {
-            method_exchangeImplementations(systemFontMethod, mySystemFontMethod)
-        }
-
-        if let boldSystemFontMethod = class_getClassMethod(self, #selector(boldSystemFont(ofSize:))),
-            let myBoldSystemFontMethod = class_getClassMethod(self, #selector(myBoldSystemFont(ofSize:))) {
-            method_exchangeImplementations(boldSystemFontMethod, myBoldSystemFontMethod)
-        }
+//        if let systemFontMethod = class_getClassMethod(self, #selector(systemFont(ofSize:))),
+//            let mySystemFontMethod = class_getClassMethod(self, #selector(mySystemFont(ofSize:))) {
+//            method_exchangeImplementations(systemFontMethod, mySystemFontMethod)
+//        }
+//
+//        if let boldSystemFontMethod = class_getClassMethod(self, #selector(boldSystemFont(ofSize:))),
+//            let myBoldSystemFontMethod = class_getClassMethod(self, #selector(myBoldSystemFont(ofSize:))) {
+//            method_exchangeImplementations(boldSystemFontMethod, myBoldSystemFontMethod)
+//        }
 
 //        if let italicSystemFontMethod = class_getClassMethod(self, #selector(italicSystemFont(ofSize:))),
 //            let myItalicSystemFontMethod = class_getClassMethod(self, #selector(myItalicSystemFont(ofSize:))) {

@@ -15,7 +15,7 @@ final class ConstantApp {
     }
     
     enum UserDefaultType {
-        case startRecord, finishRecord
+        case startRecord, finishRecord, launchApp
         
         var key: String {
             return "broadcast"
@@ -25,6 +25,7 @@ final class ConstantApp {
             switch self {
             case .startRecord: return 1
             case .finishRecord: return 2
+            case .launchApp: return 3
             }
         }
         

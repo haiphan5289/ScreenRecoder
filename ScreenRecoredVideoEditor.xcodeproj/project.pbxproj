@@ -14,6 +14,10 @@
 		93550A9D2A322013007E30A4 /* FaceCamVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93550A9A2A322013007E30A4 /* FaceCamVM.swift */; };
 		93550A9E2A322013007E30A4 /* FaceCamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93550A9B2A322013007E30A4 /* FaceCamVC.swift */; };
 		93550AA02A3227BB007E30A4 /* AVPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93550A9F2A3227BB007E30A4 /* AVPlayerManager.swift */; };
+		93776C852AA4A9FC00283140 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93776C832AA4A9FC00283140 /* UIFont+Extension.swift */; };
+		93776C8B2AA4AA6200283140 /* ListFontDefaultVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93776C882AA4AA6200283140 /* ListFontDefaultVC.xib */; };
+		93776C8C2AA4AA6200283140 /* ListFontDefaultVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93776C892AA4AA6200283140 /* ListFontDefaultVM.swift */; };
+		93776C8D2AA4AA6200283140 /* ListFontDefaultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93776C8A2AA4AA6200283140 /* ListFontDefaultVC.swift */; };
 		93AED4B02A47FAE300215827 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AED4AF2A47FAE300215827 /* ImagePicker.swift */; };
 		93B21B602A30C3A000689D0F /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B0D2A30C39700689D0F /* Storage.swift */; };
 		93B21B612A30C3A000689D0F /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B0E2A30C39700689D0F /* AppSettings.swift */; };
@@ -22,7 +26,6 @@
 		93B21B662A30C3A000689D0F /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B162A30C39B00689D0F /* UIApplication+Extension.swift */; };
 		93B21B672A30C3A000689D0F /* Obserable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B172A30C39B00689D0F /* Obserable+Extension.swift */; };
 		93B21B682A30C3A000689D0F /* RowDetailGeneric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B182A30C39B00689D0F /* RowDetailGeneric.swift */; };
-		93B21B692A30C3A000689D0F /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B192A30C39B00689D0F /* UIFont+Extension.swift */; };
 		93B21B6A2A30C3A000689D0F /* UITapgesture+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B1A2A30C39B00689D0F /* UITapgesture+Extension.swift */; };
 		93B21B6B2A30C3A000689D0F /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B1B2A30C39B00689D0F /* UIWindow+Extension.swift */; };
 		93B21B6C2A30C3A000689D0F /* UILableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B1C2A30C39B00689D0F /* UILableExtension.swift */; };
@@ -210,15 +213,18 @@
 		93550A9A2A322013007E30A4 /* FaceCamVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCamVM.swift; sourceTree = "<group>"; };
 		93550A9B2A322013007E30A4 /* FaceCamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCamVC.swift; sourceTree = "<group>"; };
 		93550A9F2A3227BB007E30A4 /* AVPlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerManager.swift; sourceTree = "<group>"; };
+		93776C832AA4A9FC00283140 /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		93776C882AA4AA6200283140 /* ListFontDefaultVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListFontDefaultVC.xib; sourceTree = "<group>"; };
+		93776C892AA4AA6200283140 /* ListFontDefaultVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFontDefaultVM.swift; sourceTree = "<group>"; };
+		93776C8A2AA4AA6200283140 /* ListFontDefaultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFontDefaultVC.swift; sourceTree = "<group>"; };
 		93AED4AF2A47FAE300215827 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		93B21B0D2A30C39700689D0F /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		93B21B0E2A30C39700689D0F /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		93B21B112A30C39700689D0F /* GetHeightSafeArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetHeightSafeArea.swift; sourceTree = "<group>"; };
-		93B21B122A30C39700689D0F /* SettingDefaultFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingDefaultFont.swift; sourceTree = "<group>"; };
+		93B21B122A30C39700689D0F /* SettingDefaultFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingDefaultFont.swift; path = ../../../Common/Constant/SettingDefaultFont.swift; sourceTree = "<group>"; };
 		93B21B162A30C39B00689D0F /* UIApplication+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		93B21B172A30C39B00689D0F /* Obserable+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Obserable+Extension.swift"; sourceTree = "<group>"; };
 		93B21B182A30C39B00689D0F /* RowDetailGeneric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowDetailGeneric.swift; sourceTree = "<group>"; };
-		93B21B192A30C39B00689D0F /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		93B21B1A2A30C39B00689D0F /* UITapgesture+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITapgesture+Extension.swift"; sourceTree = "<group>"; };
 		93B21B1B2A30C39B00689D0F /* UIWindow+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
 		93B21B1C2A30C39B00689D0F /* UILableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILableExtension.swift; sourceTree = "<group>"; };
@@ -413,6 +419,25 @@
 			path = FaceCam;
 			sourceTree = "<group>";
 		};
+		93776C822AA4A9FC00283140 /* DefaultFont */ = {
+			isa = PBXGroup;
+			children = (
+				93776C832AA4A9FC00283140 /* UIFont+Extension.swift */,
+				93B21B122A30C39700689D0F /* SettingDefaultFont.swift */,
+			);
+			path = DefaultFont;
+			sourceTree = "<group>";
+		};
+		93776C872AA4AA4D00283140 /* ListFont */ = {
+			isa = PBXGroup;
+			children = (
+				93776C882AA4AA6200283140 /* ListFontDefaultVC.xib */,
+				93776C892AA4AA6200283140 /* ListFontDefaultVM.swift */,
+				93776C8A2AA4AA6200283140 /* ListFontDefaultVC.swift */,
+			);
+			path = ListFont;
+			sourceTree = "<group>";
+		};
 		93B21B0B2A30C39700689D0F /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -437,7 +462,6 @@
 			children = (
 				93B21BF82A30C8A100689D0F /* Constant.swift */,
 				93B21B112A30C39700689D0F /* GetHeightSafeArea.swift */,
-				93B21B122A30C39700689D0F /* SettingDefaultFont.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -448,7 +472,6 @@
 				93B21B162A30C39B00689D0F /* UIApplication+Extension.swift */,
 				93B21B172A30C39B00689D0F /* Obserable+Extension.swift */,
 				93B21B182A30C39B00689D0F /* RowDetailGeneric.swift */,
-				93B21B192A30C39B00689D0F /* UIFont+Extension.swift */,
 				93B21B1A2A30C39B00689D0F /* UITapgesture+Extension.swift */,
 				93B21B1B2A30C39B00689D0F /* UIWindow+Extension.swift */,
 				93B21B1C2A30C39B00689D0F /* UILableExtension.swift */,
@@ -546,6 +569,7 @@
 		93B21BAD2A30C43B00689D0F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				93776C872AA4AA4D00283140 /* ListFont */,
 				93D539932A9E2A2400A894FE /* StreamCamera */,
 				93550A982A321FFD007E30A4 /* FaceCam */,
 				93B21BAE2A30C43B00689D0F /* RecordFinish */,
@@ -569,10 +593,10 @@
 		93B21BB22A30C43B00689D0F /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				93B21BB52A30C43B00689D0F /* Cell */,
 				93AED4AF2A47FAE300215827 /* ImagePicker.swift */,
 				93B21BB32A30C43B00689D0F /* HomeVCVC.xib */,
 				93B21BB42A30C43B00689D0F /* HomeVCVC.swift */,
-				93B21BB52A30C43B00689D0F /* Cell */,
 				93B21BB82A30C43B00689D0F /* HomeVCVM.swift */,
 			);
 			path = Home;
@@ -666,6 +690,7 @@
 			children = (
 				93B21BCF2A30C45700689D0F /* BaseNavigationColor.swift */,
 				93B21BD02A30C45700689D0F /* BaseVC.swift */,
+				93776C822AA4A9FC00283140 /* DefaultFont */,
 				93B21BD12A30C45700689D0F /* Protocol */,
 				93B21BDA2A30C45700689D0F /* Model */,
 			);
@@ -1027,6 +1052,7 @@
 				93B21BE82A30C45700689D0F /* swiftgen.yml in Resources */,
 				93B91FAD2A474BFD001BC81E /* DeviceList.plist in Resources */,
 				93550A9C2A322013007E30A4 /* FacecamVC.xib in Resources */,
+				93776C8B2AA4AA6200283140 /* ListFontDefaultVC.xib in Resources */,
 				93B21BEE2A30C45700689D0F /* FontsFree-Net-SFProText-Semibold.ttf in Resources */,
 				93550A972A321351007E30A4 /* video_check.mp4 in Resources */,
 				93CC364E2A234CDB00DC2E4D /* Main.storyboard in Resources */,
@@ -1150,6 +1176,7 @@
 				93B91FA92A45E9D8001BC81E /* SetupCameraManage.swift in Sources */,
 				93CC364B2A234CDB00DC2E4D /* ViewController.swift in Sources */,
 				93B21B712A30C3A000689D0F /* Collection+Extension.swift in Sources */,
+				93776C8C2AA4AA6200283140 /* ListFontDefaultVM.swift in Sources */,
 				93B21BAA2A30C3A000689D0F /* UIFontExtensions.swift in Sources */,
 				93B21BA62A30C3A000689D0F /* UIApplicationExtensions.swift in Sources */,
 				93B21B762A30C3A000689D0F /* Drive+Extension.swift in Sources */,
@@ -1171,6 +1198,7 @@
 				93B21B7D2A30C3A000689D0F /* ViewExtension.swift in Sources */,
 				93B21B992A30C3A000689D0F /* UINavigationBarExtensions.swift in Sources */,
 				93B21BA32A30C3A000689D0F /* UILabelExtensions.swift in Sources */,
+				93776C8D2AA4AA6200283140 /* ListFontDefaultVC.swift in Sources */,
 				93B21BF52A30C45700689D0F /* NavigationProtocol.swift in Sources */,
 				93B21B792A30C3A000689D0F /* URL+Extension.swift in Sources */,
 				93B21B982A30C3A000689D0F /* ColorExtensions.swift in Sources */,
@@ -1235,7 +1263,6 @@
 				93B21B6B2A30C3A000689D0F /* UIWindow+Extension.swift in Sources */,
 				93B21BA42A30C3A000689D0F /* UISwitchExtensions.swift in Sources */,
 				93B21B6C2A30C3A000689D0F /* UILableExtension.swift in Sources */,
-				93B21B692A30C3A000689D0F /* UIFont+Extension.swift in Sources */,
 				93B21B7F2A30C3A000689D0F /* Font+Extension.swift in Sources */,
 				93550AA02A3227BB007E30A4 /* AVPlayerManager.swift in Sources */,
 				93B21B662A30C3A000689D0F /* UIApplication+Extension.swift in Sources */,
@@ -1259,6 +1286,7 @@
 				93B21B6F2A30C3A000689D0F /* NumberExtension.swift in Sources */,
 				93B21B922A30C3A000689D0F /* UIImage+Extensions.swift in Sources */,
 				93B21B912A30C3A000689D0F /* UICollectionViewExtensions.swift in Sources */,
+				93776C852AA4A9FC00283140 /* UIFont+Extension.swift in Sources */,
 				93B21B8C2A30C3A000689D0F /* UIScrollViewExtensions.swift in Sources */,
 				93B21B932A30C3A000689D0F /* UITextViewExtensions.swift in Sources */,
 			);

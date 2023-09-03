@@ -85,16 +85,16 @@ extension HomeVCVC {
         self.tableView.rx.itemSelected
             .withUnretained(self)
             .bind { owner, idx in
-//                guard let type = HomeType(rawValue: idx.row) else {
-//                    return
-//                }
-//                switch type {
-//                case .screen:
-//                    let vc = ScreenRecorderVC.createVC()
-//                    owner.navigationController?.pushViewController(vc)
-//                case .commentary, .facecam, .liveStream, .videoEditor: break
-//                }
-                owner.imagePicker.presentGallery(type: ["public.movie"])
+                guard let type = HomeType(rawValue: idx.row) else {
+                    return
+                }
+                switch type {
+                case .screen:
+                    let vc = ScreenRecorderVC.createVC()
+                    owner.navigationController?.pushViewController(vc)
+                case .commentary, .facecam, .liveStream, .videoEditor: break
+                }
+//                owner.imagePicker.presentGallery(type: ["public.movie"])
             }.disposed(by: disposeBag)
     }
 }
