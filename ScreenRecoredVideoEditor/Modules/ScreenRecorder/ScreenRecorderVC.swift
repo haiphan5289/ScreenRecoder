@@ -74,10 +74,9 @@ extension ScreenRecorderVC {
                                                        options: [.initial, .new],
                                                        changeHandler: { [weak self] userDefaults, valueChange in
             guard let self = self, let value = valueChange.newValue else { return }
-            print(" valueChange.newValue \(valueChange.newValue)")
             if value == ConstantApp.UserDefaultType.startRecord.value  {
                 self.setupAutoTimeScreen()
-            } else {
+            } else if value == ConstantApp.UserDefaultType.finishRecord.value {
                 self.stopAutoTimer()
                 self.read()
             }
@@ -85,17 +84,16 @@ extension ScreenRecorderVC {
     }
     
     private func setupAutoTimeScreen() {
-        autoTimeScreen = nil
+        self.autoTimeScreen?.dispose()
         autoTimeScreen = Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.asyncInstance)
             .bind(onNext: { [weak self] value in
                 guard let self = self else { return }
-                print("value \(value)")
+                self.timeLabel.text = Int(value).getTextFromSecond()
             })
     }
     
     private func stopAutoTimer() {
-        autoTimeScreen = nil
-        autoTimeScreen?.disposed(by: self.disposeBag)
+        self.autoTimeScreen?.dispose()
     }
     
     private func setupBroadCastView() {
@@ -106,9 +104,9 @@ extension ScreenRecorderVC {
     }
     
     @objc func didTapRecord(_ tap: UIGestureRecognizer) {
-//        if let button = self.broadcastPickerView.subviews.first as? UIButton {
-//            button.sendActions(for: .touchUpInside)
-//        }
+        //        if let button = self.broadcastPickerView.subviews.first as? UIButton {
+        //            button.sendActions(for: .touchUpInside)
+        //        }
     }
     
     
@@ -124,7 +122,7 @@ extension ScreenRecorderVC {
     
     private func read() {
         AudioManage.shared.read(appGroupName: ConstantApp.appGroupName,
-                                             folder: ConstantApp.FolderName.folderBroadcast.rawValue,
+                                folder: ConstantApp.FolderName.folderBroadcast.rawValue,
                                 folderFinish: ConstantApp.FolderName.folderRecordFinish.rawValue) { outputURL in
             print(outputURL)
             let vc = RecordFinishVC.createVC()
@@ -134,7 +132,7 @@ extension ScreenRecorderVC {
             guard let self = self else { return }
             self.showAlert(title: nil, message: error)
         }
-
+        
     }
 }
 

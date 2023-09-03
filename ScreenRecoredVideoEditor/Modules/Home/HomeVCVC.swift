@@ -10,6 +10,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import EasyBaseAudio
 
 class HomeVCVC: BaseVC, SetupTableView, NavigationProtocol {
     
@@ -60,6 +61,12 @@ class HomeVCVC: BaseVC, SetupTableView, NavigationProtocol {
         super.viewDidLoad()
         self.setupUI()
         self.setupRX()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        AudioManage.shared.removeFilesFolder(name: ConstantApp.FolderName.folderRecordFinish.rawValue)
+        ConstantApp.shared.removeFilesFolder()
     }
     
 }

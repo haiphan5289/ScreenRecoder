@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import EasyBaseAudio
 
 class TabbarVC: UITabBarController {
 
@@ -43,6 +44,12 @@ class TabbarVC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        AudioManage.shared.removeFilesFolder(name: ConstantApp.FolderName.folderRecordFinish.rawValue)
+        ConstantApp.shared.removeFilesFolder()
     }
 }
 extension TabbarVC {
