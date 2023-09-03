@@ -12,13 +12,15 @@ import Toaster
 import Photos
 import SwiftOverlays
 import FaceCamFW
+import RxSwift
+import RxRelay
 
-class FacecamVC: UIViewController {
+class FacecamVC: BaseVC {
     @IBOutlet weak var videoRecordView: UIView!
-    @IBOutlet weak var recordBtn: UIButton!
-    @IBOutlet weak var btnSave: UIButton!
-    @IBOutlet weak var contentVideo: UIView!
-    private let videoRangeSlider: VideoRecordSlider = VideoRecordSlider()
+    @IBOutlet weak var recoredButton: UIButton!
+    @IBOutlet weak var stopRecordButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     
     var videoURL: URL?
     private var isVideoInited: Bool = false
@@ -64,16 +66,10 @@ class FacecamVC: UIViewController {
         //This is important
         //Create FW and create View = code, donot must use sotryboard
         // App will creash with bug "exc_bad_access (code=2, address=0x1f3cb31e0)" && exc_bad_instruction
-        contentVideo.addSubview(videoRangeSlider)
-        videoRangeSlider.translatesAutoresizingMaskIntoConstraints = false
-        videoRangeSlider.topAnchor.constraint(equalTo: contentVideo.topAnchor).isActive = true
-        videoRangeSlider.leftAnchor.constraint(equalTo: contentVideo.leftAnchor).isActive = true
-        videoRangeSlider.rightAnchor.constraint(equalTo: contentVideo.rightAnchor).isActive = true
-        videoRangeSlider.bottomAnchor.constraint(equalTo: contentVideo.bottomAnchor).isActive = true
-        self.displayUI()
-        self.recordButtonUI(state: 0)
-        self.videoRangeSlider.delegate = self
-        
+//        self.displayUI()
+//        self.recordButtonUI(state: 0)
+        setupUI()
+        setupRX()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -102,21 +98,20 @@ class FacecamVC: UIViewController {
         stopCapture()
     }
     
-    @IBAction func didTapRecord(_ sender: UIButton) {
-        if sender.tag == 0 {
-            startRecord()
-        } else if sender.tag == 2 {
-            stopRecord()
-        } else if sender.tag == 3,
-                  let fileURL = videoRecordURL {
-//            if !cloudUtils.deleteVideo(fileUrl: fileURL, from: .local) {
-//                DLog("Delete video error")
-//            }
-            recordButtonUI(state: 0)
-            videoRangeSlider.resetProgressBar()
-            videoRecordURL = nil
-        }
-    }
+//    @IBAction func didTapRecord(_ sender: UIButton) {
+//        if sender.tag == 0 {
+//            startRecord()
+//        } else if sender.tag == 2 {
+//            stopRecord()
+//        } else if sender.tag == 3,
+//                  let fileURL = videoRecordURL {
+////            if !cloudUtils.deleteVideo(fileUrl: fileURL, from: .local) {
+////                DLog("Delete video error")
+////            }
+//            recordButtonUI(state: 0)
+//            videoRecordURL = nil
+//        }
+//    }
     
     @IBAction func onPressClose(_ sender: UIButton) {
         dismiss(animated: true)
@@ -137,8 +132,7 @@ class FacecamVC: UIViewController {
             }) { saved, error in
                 if saved {
                     DispatchQueue.main.async {
-                        self.recordButtonUI(state: 0)
-                        self.videoRangeSlider.resetProgressBar()
+//                        self.recordButtonUI(state: 0)
                         Toast(text: "Done", duration: Delay.long).show()
                         self.dismiss(animated: true)
                     }
@@ -155,16 +149,71 @@ class FacecamVC: UIViewController {
             if !isVideoInited {
                 isVideoInited = true
                 streamer?.initVideo(videoURL)
-                videoRangeSlider.setVideoURL(videoURL: videoURL)
-                recordButtonUI(state: 0)
-                videoRangeSlider.resetProgressPosition()
-                videoRangeSlider.resetProgressBar()
+//                recordButtonUI(state: 0)
             } else {
                 streamer?.initVideo(videoURL)
-                streamer?.player?.seek(to: CMTime(seconds: videoRangeSlider.currentSecond, preferredTimescale: 1000))
+//                streamer?.player?.seek(to: CMTime(seconds: videoRangeSlider.currentSecond, preferredTimescale: 1000))
                 isAdjustPipPos = !isAdjustPipPos
             }
         }
+    }
+    
+    private func setupUI() {
+        navigationType = .hide
+        setupBackButton(imgArrow: Asset.icArrowLeft.image)
+    }
+    
+    private func setupRX() {
+        recoredButton.rx.tap
+            .withUnretained(self)
+            .bind { owner, _ in
+                owner.startRecord()
+                owner.recoredButton.isHidden = true
+            }.disposed(by: disposeBag)
+        
+        stopRecordButton.rx.tap
+            .withUnretained(self)
+            .bind { owner, _ in
+                owner.stopRecord()
+            }.disposed(by: disposeBag)
+        
+        saveButton.rx.tap
+            .withUnretained(self)
+            .bind { owner, _ in
+                owner.saveVideo()
+            }.disposed(by: disposeBag)
+        
+        backButton.rx.tap
+            .withUnretained(self)
+            .bind { owner, _ in
+                owner.navigationController?.popViewController(animated: true)
+            }.disposed(by: disposeBag)
+    }
+    
+    
+    private func saveVideo() {
+        //        if Cache.shared.is_premium == false && RemoteConfigManager.sharedInstance.boolValue(forKey: .lockFaceCam) {
+        //            let vc: InappPremiumVC = .load(SB: .More)
+        //            vc.pageMode = 2
+        //            present(vc, animated: true, completion: nil)
+        //            return
+        //        }
+                
+                if let recordURL = videoRecordURL {
+                    PHPhotoLibrary.shared().performChanges({
+                        PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: recordURL)
+                    }) { saved, error in
+                        if saved {
+                            DispatchQueue.main.async {
+        //                        self.recordButtonUI(state: 0)
+                                Toast(text: "Done", duration: Delay.long).show()
+                                self.dismiss(animated: true)
+                            }
+                        }
+                    }
+                } else {
+                    Toast(text: "Please record video first!", duration: Delay.long).show()
+                }
     }
     
     // MARK: Capture utitlies
@@ -288,12 +337,8 @@ class FacecamVC: UIViewController {
             }
         )
     }
-    
-    // 1 - Set the preview layer frame so that the frame of the preview layer changes when the screen rotates.
-    // 2 - Rotate the preview layer connection with the rotation of the device.
+
     func updateOrientation() {
-//        DLog("updateOrientation")
-        videoRangeSlider.resetProgressBar()
         
         let deviceOrientation = UIApplication.shared.statusBarOrientation
         let newOrientation = toAVCaptureVideoOrientation(deviceOrientation: deviceOrientation, defaultOrientation: AVCaptureVideoOrientation.portrait)
@@ -477,36 +522,36 @@ class FacecamVC: UIViewController {
         // previewLayerImage?.orientation = (streamer?.position == .front) ? .downMirrored : .up
     }
     
-    func displayUI() {
-        btnSave.isHidden = true
-    }
+//    func displayUI() {
+//        btnSave.isHidden = true
+//    }
     
-    func recordButtonUI(state: Int) {
-        if state == 0 {
-            recordBtn.setTitle("Start Recording", for: .normal)
-            recordBtn.backgroundColor = UIColor(hex: "FFBF09")
-            recordBtn.isEnabled = true
-            recordBtn.alpha = 1
-            recordBtn.tag = state
-            btnSave.isHidden = true
-        } else if state == 1 {
-            recordBtn.isEnabled = false
-            recordBtn.alpha = 0.6
-            btnSave.isHidden = true
-        } else if state == 2 {
-            recordBtn.setTitle("Stop Recording", for: .normal)
-            recordBtn.backgroundColor = UIColor(hex: "f3736c")
-            recordBtn.isEnabled = true
-            recordBtn.tag = state
-            btnSave.isHidden = true
-        } else if state == 3 {
-            recordBtn.setTitle("Delete Record", for: .normal)
-            recordBtn.backgroundColor = UIColor(hex: "fd663f")
-            recordBtn.isEnabled = true
-            recordBtn.tag = state
-            btnSave.isHidden = false
-        }
-    }
+//    func recordButtonUI(state: Int) {
+//        if state == 0 {
+//            recordBtn.setTitle("Start Recording", for: .normal)
+//            recordBtn.backgroundColor = UIColor(hex: "FFBF09")
+//            recordBtn.isEnabled = true
+//            recordBtn.alpha = 1
+//            recordBtn.tag = state
+//            btnSave.isHidden = true
+//        } else if state == 1 {
+//            recordBtn.isEnabled = false
+//            recordBtn.alpha = 0.6
+//            btnSave.isHidden = true
+//        } else if state == 2 {
+//            recordBtn.setTitle("Stop Recording", for: .normal)
+//            recordBtn.backgroundColor = UIColor(hex: "f3736c")
+//            recordBtn.isEnabled = true
+//            recordBtn.tag = state
+//            btnSave.isHidden = true
+//        } else if state == 3 {
+//            recordBtn.setTitle("Delete Record", for: .normal)
+//            recordBtn.backgroundColor = UIColor(hex: "fd663f")
+//            recordBtn.isEnabled = true
+//            recordBtn.tag = state
+//            btnSave.isHidden = false
+//        }
+//    }
     
     func adjustPipPosition() {
         if streamer != nil {
@@ -675,10 +720,6 @@ extension FacecamVC: StreamerFacecamManagerDelegate {
     }
     
     func didOutputCGImage(outputImage: CGImage?, pipImage: CGImage?) {
-        if videoRangeSlider.isRecording,
-           let seconds = streamer?.playerItem?.currentTime().seconds {
-            videoRangeSlider.updateProgressIndicator(seconds: seconds)
-        }
         if let outputImage = outputImage {
             fullLayerImage.currentCGImage = outputImage
             let isVideoPortal = outputImage.width < outputImage.height
@@ -703,32 +744,19 @@ extension FacecamVC: StreamerFacecamManagerDelegate {
         DispatchQueue.main.async {
             switch state {
                 case .setup:
-//                    SwiftOverlays.showBlockingWaitOverlayWithText("Start record...")
-                    self.recordButtonUI(state: 2)
+//                    self.recordButtonUI(state: 2)
                     break
                 case .setuped:
                     break
                 case .started:
-//                    SwiftOverlays.removeAllBlockingOverlays()
-                    self.videoRangeSlider.isRecording = true
                     self.streamer?.player?.play()
                     break
                 case .stop, .stopByCancel:
-//                    SwiftOverlays.showBlockingWaitOverlayWithText("Stop record...")
-                    if self.videoRangeSlider.isRecording {
-                        self.recordButtonUI(state: state == .stop ? 3 : 0)
-                    }
-                    self.videoRangeSlider.isRecording = false
                     self.streamer?.player?.pause()
                     break
-                case .stopped:
-//                    SwiftOverlays.removeAllBlockingOverlays()
-                    break
+                case .stopped:break
                 case .failed:
-                    self.recordButtonUI(state: 0)
-//                    SwiftOverlays.removeAllBlockingOverlays()
-//                    DLog(status?.localizedDescription ?? "")
-                    Toast(text: "Record failed").show()
+//                    self.recordButtonUI(state: 0)
                     break
                 case .none:
                     break
@@ -824,26 +852,6 @@ extension FacecamVC: ApplicationStateObserver {
 //            DLog("mediaServicesWereReset")
             startCapture()
         }
-    }
-    
-    
-}
-extension FacecamVC: VideoRecordSliderDelegate {
-    func didChangeValue(videoRangeSlider: VideoRecordSlider, startTime: Float64, endTime: Float64) {
-        
-    }
-    
-    func indicatorDidChangePosition(videoRangeSlider: VideoRecordSlider, position: Float64) {
-        
-    }
-    
-    func sliderGesturesBegan() {
-        recordButtonUI(state: 1)
-    }
-    
-    func sliderGesturesEnded() {
-        recordButtonUI(state: recordBtn.tag)
-        streamer?.player?.seek(to: CMTime(seconds: videoRangeSlider.currentSecond, preferredTimescale: 1000))
     }
     
     

@@ -152,6 +152,15 @@
 		93CC36852A234E1400DC2E4D /* CGFloat+NSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CC36822A234E1400DC2E4D /* CGFloat+NSNumber.swift */; };
 		93CC36862A234E1400DC2E4D /* AVAssetWriter.Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CC36832A234E1400DC2E4D /* AVAssetWriter.Status.swift */; };
 		93CC36872A234E1400DC2E4D /* BroadcastWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CC36842A234E1400DC2E4D /* BroadcastWriter.swift */; };
+		93D539972A9E2A6600A894FE /* StreamCameraVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93D539942A9E2A6600A894FE /* StreamCameraVC.xib */; };
+		93D539982A9E2A6600A894FE /* StreamCameraVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D539952A9E2A6600A894FE /* StreamCameraVM.swift */; };
+		93D539992A9E2A6600A894FE /* StreamCameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D539962A9E2A6600A894FE /* StreamCameraVC.swift */; };
+		93D5399C2A9E2AD700A894FE /* StartStreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D5399B2A9E2AD700A894FE /* StartStreamView.swift */; };
+		93D5399E2A9E2B1100A894FE /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D5399D2A9E2B1100A894FE /* UIView+Ext.swift */; };
+		93D539A02A9E2B4000A894FE /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D5399F2A9E2B4000A894FE /* UIFont+Ext.swift */; };
+		93D539A22A9E2B7F00A894FE /* CountdownService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D539A12A9E2B7F00A894FE /* CountdownService.swift */; };
+		93D539A42A9E2C2000A894FE /* PermissionChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D539A32A9E2C2000A894FE /* PermissionChecker.swift */; };
+		93D539A62A9E2C5800A894FE /* AudioSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D539A52A9E2C5800A894FE /* AudioSession.swift */; };
 		B25EDE7810FC15336DA7B68F /* Pods_ScreenRecoredVideoEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C49C9177131082ED7CB1EABB /* Pods_ScreenRecoredVideoEditor.framework */; };
 /* End PBXBuildFile section */
 
@@ -345,6 +354,15 @@
 		93CC36822A234E1400DC2E4D /* CGFloat+NSNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+NSNumber.swift"; sourceTree = "<group>"; };
 		93CC36832A234E1400DC2E4D /* AVAssetWriter.Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAssetWriter.Status.swift; sourceTree = "<group>"; };
 		93CC36842A234E1400DC2E4D /* BroadcastWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastWriter.swift; sourceTree = "<group>"; };
+		93D539942A9E2A6600A894FE /* StreamCameraVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StreamCameraVC.xib; sourceTree = "<group>"; };
+		93D539952A9E2A6600A894FE /* StreamCameraVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamCameraVM.swift; sourceTree = "<group>"; };
+		93D539962A9E2A6600A894FE /* StreamCameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamCameraVC.swift; sourceTree = "<group>"; };
+		93D5399B2A9E2AD700A894FE /* StartStreamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartStreamView.swift; sourceTree = "<group>"; };
+		93D5399D2A9E2B1100A894FE /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		93D5399F2A9E2B4000A894FE /* UIFont+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
+		93D539A12A9E2B7F00A894FE /* CountdownService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownService.swift; sourceTree = "<group>"; };
+		93D539A32A9E2C2000A894FE /* PermissionChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionChecker.swift; sourceTree = "<group>"; };
+		93D539A52A9E2C5800A894FE /* AudioSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSession.swift; sourceTree = "<group>"; };
 		C49C9177131082ED7CB1EABB /* Pods_ScreenRecoredVideoEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScreenRecoredVideoEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -528,6 +546,7 @@
 		93B21BAD2A30C43B00689D0F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				93D539932A9E2A2400A894FE /* StreamCamera */,
 				93550A982A321FFD007E30A4 /* FaceCam */,
 				93B21BAE2A30C43B00689D0F /* RecordFinish */,
 				93B21BB22A30C43B00689D0F /* Home */,
@@ -840,6 +859,30 @@
 			path = BroadCastSetupUI;
 			sourceTree = "<group>";
 		};
+		93D539932A9E2A2400A894FE /* StreamCamera */ = {
+			isa = PBXGroup;
+			children = (
+				93D5399A2A9E2AC900A894FE /* Views */,
+				93D539942A9E2A6600A894FE /* StreamCameraVC.xib */,
+				93D539952A9E2A6600A894FE /* StreamCameraVM.swift */,
+				93D539962A9E2A6600A894FE /* StreamCameraVC.swift */,
+			);
+			path = StreamCamera;
+			sourceTree = "<group>";
+		};
+		93D5399A2A9E2AC900A894FE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				93D539A52A9E2C5800A894FE /* AudioSession.swift */,
+				93D539A32A9E2C2000A894FE /* PermissionChecker.swift */,
+				93D539A12A9E2B7F00A894FE /* CountdownService.swift */,
+				93D5399F2A9E2B4000A894FE /* UIFont+Ext.swift */,
+				93D5399D2A9E2B1100A894FE /* UIView+Ext.swift */,
+				93D5399B2A9E2AD700A894FE /* StartStreamView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B6A489465EDC66ABF062BC22 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -979,6 +1022,7 @@
 				93CC36532A234CDD00DC2E4D /* LaunchScreen.storyboard in Resources */,
 				93B21BEA2A30C45700689D0F /* VideoEditorView.xib in Resources */,
 				93B21C062A30EB8200689D0F /* VideoPlayView.xib in Resources */,
+				93D539972A9E2A6600A894FE /* StreamCameraVC.xib in Resources */,
 				93CC36502A234CDD00DC2E4D /* Assets.xcassets in Resources */,
 				93B21BE82A30C45700689D0F /* swiftgen.yml in Resources */,
 				93B91FAD2A474BFD001BC81E /* DeviceList.plist in Resources */,
@@ -1111,6 +1155,7 @@
 				93B21B762A30C3A000689D0F /* Drive+Extension.swift in Sources */,
 				93B21B7C2A30C3A000689D0F /* PropertyWapper.swift in Sources */,
 				93BA31942A7E4F7C004A0D2B /* ScreencasterDelegate.swift in Sources */,
+				93D539A02A9E2B4000A894FE /* UIFont+Ext.swift in Sources */,
 				93B21BF22A30C45700689D0F /* BaseVC.swift in Sources */,
 				93B21BA12A30C3A000689D0F /* ActivityExt.swift in Sources */,
 				93B21B602A30C3A000689D0F /* Storage.swift in Sources */,
@@ -1122,6 +1167,7 @@
 				93B21B8A2A30C3A000689D0F /* UITableViewExtensions.swift in Sources */,
 				93B21BF12A30C45700689D0F /* BaseNavigationColor.swift in Sources */,
 				93B21B842A30C3A000689D0F /* Encode+Extension.swift in Sources */,
+				93D5399C2A9E2AD700A894FE /* StartStreamView.swift in Sources */,
 				93B21B7D2A30C3A000689D0F /* ViewExtension.swift in Sources */,
 				93B21B992A30C3A000689D0F /* UINavigationBarExtensions.swift in Sources */,
 				93B21BA32A30C3A000689D0F /* UILabelExtensions.swift in Sources */,
@@ -1132,10 +1178,13 @@
 				93B21BFE2A30E70B00689D0F /* ResultURLModel.swift in Sources */,
 				93B21B852A30C3A000689D0F /* PushNotificationHandler.swift in Sources */,
 				93B21B7B2A30C3A000689D0F /* String+Extension.swift in Sources */,
+				93D5399E2A9E2B1100A894FE /* UIView+Ext.swift in Sources */,
 				93B21BE12A30C45700689D0F /* HomeCell.swift in Sources */,
 				93B21B9C2A30C3A000689D0F /* UIViewControllerExtensions.swift in Sources */,
 				93B21BA52A30C3A000689D0F /* UIButtonExtensions.swift in Sources */,
+				93D539A22A9E2B7F00A894FE /* CountdownService.swift in Sources */,
 				93B21BA82A30C3A000689D0F /* UIRefreshControlExtensions.swift in Sources */,
+				93D539982A9E2A6600A894FE /* StreamCameraVM.swift in Sources */,
 				93B21BE92A30C45700689D0F /* VideoEditorView.swift in Sources */,
 				93B21B902A30C3A000689D0F /* UIView+Extension.swift in Sources */,
 				93B21B8D2A30C3A000689D0F /* UILayoutPriorityExtensions.swift in Sources */,
@@ -1167,6 +1216,7 @@
 				93550A9E2A322013007E30A4 /* FaceCamVC.swift in Sources */,
 				93B21B702A30C3A000689D0F /* ViewControllerExtension.swift in Sources */,
 				93B21C042A30EB7900689D0F /* VideoPlayView.swift in Sources */,
+				93D539992A9E2A6600A894FE /* StreamCameraVC.swift in Sources */,
 				93B21B8B2A30C3A000689D0F /* UIEdgeInsetsExtensions.swift in Sources */,
 				93B21B9B2A30C3A000689D0F /* UISliderExtensions.swift in Sources */,
 				93B21BA72A30C3A000689D0F /* UIImageViewExtensions.swift in Sources */,
@@ -1174,6 +1224,7 @@
 				93B21B752A30C3A000689D0F /* CustomSegment.swift in Sources */,
 				93B21B642A30C3A000689D0F /* SettingDefaultFont.swift in Sources */,
 				93B21B942A30C3A000689D0F /* UIBarButtonItemExtensions.swift in Sources */,
+				93D539A62A9E2C5800A894FE /* AudioSession.swift in Sources */,
 				93B21B7E2A30C3A000689D0F /* UIAllertVC+Extension.swift in Sources */,
 				93B21BDC2A30C45700689D0F /* RecordFinishVM.swift in Sources */,
 				93B21B782A30C3A000689D0F /* ArrayExxtension.swift in Sources */,
@@ -1195,6 +1246,7 @@
 				93B21BF72A30C45700689D0F /* BaseModelImageText.swift in Sources */,
 				93B21BE52A30C45700689D0F /* ScreenRecorderVC.swift in Sources */,
 				93B21B6D2A30C3A000689D0F /* CALayerExtension.swift in Sources */,
+				93D539A42A9E2C2000A894FE /* PermissionChecker.swift in Sources */,
 				93B21B7A2A30C3A000689D0F /* UITextField_Extension.swift in Sources */,
 				93B21B8E2A30C3A000689D0F /* UINavigationItemExtensions.swift in Sources */,
 				93B21B962A30C3A000689D0F /* UITabBarExtensions.swift in Sources */,

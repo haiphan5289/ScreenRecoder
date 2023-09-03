@@ -276,7 +276,7 @@ public class Settings: SettingsKeys {
         return config
     }
     
-    var radioMode: Bool {
+    public var radioMode: Bool {
         return UserDefaults.standard.bool(forKey: radio_mode)
     }
     

@@ -18,6 +18,7 @@ class BaseVC: UIViewController {
     }
     
     let buttonRight: UIButton = UIButton(frame: CGRect(origin: .zero, size: CGSize(width: 44, height: 44)))
+    let buttonLeft: UIButton = UIButton(frame: CGRect(origin: .zero, size: CGSize(width: 44, height: 44)))
     var navigationType: NavigationHideType = .show
     
     var disposeBag = DisposeBag()
@@ -38,6 +39,13 @@ class BaseVC: UIViewController {
             }
         }
         self.navigationController?.isNavigationBarHidden = navigationType == .hide
+    }
+    
+    func setupBackButton(imgArrow: UIImage?) {
+        buttonLeft.setImage(imgArrow, for: .normal)
+        buttonLeft.contentEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: -0)
+        let leftBarButton = UIBarButtonItem(customView: buttonLeft)
+        navigationItem.leftBarButtonItem = leftBarButton
     }
     
     func customRightButton(imgArrow: UIImage){
