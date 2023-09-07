@@ -24,6 +24,7 @@ class RecordFinishVC: BaseVC, PlayVideoProtocel, NavigationProtocol {
     @IBOutlet weak var contentVideo: UIView!
     private let videoEditorView: VideoEditorView = .loadXib()
     @IBOutlet weak var faceCamButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
     // Add here your view model
     private var viewModel: RecordFinishVM = RecordFinishVM()
     private let videoPlayView: VideoPlayView = .loadXib()
@@ -96,6 +97,14 @@ extension RecordFinishVC {
             .bind { owner, _ in
                 owner.sectionContentView.isHidden = true
                 owner.videoEditorContent.isHidden = false
+            }.disposed(by: disposeBag)
+        
+        shareButton.rx.tap
+            .withUnretained(self)
+            .bind { owner, _ in
+                if let url = owner.inputURL {
+                    ManageApp.shared.shareProductId(sharedObjects: [url])
+                }
             }.disposed(by: disposeBag)
     }
 }

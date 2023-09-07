@@ -20,6 +20,20 @@ final class ManageApp {
                               forKey: ConstantApp.UserDefaultType.launchApp.key)
     }
     
+    func shareProductId(sharedObjects: [URL]) {
+        guard let topVC = self.topViewController() else { return }
+        let activityVC = UIActivityViewController(activityItems: sharedObjects, applicationActivities: nil)
+        activityVC.excludedActivityTypes = [.airDrop, .addToReadingList, .assignToContact,
+                                            .mail, .message, .postToFacebook, .postToWhatsApp]
+        activityVC.popoverPresentationController?.sourceView = topVC.view
+        activityVC.title = "PTH"
+        activityVC.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
+            activityVC.dismiss(animated: true) {
+            }
+        }
+        topVC.present(activityVC, animated: true, completion: nil)
+    }
+    
     func topViewController(controller: UIViewController? = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController) -> UIViewController? {
         if let navigationController = controller as? UINavigationController {
             return topViewController(controller: navigationController.visibleViewController)
