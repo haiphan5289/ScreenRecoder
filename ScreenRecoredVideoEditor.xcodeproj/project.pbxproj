@@ -139,6 +139,7 @@
 		93BA31942A7E4F7C004A0D2B /* ScreencasterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BA31882A7E4F7C004A0D2B /* ScreencasterDelegate.swift */; };
 		93BA31952A7E4F7C004A0D2B /* VideoPostprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BA31892A7E4F7C004A0D2B /* VideoPostprocessor.swift */; };
 		93BA31AA2A7E54B5004A0D2B /* DeviceGuru in Frameworks */ = {isa = PBXBuildFile; productRef = 93BA31A92A7E54B5004A0D2B /* DeviceGuru */; };
+		93CAEC972AA77665009AE911 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CAEC962AA77665009AE911 /* PaddingLabel.swift */; };
 		93CC36472A234CDB00DC2E4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CC36462A234CDB00DC2E4D /* AppDelegate.swift */; };
 		93CC36492A234CDB00DC2E4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CC36482A234CDB00DC2E4D /* SceneDelegate.swift */; };
 		93CC364B2A234CDB00DC2E4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CC364A2A234CDB00DC2E4D /* ViewController.swift */; };
@@ -338,6 +339,7 @@
 		93BA318D2A7E4F7C004A0D2B /* ConnectionConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionConfig.h; sourceTree = "<group>"; };
 		93BA318E2A7E4F7C004A0D2B /* StreamerEngineDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamerEngineDelegate.h; sourceTree = "<group>"; };
 		93BA31AB2A7E7AF3004A0D2B /* ScreenRecoredVideoEditor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScreenRecoredVideoEditor-Bridging-Header.h"; sourceTree = "<group>"; };
+		93CAEC962AA77665009AE911 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		93CC36432A234CDB00DC2E4D /* ScreenRecoredVideoEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenRecoredVideoEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93CC36462A234CDB00DC2E4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93CC36482A234CDB00DC2E4D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -441,6 +443,7 @@
 		93B21B0B2A30C39700689D0F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				93CAEC952AA77657009AE911 /* PaddingLabel */,
 				93B21BFC2A30E70A00689D0F /* ResultURLModel */,
 				93B21B0C2A30C39700689D0F /* AppConfig */,
 				93B21B0F2A30C39700689D0F /* Constant */,
@@ -797,6 +800,14 @@
 				93BA31892A7E4F7C004A0D2B /* VideoPostprocessor.swift */,
 			);
 			path = Broadcast;
+			sourceTree = "<group>";
+		};
+		93CAEC952AA77657009AE911 /* PaddingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				93CAEC962AA77665009AE911 /* PaddingLabel.swift */,
+			);
+			path = PaddingLabel;
 			sourceTree = "<group>";
 		};
 		93CC363A2A234CDB00DC2E4D = {
@@ -1284,6 +1295,7 @@
 				93B21B9A2A30C3A000689D0F /* UIActivityExtensions.swift in Sources */,
 				93B21BEB2A30C45700689D0F /* ManageApp.swift in Sources */,
 				93B21B6F2A30C3A000689D0F /* NumberExtension.swift in Sources */,
+				93CAEC972AA77665009AE911 /* PaddingLabel.swift in Sources */,
 				93B21B922A30C3A000689D0F /* UIImage+Extensions.swift in Sources */,
 				93B21B912A30C3A000689D0F /* UICollectionViewExtensions.swift in Sources */,
 				93776C852AA4A9FC00283140 /* UIFont+Extension.swift in Sources */,

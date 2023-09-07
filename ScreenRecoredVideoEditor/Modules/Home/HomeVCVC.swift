@@ -99,9 +99,10 @@ extension HomeVCVC {
                 case .screen:
                     let vc = ScreenRecorderVC.createVC()
                     owner.navigationController?.pushViewController(vc)
-                case .commentary, .facecam, .liveStream, .videoEditor: break
+                case .commentary, .facecam, .liveStream, .videoEditor:
+                    owner.imagePicker.presentGallery(type: ["public.movie"])
                 }
-//                owner.imagePicker.presentGallery(type: ["public.movie"])
+                
             }.disposed(by: disposeBag)
     }
 }

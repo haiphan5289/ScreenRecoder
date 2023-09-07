@@ -16,6 +16,8 @@
                 <outlet property="recoredButton" destination="tUI-GS-gHg" id="uAk-wr-u2h"/>
                 <outlet property="saveButton" destination="kRB-Dj-W5N" id="iFC-66-nlo"/>
                 <outlet property="stopRecordButton" destination="iBO-Rq-jzO" id="rs8-IW-IoE"/>
+                <outlet property="timeVideoLabel" destination="gdU-ga-gQY" id="HnL-Ic-mU8"/>
+                <outlet property="timeVideoSilder" destination="YbE-HS-HuP" id="UST-oJ-abt"/>
                 <outlet property="videoRecordView" destination="fhR-MR-nqe" id="C8F-EA-DF7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -44,24 +46,35 @@
                                             <state key="normal" image="ic_arrow_left"/>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Face Cam" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0q-NT-evd">
-                                            <rect key="frame" x="127" y="16" width="92.5" height="24"/>
+                                            <rect key="frame" x="125.5" y="16" width="92.5" height="24"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w1e-Zd-yy6">
-                                            <rect key="frame" x="322" y="14" width="60" height="28"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdU-ga-gQY" customClass="PaddingLabel" customModule="ScreenRecoredVideoEditor" customModuleProvider="target">
+                                            <rect key="frame" x="319" y="14" width="63" height="28.5"/>
                                             <color key="backgroundColor" name="FF4039"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="28" id="OBB-3K-kq0"/>
-                                                <constraint firstAttribute="width" constant="60" id="xCd-c4-ahS"/>
-                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="topInset">
+                                                    <real key="value" value="7"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="bottomInset">
+                                                    <real key="value" value="7"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                                                    <real key="value" value="16"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
+                                                    <real key="value" value="16"/>
+                                                </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="14"/>
+                                                    <real key="value" value="15"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
-                                        </view>
+                                        </label>
                                     </subviews>
                                 </stackView>
                             </subviews>
@@ -75,10 +88,10 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aia-qN-f7v">
-                            <rect key="frame" x="0.0" y="71" width="414" height="677"/>
+                            <rect key="frame" x="0.0" y="71" width="414" height="612"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhR-MR-nqe">
-                                    <rect key="frame" x="50" y="0.0" width="314" height="677"/>
+                                    <rect key="frame" x="50" y="0.0" width="314" height="612"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                             </subviews>
@@ -88,6 +101,23 @@
                                 <constraint firstItem="fhR-MR-nqe" firstAttribute="top" secondItem="aia-qN-f7v" secondAttribute="top" id="MrF-Fr-p1k"/>
                                 <constraint firstItem="fhR-MR-nqe" firstAttribute="leading" secondItem="aia-qN-f7v" secondAttribute="leading" constant="50" id="WBJ-3f-Nbg"/>
                                 <constraint firstAttribute="trailing" secondItem="fhR-MR-nqe" secondAttribute="trailing" constant="50" id="rNs-uJ-x9x"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2U7-Ak-sD7">
+                            <rect key="frame" x="0.0" y="698" width="414" height="50"/>
+                            <subviews>
+                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YbE-HS-HuP">
+                                    <rect key="frame" x="14" y="0.0" width="386" height="51"/>
+                                    <color key="minimumTrackTintColor" name="177CEF"/>
+                                    <color key="thumbTintColor" name="177CEF"/>
+                                </slider>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="YbE-HS-HuP" secondAttribute="bottom" id="BVS-bx-Ob7"/>
+                                <constraint firstItem="YbE-HS-HuP" firstAttribute="leading" secondItem="2U7-Ak-sD7" secondAttribute="leading" constant="16" id="F4p-3U-QGd"/>
+                                <constraint firstItem="YbE-HS-HuP" firstAttribute="top" secondItem="2U7-Ak-sD7" secondAttribute="top" id="R8f-e1-6jh"/>
+                                <constraint firstAttribute="trailing" secondItem="YbE-HS-HuP" secondAttribute="trailing" constant="16" id="q2C-oI-dKM"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXI-ZF-GbB">
@@ -156,8 +186,16 @@
             <point key="canvasLocation" x="139" y="141"/>
         </view>
     </objects>
+    <designables>
+        <designable name="gdU-ga-gQY">
+            <size key="intrinsicContentSize" width="63" height="28.5"/>
+        </designable>
+    </designables>
     <resources>
         <image name="ic_arrow_left" width="24" height="24"/>
+        <namedColor name="177CEF">
+            <color red="0.090196078431372548" green="0.48627450980392156" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="FF4039">
             <color red="1" green="0.25098039215686274" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

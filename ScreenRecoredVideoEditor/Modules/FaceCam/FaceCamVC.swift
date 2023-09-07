@@ -14,8 +14,11 @@ import SwiftOverlays
 import FaceCamFW
 import RxSwift
 import RxRelay
+import SVProgressHUD
 
 class FacecamVC: BaseVC {
+    @IBOutlet weak var timeVideoSilder: UISlider!
+    @IBOutlet weak var timeVideoLabel: PaddingLabel!
     @IBOutlet weak var videoRecordView: UIView!
     @IBOutlet weak var recoredButton: UIButton!
     @IBOutlet weak var stopRecordButton: UIButton!
@@ -47,8 +50,6 @@ class FacecamVC: BaseVC {
     }()
     var resizableFrame: CGRect?
     var isAdjustPipPos: Bool = false
-    
-//    var cloudUtils = CloudUtilites()
     var videoRecordURL: URL?
     
     override open var shouldAutorotate : Bool {
@@ -86,64 +87,14 @@ class FacecamVC: BaseVC {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-//        DLog("viewWillDisappear")
-        
-//        ToastCenter.default.cancelAll()
         dismissAlertController()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-//        DLog("viewDidDisappear")
         stopCapture()
     }
-    
-//    @IBAction func didTapRecord(_ sender: UIButton) {
-//        if sender.tag == 0 {
-//            startRecord()
-//        } else if sender.tag == 2 {
-//            stopRecord()
-//        } else if sender.tag == 3,
-//                  let fileURL = videoRecordURL {
-////            if !cloudUtils.deleteVideo(fileUrl: fileURL, from: .local) {
-////                DLog("Delete video error")
-////            }
-//            recordButtonUI(state: 0)
-//            videoRecordURL = nil
-//        }
-//    }
-    
-    @IBAction func onPressClose(_ sender: UIButton) {
-        dismiss(animated: true)
-    }
-    
-    @IBAction func didTabSave(_ sender: Any) {
-        
-//        if Cache.shared.is_premium == false && RemoteConfigManager.sharedInstance.boolValue(forKey: .lockFaceCam) {
-//            let vc: InappPremiumVC = .load(SB: .More)
-//            vc.pageMode = 2
-//            present(vc, animated: true, completion: nil)
-//            return
-//        }
-        
-        if let recordURL = videoRecordURL {
-            PHPhotoLibrary.shared().performChanges({
-                PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: recordURL)
-            }) { saved, error in
-                if saved {
-                    DispatchQueue.main.async {
-//                        self.recordButtonUI(state: 0)
-                        Toast(text: "Done", duration: Delay.long).show()
-                        self.dismiss(animated: true)
-                    }
-                }
-            }
-        } else {
-            Toast(text: "Please record video first!", duration: Delay.long).show()
-        }
-        
-    }
-    
+   
     private func initVideo() {
         if let videoURL = self.videoURL {
             if !isVideoInited {
@@ -161,6 +112,11 @@ class FacecamVC: BaseVC {
     private func setupUI() {
         navigationType = .hide
         setupBackButton(imgArrow: Asset.icArrowLeft.image)
+        
+        if let duration = self.videoURL?.getDuration() {
+            timeVideoLabel.text = Int(duration).getTextFromSecond()
+            timeVideoSilder.maximumValue = Float(duration)
+        }
     }
     
     private func setupRX() {
@@ -202,13 +158,10 @@ class FacecamVC: BaseVC {
                 if let recordURL = videoRecordURL {
                     PHPhotoLibrary.shared().performChanges({
                         PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: recordURL)
-                    }) { saved, error in
+                    }) { [weak self] saved, error in
+                        guard let self = self else { return }
                         if saved {
-                            DispatchQueue.main.async {
-        //                        self.recordButtonUI(state: 0)
-                                Toast(text: "Done", duration: Delay.long).show()
-                                self.dismiss(animated: true)
-                            }
+                            self.showAlert(title: nil, message: "Your video is save PhotoAlbum")
                         }
                     }
                 } else {
@@ -307,24 +260,12 @@ class FacecamVC: BaseVC {
             DispatchQueue.main.async {
                 self.updatePreviewOrientation()
             }
-        case .ChangeCameraFailed:
-            DispatchQueue.main.async {
-                let message = NSLocalizedString("The selected video size or frame rate is not supported by the destination camera. Decrease the video size or frame rate before switching cameras.", comment: "")
-                Toast(text: message, duration: Delay.long).show()
-            }
-        case .FrameRateNotSupported: break
-//            DispatchQueue.main.async {
-//                let message = (Settings.sharedInstance.cameraPosition == .front) ?
-//                    NSLocalizedString("The selected frame rate is not supported by this camera. Try to start app with Back Camera.", comment: "") :
-//                    NSLocalizedString("The selected frame rate is not supported by this camera.", comment: "")
-//                Toast(text: message, duration: Delay.long).show()
-//            }
+        case .FrameRateNotSupported, .ChangeCameraFailed: break
         }
     }
     
     // MARK: Device orientation
     @objc func orientationDidChange(notification: Notification) {
-//        DLog("orientationDidChange")
         updateOrientation()
     }
     
@@ -699,6 +640,12 @@ extension FacecamVC: OTResizableViewDelegate {
     }
 }
 extension FacecamVC: StreamerFacecamManagerDelegate {
+    func loading(isLoadong: Bool) {
+        DispatchQueue.main.async {
+            isLoadong ? SVProgressHUD.show() : SVProgressHUD.dismiss()
+        }
+    }
+    
     func showToast(text: String) {
         Toast(text: text).show()
     }
@@ -715,11 +662,13 @@ extension FacecamVC: StreamerFacecamManagerDelegate {
     
     func videoSaved(fileUrl: URL) {
         videoRecordURL = fileUrl
-//        let dest = Settings.sharedInstance.recordStorage
-//        cloudUtils.moveVideo(fileUrl: fileUrl, to: dest)
     }
     
     func didOutputCGImage(outputImage: CGImage?, pipImage: CGImage?) {
+        if let seconds = streamer?.playerItem?.currentTime().seconds {
+            timeVideoSilder.value = Float(seconds)
+        }
+        
         if let outputImage = outputImage {
             fullLayerImage.currentCGImage = outputImage
             let isVideoPortal = outputImage.width < outputImage.height

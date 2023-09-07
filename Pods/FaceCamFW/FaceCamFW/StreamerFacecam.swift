@@ -41,6 +41,7 @@ public protocol StreamerFacecamManagerDelegate: AnyObject {
     func photoSaved(fileUrl: URL)
     func videoSaved(fileUrl: URL)
     func didOutputCGImage(outputImage: CGImage?, pipImage: CGImage?)
+    func loading(isLoadong: Bool)
 }
 
 public class StreamerFacecamManager: NSObject {
@@ -490,13 +491,14 @@ public class StreamerFacecamManager: NSObject {
     }
 
     public func stopRecord(restart: Bool = false, cancel: Bool = false) {
-        ////DLog("stopRecord")
+        self.delegate?.loading(isLoadong: true)
         if recordStatus == .setup || recordStatus == .setuped || recordStatus == .started {
             delegate?.recordStateDidChange(state: cancel ? .stopByCancel : .stop, status: nil)
         }
         recordStatus = .stop
-        sessionQueue.async {
+        DispatchQueue.main.async {
             self.stopWriting(restart: restart, cancel: cancel)
+            self.delegate?.loading(isLoadong: false)
         }
     }
     
