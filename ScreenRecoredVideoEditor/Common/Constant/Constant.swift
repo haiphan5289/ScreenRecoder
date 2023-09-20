@@ -11,7 +11,7 @@ import UIKit
 final class ConstantApp {
     
     enum FolderName: String, CaseIterable {
-        case folderBroadcast, folderRecordFinish
+        case folderBroadcast, folderRecordFinish, editVideo
     }
     
     enum UserDefaultType {

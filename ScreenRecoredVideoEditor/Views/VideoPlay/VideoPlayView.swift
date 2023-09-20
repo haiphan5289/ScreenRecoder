@@ -23,6 +23,7 @@ class VideoPlayView: UIView, PlayVideoProtocel {
     @IBOutlet weak var bgContentView: UIView!
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var bgPlayButton: UIImageView!
     
     private var playVideo: AVPlayer = AVPlayer()
     private var url: URL?
@@ -42,6 +43,21 @@ extension VideoPlayView {
     
     private func setupUI() {
         avplayerManager.delegate = self
+        let tapGestureView: UITapGestureRecognizer = UITapGestureRecognizer()
+        self.videoView.addGestureRecognizer(tapGestureView)
+        tapGestureView.rx.event
+            .withUnretained(self)
+            .bind { owner, _ in
+                
+                if owner.avplayerManager.isVideoPlaying() {
+                    owner.avplayerManager.doAVPlayer(action: .pause)
+                    owner.bgVideoImage.isHidden = false
+                } else {
+                    owner.avplayerManager.doAVPlayer(action: .play)
+                    owner.bgVideoImage.isHidden = true
+                }
+                
+            }.disposed(by: disposeBag)
     }
     
     private func setupRX() {
@@ -56,19 +72,17 @@ extension VideoPlayView {
     }
     
     func playURL(url: URL) {
+        pauseVideo()
         layoutIfNeeded()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.avplayerManager.loadVideoURL(videoURL: url, videoView: self.videoView)
             self.avplayerManager.doAVPlayer(action: .play)
-            
-            let checkView: UIView = UIView(frame: .zero)
-            checkView.backgroundColor = .red
-            self.addSubview(checkView)
-            checkView.snp.makeConstraints { make in
-                make.left.right.equalToSuperview()
-                make.height.width.equalTo(50)
-            }
         }
+    }
+    
+    func pauseVideo() {
+        self.avplayerManager.doAVPlayer(action: .pause)
+        self.bgVideoImage.isHidden = true
     }
     
     func playVideoSelect() {
@@ -94,7 +108,12 @@ extension VideoPlayView {
     
 }
 extension VideoPlayView: AVPlayerManagerDelegate {
+    func getRate(rate: Float) {
+        self.bgPlayButton.isHidden = rate == 1
+    }
+    
     func didFinishAVPlayer() {
+        self.bgPlayButton.isHidden = false
         self.didFinishAVPlayerHandler?()
     }
     

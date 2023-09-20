@@ -14,6 +14,7 @@ protocol AVPlayerManagerDelegate: AnyObject {
     func didFinishAVPlayer()
     func timeProcess(time: Double)
     func getDuration(value: Double)
+    func getRate(rate: Float)
 }
 
 final class AVPlayerManager {
@@ -50,6 +51,10 @@ final class AVPlayerManager {
            wSelf.delegate?.didFinishAVPlayer()
            wSelf.disAudoRun()
        }
+    }
+    
+    func isVideoPlaying() -> Bool {
+        return self.player?.rate == 1
     }
     
     func doAVPlayer(action: Action) {
@@ -98,25 +103,31 @@ final class AVPlayerManager {
     }
     
     func loadVideoURL(videoURL: URL, videoView: UIView) {
-        self.videoURL = videoURL
-        let asset = AVAsset(url: videoURL)
-        let playerItem = AVPlayerItem(asset: asset)
-        self.player = AVPlayer(playerItem: playerItem)
-        
-        //3. Create AVPlayerLayer object
-        let playerLayer = AVPlayerLayer(player: self.player)
-        playerLayer.frame = videoView.bounds //bounds of the view in which AVPlayer should be displayed
-        playerLayer.videoGravity = .resizeAspect
-        
-        //4. Add playerLayer to view's layer
-        videoView.layer.addSublayer(playerLayer)
-        self.delegate?.getDuration(value: videoURL.getDuration())
-        
-        guard let player = player else {
-            return
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+            self.videoURL = videoURL
+            let asset = AVAsset(url: videoURL)
+            let playerItem = AVPlayerItem(asset: asset)
+            self.player = AVPlayer(playerItem: playerItem)
+            
+            //3. Create AVPlayerLayer object
+            let playerLayer = AVPlayerLayer(player: self.player)
+            playerLayer.frame = videoView.bounds //bounds of the view in which AVPlayer should be displayed
+            playerLayer.videoGravity = .resizeAspect
+            playerLayer.player?.volume = 1
+            
+            //4. Add playerLayer to view's layer
+            videoView.layer.addSublayer(playerLayer)
+            self.delegate?.getDuration(value: videoURL.getDuration())
+            
+            guard let player = player else {
+                return
+            }
+            self.autoRun()
         }
-        self.autoRun()
-        
+        catch {
+            print("Setting category to AVAudioSessionCategoryPlayback failed.")
+        }
 //        player.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 2),
 //                                       queue: DispatchQueue.main) {[weak self] (progressTime) in
 //            guard let wSelf = self else { return }
@@ -146,11 +157,13 @@ final class AVPlayerManager {
             if let currentItem = player.currentItem {
                 let duration = CMTimeGetSeconds(currentItem.duration)
                 let currentTime = CMTimeGetSeconds(currentItem.currentTime())
-
                 print("Duration: \(duration) s")
                 print("Current time: \(currentTime) s")
             }
+            print("Rate \(player.rate)")
+            
             wSelf.delegate?.timeProcess(time: player.currentItem?.currentTime().seconds ?? 0)
+            wSelf.delegate?.getRate(rate: player.rate)
         })
     }
 }

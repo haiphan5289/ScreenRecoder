@@ -25,10 +25,16 @@ class RecordFinishVC: BaseVC, PlayVideoProtocel, NavigationProtocol {
     private let videoEditorView: VideoEditorView = .loadXib()
     @IBOutlet weak var faceCamButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var trimVideoButton: UIButton!
+    @IBOutlet weak var editorVideoView: UIView!
+    @IBOutlet weak var mainEditView: UIView!
+    @IBOutlet weak var trimEditorContentView: UIView!
+    @IBOutlet weak var trimActionButton: UIButton!
     // Add here your view model
     private var viewModel: RecordFinishVM = RecordFinishVM()
     private let videoPlayView: VideoPlayView = .loadXib()
     private var playVideo: AVPlayer = AVPlayer()
+    private let trimEditorVIew: TrimVideoView = .loadXib()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
@@ -44,6 +50,11 @@ class RecordFinishVC: BaseVC, PlayVideoProtocel, NavigationProtocol {
                                 textColor: UIColor.black)
         customRightButton(imgArrow: Asset.icTrash.image)
         navigationController?.hideHairline()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        videoPlayView.pauseVideo()
     }
     
 }
@@ -63,6 +74,11 @@ extension RecordFinishVC {
         
         if let url = inputURL {
             videoPlayView.playURL(url: url)
+        }
+        editorVideoView.isHidden = true
+        trimEditorContentView.addSubview(trimEditorVIew)
+        trimEditorVIew.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
     }
     
@@ -97,6 +113,8 @@ extension RecordFinishVC {
             .bind { owner, _ in
                 owner.sectionContentView.isHidden = true
                 owner.videoEditorContent.isHidden = false
+                owner.mainEditView.isHidden = true
+                owner.editorVideoView.isHidden = false
             }.disposed(by: disposeBag)
         
         shareButton.rx.tap
@@ -106,5 +124,24 @@ extension RecordFinishVC {
                     ManageApp.shared.shareProductId(sharedObjects: [url])
                 }
             }.disposed(by: disposeBag)
+        
+        trimVideoButton.rx.tap
+            .withUnretained(self)
+            .bind { owner, _ in
+                if let url = owner.inputURL {
+                    owner.moveToEditorVideo(inputURL: url, delegate: owner, editorVideoType: .trim)
+                }
+            }.disposed(by: disposeBag)
+    }
+    
+    private func handleUpdateInputVideo(video: URL) {
+        self.inputURL = video
+        videoPlayView.playURL(url: video)
+    }
+    
+}
+extension RecordFinishVC: EditorVideoDelegate {
+    func updateOutputVideo(video: URL) {
+        handleUpdateInputVideo(video: video)
     }
 }

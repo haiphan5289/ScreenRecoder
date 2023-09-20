@@ -127,6 +127,8 @@
 		93B21BFE2A30E70B00689D0F /* ResultURLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21BFD2A30E70A00689D0F /* ResultURLModel.swift */; };
 		93B21C042A30EB7900689D0F /* VideoPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21C032A30EB7900689D0F /* VideoPlayView.swift */; };
 		93B21C062A30EB8200689D0F /* VideoPlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93B21C052A30EB8200689D0F /* VideoPlayView.xib */; };
+		93B768882AB0A605000EC8AE /* TrimVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B768872AB0A605000EC8AE /* TrimVideoView.swift */; };
+		93B7688A2AB0A624000EC8AE /* TrimVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93B768892AB0A624000EC8AE /* TrimVideoView.xib */; };
 		93B7C7612A79537000C96B52 /* Toaster in Frameworks */ = {isa = PBXBuildFile; productRef = 93B7C7602A79537000C96B52 /* Toaster */; };
 		93B7C7642A79539E00C96B52 /* PixelSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 93B7C7632A79539E00C96B52 /* PixelSDK */; };
 		93B91FA92A45E9D8001BC81E /* SetupCameraManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B91FA82A45E9D8001BC81E /* SetupCameraManage.swift */; };
@@ -139,6 +141,9 @@
 		93BA31942A7E4F7C004A0D2B /* ScreencasterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BA31882A7E4F7C004A0D2B /* ScreencasterDelegate.swift */; };
 		93BA31952A7E4F7C004A0D2B /* VideoPostprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BA31892A7E4F7C004A0D2B /* VideoPostprocessor.swift */; };
 		93BA31AA2A7E54B5004A0D2B /* DeviceGuru in Frameworks */ = {isa = PBXBuildFile; productRef = 93BA31A92A7E54B5004A0D2B /* DeviceGuru */; };
+		93C15BAF2ABB297A0001BE56 /* EditorVideoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93C15BAC2ABB297A0001BE56 /* EditorVideoVC.xib */; };
+		93C15BB02ABB297A0001BE56 /* EditorVideoVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C15BAD2ABB297A0001BE56 /* EditorVideoVM.swift */; };
+		93C15BB12ABB297A0001BE56 /* EditorVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C15BAE2ABB297A0001BE56 /* EditorVideoVC.swift */; };
 		93CAEC972AA77665009AE911 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CAEC962AA77665009AE911 /* PaddingLabel.swift */; };
 		93CC36472A234CDB00DC2E4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CC36462A234CDB00DC2E4D /* AppDelegate.swift */; };
 		93CC36492A234CDB00DC2E4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CC36482A234CDB00DC2E4D /* SceneDelegate.swift */; };
@@ -325,6 +330,8 @@
 		93B21BFD2A30E70A00689D0F /* ResultURLModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultURLModel.swift; sourceTree = "<group>"; };
 		93B21C032A30EB7900689D0F /* VideoPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayView.swift; sourceTree = "<group>"; };
 		93B21C052A30EB8200689D0F /* VideoPlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPlayView.xib; sourceTree = "<group>"; };
+		93B768872AB0A605000EC8AE /* TrimVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimVideoView.swift; sourceTree = "<group>"; };
+		93B768892AB0A624000EC8AE /* TrimVideoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrimVideoView.xib; sourceTree = "<group>"; };
 		93B91FA82A45E9D8001BC81E /* SetupCameraManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCameraManage.swift; sourceTree = "<group>"; };
 		93B91FAC2A474BFD001BC81E /* DeviceList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DeviceList.plist; sourceTree = "<group>"; };
 		93BA317D2A7E4F7C004A0D2B /* MixerConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MixerConvert.h; sourceTree = "<group>"; };
@@ -339,6 +346,9 @@
 		93BA318D2A7E4F7C004A0D2B /* ConnectionConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionConfig.h; sourceTree = "<group>"; };
 		93BA318E2A7E4F7C004A0D2B /* StreamerEngineDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamerEngineDelegate.h; sourceTree = "<group>"; };
 		93BA31AB2A7E7AF3004A0D2B /* ScreenRecoredVideoEditor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScreenRecoredVideoEditor-Bridging-Header.h"; sourceTree = "<group>"; };
+		93C15BAC2ABB297A0001BE56 /* EditorVideoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditorVideoVC.xib; sourceTree = "<group>"; };
+		93C15BAD2ABB297A0001BE56 /* EditorVideoVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorVideoVM.swift; sourceTree = "<group>"; };
+		93C15BAE2ABB297A0001BE56 /* EditorVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorVideoVC.swift; sourceTree = "<group>"; };
 		93CAEC962AA77665009AE911 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		93CC36432A234CDB00DC2E4D /* ScreenRecoredVideoEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenRecoredVideoEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93CC36462A234CDB00DC2E4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -572,6 +582,7 @@
 		93B21BAD2A30C43B00689D0F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				93C15BAB2ABB29650001BE56 /* EditorVideo */,
 				93776C872AA4AA4D00283140 /* ListFont */,
 				93D539932A9E2A2400A894FE /* StreamCamera */,
 				93550A982A321FFD007E30A4 /* FaceCam */,
@@ -635,6 +646,7 @@
 		93B21BC02A30C44400689D0F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				93B768862AB0A5DB000EC8AE /* TrimVideo */,
 				93B21C022A30EB2A00689D0F /* VideoPlay */,
 				93B21BC12A30C44400689D0F /* VideoEditor */,
 			);
@@ -768,6 +780,15 @@
 			path = VideoPlay;
 			sourceTree = "<group>";
 		};
+		93B768862AB0A5DB000EC8AE /* TrimVideo */ = {
+			isa = PBXGroup;
+			children = (
+				93B768872AB0A605000EC8AE /* TrimVideoView.swift */,
+				93B768892AB0A624000EC8AE /* TrimVideoView.xib */,
+			);
+			path = TrimVideo;
+			sourceTree = "<group>";
+		};
 		93B91FA72A45E9C4001BC81E /* SetupCamera */ = {
 			isa = PBXGroup;
 			children = (
@@ -800,6 +821,16 @@
 				93BA31892A7E4F7C004A0D2B /* VideoPostprocessor.swift */,
 			);
 			path = Broadcast;
+			sourceTree = "<group>";
+		};
+		93C15BAB2ABB29650001BE56 /* EditorVideo */ = {
+			isa = PBXGroup;
+			children = (
+				93C15BAC2ABB297A0001BE56 /* EditorVideoVC.xib */,
+				93C15BAD2ABB297A0001BE56 /* EditorVideoVM.swift */,
+				93C15BAE2ABB297A0001BE56 /* EditorVideoVC.swift */,
+			);
+			path = EditorVideo;
 			sourceTree = "<group>";
 		};
 		93CAEC952AA77657009AE911 /* PaddingLabel */ = {
@@ -1065,12 +1096,14 @@
 				93550A9C2A322013007E30A4 /* FacecamVC.xib in Resources */,
 				93776C8B2AA4AA6200283140 /* ListFontDefaultVC.xib in Resources */,
 				93B21BEE2A30C45700689D0F /* FontsFree-Net-SFProText-Semibold.ttf in Resources */,
+				93B7688A2AB0A624000EC8AE /* TrimVideoView.xib in Resources */,
 				93550A972A321351007E30A4 /* video_check.mp4 in Resources */,
 				93CC364E2A234CDB00DC2E4D /* Main.storyboard in Resources */,
 				93B21BED2A30C45700689D0F /* FontsFree-Net-SFProText-Regular.ttf in Resources */,
 				93B21BEF2A30C45700689D0F /* FontsFree-Net-SFProText-Medium.ttf in Resources */,
 				93B21BE22A30C45700689D0F /* HomeCell.xib in Resources */,
 				93B21BE62A30C45700689D0F /* ScreenRecorderVC.xib in Resources */,
+				93C15BAF2ABB297A0001BE56 /* EditorVideoVC.xib in Resources */,
 				93B21BDF2A30C45700689D0F /* HomeVCVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1242,6 +1275,7 @@
 				93B21B892A30C3A000689D0F /* UISearchBarExtensions.swift in Sources */,
 				93B21B972A30C3A000689D0F /* UISegmentedControlExtensions.swift in Sources */,
 				93CC36492A234CDB00DC2E4D /* SceneDelegate.swift in Sources */,
+				93B768882AB0A605000EC8AE /* TrimVideoView.swift in Sources */,
 				93B21BE02A30C45700689D0F /* HomeVCVC.swift in Sources */,
 				93BA31922A7E4F7C004A0D2B /* Selections.swift in Sources */,
 				93B21B952A30C3A000689D0F /* UIStoryboardExtensions.swift in Sources */,
@@ -1276,6 +1310,7 @@
 				93B21B6C2A30C3A000689D0F /* UILableExtension.swift in Sources */,
 				93B21B7F2A30C3A000689D0F /* Font+Extension.swift in Sources */,
 				93550AA02A3227BB007E30A4 /* AVPlayerManager.swift in Sources */,
+				93C15BB12ABB297A0001BE56 /* EditorVideoVC.swift in Sources */,
 				93B21B662A30C3A000689D0F /* UIApplication+Extension.swift in Sources */,
 				93B21BF92A30C8A100689D0F /* Constant.swift in Sources */,
 				93B21B6E2A30C3A000689D0F /* UITextViewExtension.swift in Sources */,
@@ -1285,6 +1320,7 @@
 				93B21BE52A30C45700689D0F /* ScreenRecorderVC.swift in Sources */,
 				93B21B6D2A30C3A000689D0F /* CALayerExtension.swift in Sources */,
 				93D539A42A9E2C2000A894FE /* PermissionChecker.swift in Sources */,
+				93C15BB02ABB297A0001BE56 /* EditorVideoVM.swift in Sources */,
 				93B21B7A2A30C3A000689D0F /* UITextField_Extension.swift in Sources */,
 				93B21B8E2A30C3A000689D0F /* UINavigationItemExtensions.swift in Sources */,
 				93B21B962A30C3A000689D0F /* UITabBarExtensions.swift in Sources */,

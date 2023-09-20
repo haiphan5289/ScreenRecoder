@@ -118,11 +118,9 @@ extension HomeVCVC: ImagePickerDelegate {
     }
     
     func didSelectVideo(url: URL) {
-//        self.moveToFaceCame(inputURL: url)
-        let faceCameVc = FacecamVC.createVC()
+        let faceCameVc = RecordFinishVC.createVC()
         faceCameVc.modalPresentationStyle = .fullScreen
-        faceCameVc.videoURL = url
+        faceCameVc.inputURL = url
         self.navigationController?.pushViewController(faceCameVc)
-//        self.present(faceCameVc, animated: true, completion: nil)
     }
 }

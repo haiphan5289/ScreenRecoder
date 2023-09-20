@@ -12,6 +12,19 @@ import UIKit
 protocol NavigationProtocol {}
 extension NavigationProtocol {
     
+    func moveToEditorVideo(inputURL: URL,
+                           delegate: EditorVideoDelegate?,
+                           editorVideoType: EditorVideoVC.EditorVideoType) {
+        guard let topVC = ManageApp.shared.topViewController() else {
+            return
+        }
+        let editorVC = EditorVideoVC.createVC()
+        editorVC.inputVideo = inputURL
+        editorVC.delegate = delegate
+        editorVC.editorVideoType = editorVideoType
+        topVC.navigationController?.pushViewController(editorVC)
+    }
+    
     func moveToFaceCame(inputURL: URL) {
         guard let topVC = ManageApp.shared.topViewController() else {
             return

@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -50,26 +51,29 @@
                         </view>
                     </subviews>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4My-9W-XFH">
-                    <rect key="frame" x="159" y="195.33333333333334" width="75" height="34.333333333333343"/>
-                    <color key="backgroundColor" red="0.0" green="0.45882352939999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ruf-bf-heB">
+                    <rect key="frame" x="171.66666666666666" y="187.66666666666666" width="50" height="50"/>
+                    <color key="backgroundColor" name="177CEF"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="95v-3c-lc6"/>
+                        <constraint firstAttribute="width" secondItem="ruf-bf-heB" secondAttribute="height" id="dK2-QB-gvk"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="1ep-2V-0si" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="17M-9w-Xeh"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1ep-2V-0si" secondAttribute="trailing" id="HxE-YZ-88P"/>
+                <constraint firstItem="ruf-bf-heB" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="IS2-gy-efv"/>
                 <constraint firstItem="1ep-2V-0si" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="cMp-am-es7"/>
-                <constraint firstItem="4My-9W-XFH" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="lzK-9d-r33"/>
-                <constraint firstItem="4My-9W-XFH" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="wgx-Dk-zoP"/>
+                <constraint firstItem="ruf-bf-heB" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="jUK-UI-Uoc"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="1ep-2V-0si" secondAttribute="bottom" id="zOa-Jv-dU0"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="bgContentView" destination="wj1-Ob-F5F" id="gR5-fE-szn"/>
+                <outlet property="bgPlayButton" destination="ruf-bf-heB" id="sNE-l8-c9p"/>
                 <outlet property="bgVideoImage" destination="HBJ-Ko-zvx" id="iJW-Tk-kYY"/>
                 <outlet property="playButton" destination="zvH-2a-2td" id="Vsn-FH-qPG"/>
                 <outlet property="videoView" destination="mqh-KU-qj6" id="qJY-Qc-o4r"/>
@@ -78,6 +82,9 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="177CEF">
+            <color red="0.090196078431372548" green="0.48627450980392156" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
