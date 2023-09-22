@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditorVideoVC" customModule="ScreenRecoredVideoEditor" customModuleProvider="target">
             <connections>
                 <outlet property="contentVideo" destination="Nqi-cd-iRp" id="6fr-zX-Fmu"/>
+                <outlet property="filterContentView" destination="4rv-RG-EMT" id="Usu-22-L2r"/>
                 <outlet property="trimContentVideo" destination="8Jx-S8-c9f" id="uIY-tF-nSQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -46,11 +47,18 @@
                                 <constraint firstItem="Nqi-cd-iRp" firstAttribute="leading" secondItem="l6R-QT-cj5" secondAttribute="leading" constant="50" id="kCC-cY-ZI6"/>
                             </constraints>
                         </view>
-                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Jx-S8-c9f">
+                        <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Jx-S8-c9f">
                             <rect key="frame" x="0.0" y="764" width="414" height="50"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" placeholder="YES" id="1RK-qg-hf3"/>
+                            </constraints>
+                        </view>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rv-RG-EMT">
+                            <rect key="frame" x="0.0" y="764" width="414" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" placeholder="YES" id="2gJ-MO-nrm"/>
                             </constraints>
                         </view>
                     </subviews>

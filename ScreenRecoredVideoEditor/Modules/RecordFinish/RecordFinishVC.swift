@@ -30,6 +30,7 @@ class RecordFinishVC: BaseVC, PlayVideoProtocel, NavigationProtocol {
     @IBOutlet weak var mainEditView: UIView!
     @IBOutlet weak var trimEditorContentView: UIView!
     @IBOutlet weak var trimActionButton: UIButton!
+    @IBOutlet weak var filterButton: UIButton!
     // Add here your view model
     private var viewModel: RecordFinishVM = RecordFinishVM()
     private let videoPlayView: VideoPlayView = .loadXib()
@@ -130,6 +131,14 @@ extension RecordFinishVC {
             .bind { owner, _ in
                 if let url = owner.inputURL {
                     owner.moveToEditorVideo(inputURL: url, delegate: owner, editorVideoType: .trim)
+                }
+            }.disposed(by: disposeBag)
+        
+        filterButton.rx.tap
+            .withUnretained(self)
+            .bind { owner, _ in
+                if let url = owner.inputURL {
+                    owner.moveToEditorVideo(inputURL: url, delegate: owner, editorVideoType: .filter)
                 }
             }.disposed(by: disposeBag)
     }

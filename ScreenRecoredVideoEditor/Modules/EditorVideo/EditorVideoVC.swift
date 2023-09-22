@@ -13,6 +13,7 @@ import RxSwift
 import EasyBaseCodes
 import AVFoundation
 import SnapKit
+import SVProgressHUD
 
 protocol EditorVideoDelegate: AnyObject {
     func updateOutputVideo(video: URL)
@@ -21,7 +22,7 @@ protocol EditorVideoDelegate: AnyObject {
 class EditorVideoVC: BaseVC, PlayVideoProtocel {
     
     enum EditorVideoType {
-        case trim
+        case trim, filter
     }
     
     //delegate
@@ -32,12 +33,15 @@ class EditorVideoVC: BaseVC, PlayVideoProtocel {
     // Add here outlets
     @IBOutlet weak var contentVideo: UIView!
     @IBOutlet weak var trimContentVideo: UIView!
+    @IBOutlet weak var filterContentView: UIView!
     private let videoPlayView: VideoPlayView = .loadXib()
     private var playVideo: AVPlayer = AVPlayer()
     private let trimEditorView: TrimVideoView = .loadXib()
+    private let filterVideoView: FilterVideoView = .loadXib()
     
     // Add here your view model
     private var viewModel: EditorVideoVM = EditorVideoVM()
+    private let loadingTrigger: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,6 +83,10 @@ extension EditorVideoVC {
         trimEditorView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        filterContentView.addSubview(filterVideoView)
+        filterVideoView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
         switch editorVideoType {
         case .trim:
             trimContentVideo.isHidden = false
@@ -91,14 +99,39 @@ extension EditorVideoVC {
             }
             trimEditorView.outputVideo = { [weak self] outputVideo in
                 guard let self = self else { return }
-                self.navigationController?.popViewController()
-                self.delegate?.updateOutputVideo(video: outputVideo)
+                self.handlePopViewController(outputVideo: outputVideo)
             }
-            
+        case .filter:
+            if let inputVideo = self.inputVideo {
+                filterVideoView.setCurrentURL(url: inputVideo)
+            }
+            filterVideoView.outputVideo = { [weak self] outputURL in
+                guard let self = self else { return }
+                self.handlePopViewController(outputVideo: outputURL)
+                
+            }
+            filterVideoView.videoFilter = { [weak self] outputURL in
+                guard let self = self else { return }
+                videoPlayView.playURL(url: outputURL)
+            }
+            filterVideoView.isProcessing = { [weak self] isLoading in
+                guard let self = self else { return }
+                self.loadingTrigger.accept(isLoading)
+            }
         }
     }
     
     private func setupRX() {
         // Add here the setup for the RX
+        loadingTrigger
+            .asDriver()
+            .drive { isLoading in
+                isLoading ? SVProgressHUD.show() : SVProgressHUD.dismiss()
+            }.disposed(by: disposeBag)
+    }
+    
+    private func handlePopViewController(outputVideo: URL) {
+        self.navigationController?.popViewController()
+        self.delegate?.updateOutputVideo(video: outputVideo)
     }
 }

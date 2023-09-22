@@ -18,7 +18,6 @@
 		93776C8B2AA4AA6200283140 /* ListFontDefaultVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93776C882AA4AA6200283140 /* ListFontDefaultVC.xib */; };
 		93776C8C2AA4AA6200283140 /* ListFontDefaultVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93776C892AA4AA6200283140 /* ListFontDefaultVM.swift */; };
 		93776C8D2AA4AA6200283140 /* ListFontDefaultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93776C8A2AA4AA6200283140 /* ListFontDefaultVC.swift */; };
-		93AED4B02A47FAE300215827 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AED4AF2A47FAE300215827 /* ImagePicker.swift */; };
 		93B21B602A30C3A000689D0F /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B0D2A30C39700689D0F /* Storage.swift */; };
 		93B21B612A30C3A000689D0F /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B0E2A30C39700689D0F /* AppSettings.swift */; };
 		93B21B632A30C3A000689D0F /* GetHeightSafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B112A30C39700689D0F /* GetHeightSafeArea.swift */; };
@@ -170,6 +169,11 @@
 		93D539A22A9E2B7F00A894FE /* CountdownService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D539A12A9E2B7F00A894FE /* CountdownService.swift */; };
 		93D539A42A9E2C2000A894FE /* PermissionChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D539A32A9E2C2000A894FE /* PermissionChecker.swift */; };
 		93D539A62A9E2C5800A894FE /* AudioSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D539A52A9E2C5800A894FE /* AudioSession.swift */; };
+		93D856702ABC7A22007C294E /* FilterVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93D8566F2ABC7A22007C294E /* FilterVideoView.xib */; };
+		93D856722ABC7A2E007C294E /* FilterVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D856712ABC7A2E007C294E /* FilterVideoView.swift */; };
+		93D856742ABC83F8007C294E /* FilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D856732ABC83F8007C294E /* FilterManager.swift */; };
+		93D856782ABC9111007C294E /* FilterVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D856762ABC9111007C294E /* FilterVideoCell.swift */; };
+		93D856792ABC9111007C294E /* FilterVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93D856772ABC9111007C294E /* FilterVideoCell.xib */; };
 		B25EDE7810FC15336DA7B68F /* Pods_ScreenRecoredVideoEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C49C9177131082ED7CB1EABB /* Pods_ScreenRecoredVideoEditor.framework */; };
 /* End PBXBuildFile section */
 
@@ -223,7 +227,6 @@
 		93776C882AA4AA6200283140 /* ListFontDefaultVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListFontDefaultVC.xib; sourceTree = "<group>"; };
 		93776C892AA4AA6200283140 /* ListFontDefaultVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFontDefaultVM.swift; sourceTree = "<group>"; };
 		93776C8A2AA4AA6200283140 /* ListFontDefaultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFontDefaultVC.swift; sourceTree = "<group>"; };
-		93AED4AF2A47FAE300215827 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		93B21B0D2A30C39700689D0F /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		93B21B0E2A30C39700689D0F /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		93B21B112A30C39700689D0F /* GetHeightSafeArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetHeightSafeArea.swift; sourceTree = "<group>"; };
@@ -381,6 +384,11 @@
 		93D539A12A9E2B7F00A894FE /* CountdownService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownService.swift; sourceTree = "<group>"; };
 		93D539A32A9E2C2000A894FE /* PermissionChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionChecker.swift; sourceTree = "<group>"; };
 		93D539A52A9E2C5800A894FE /* AudioSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSession.swift; sourceTree = "<group>"; };
+		93D8566F2ABC7A22007C294E /* FilterVideoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterVideoView.xib; sourceTree = "<group>"; };
+		93D856712ABC7A2E007C294E /* FilterVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVideoView.swift; sourceTree = "<group>"; };
+		93D856732ABC83F8007C294E /* FilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
+		93D856762ABC9111007C294E /* FilterVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVideoCell.swift; sourceTree = "<group>"; };
+		93D856772ABC9111007C294E /* FilterVideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterVideoCell.xib; sourceTree = "<group>"; };
 		C49C9177131082ED7CB1EABB /* Pods_ScreenRecoredVideoEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScreenRecoredVideoEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -608,7 +616,6 @@
 			isa = PBXGroup;
 			children = (
 				93B21BB52A30C43B00689D0F /* Cell */,
-				93AED4AF2A47FAE300215827 /* ImagePicker.swift */,
 				93B21BB32A30C43B00689D0F /* HomeVCVC.xib */,
 				93B21BB42A30C43B00689D0F /* HomeVCVC.swift */,
 				93B21BB82A30C43B00689D0F /* HomeVCVM.swift */,
@@ -646,6 +653,7 @@
 		93B21BC02A30C44400689D0F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				93D8566E2ABC7A0D007C294E /* FilterVideo */,
 				93B768862AB0A5DB000EC8AE /* TrimVideo */,
 				93B21C022A30EB2A00689D0F /* VideoPlay */,
 				93B21BC12A30C44400689D0F /* VideoEditor */,
@@ -793,6 +801,7 @@
 			isa = PBXGroup;
 			children = (
 				93B91FA82A45E9D8001BC81E /* SetupCameraManage.swift */,
+				93D856732ABC83F8007C294E /* FilterManager.swift */,
 			);
 			path = SetupCamera;
 			sourceTree = "<group>";
@@ -950,6 +959,25 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		93D8566E2ABC7A0D007C294E /* FilterVideo */ = {
+			isa = PBXGroup;
+			children = (
+				93D856752ABC90F9007C294E /* Cell */,
+				93D8566F2ABC7A22007C294E /* FilterVideoView.xib */,
+				93D856712ABC7A2E007C294E /* FilterVideoView.swift */,
+			);
+			path = FilterVideo;
+			sourceTree = "<group>";
+		};
+		93D856752ABC90F9007C294E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				93D856762ABC9111007C294E /* FilterVideoCell.swift */,
+				93D856772ABC9111007C294E /* FilterVideoCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		B6A489465EDC66ABF062BC22 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1094,12 +1122,14 @@
 				93B21BE82A30C45700689D0F /* swiftgen.yml in Resources */,
 				93B91FAD2A474BFD001BC81E /* DeviceList.plist in Resources */,
 				93550A9C2A322013007E30A4 /* FacecamVC.xib in Resources */,
+				93D856702ABC7A22007C294E /* FilterVideoView.xib in Resources */,
 				93776C8B2AA4AA6200283140 /* ListFontDefaultVC.xib in Resources */,
 				93B21BEE2A30C45700689D0F /* FontsFree-Net-SFProText-Semibold.ttf in Resources */,
 				93B7688A2AB0A624000EC8AE /* TrimVideoView.xib in Resources */,
 				93550A972A321351007E30A4 /* video_check.mp4 in Resources */,
 				93CC364E2A234CDB00DC2E4D /* Main.storyboard in Resources */,
 				93B21BED2A30C45700689D0F /* FontsFree-Net-SFProText-Regular.ttf in Resources */,
+				93D856792ABC9111007C294E /* FilterVideoCell.xib in Resources */,
 				93B21BEF2A30C45700689D0F /* FontsFree-Net-SFProText-Medium.ttf in Resources */,
 				93B21BE22A30C45700689D0F /* HomeCell.xib in Resources */,
 				93B21BE62A30C45700689D0F /* ScreenRecorderVC.xib in Resources */,
@@ -1222,6 +1252,7 @@
 				93B21B712A30C3A000689D0F /* Collection+Extension.swift in Sources */,
 				93776C8C2AA4AA6200283140 /* ListFontDefaultVM.swift in Sources */,
 				93B21BAA2A30C3A000689D0F /* UIFontExtensions.swift in Sources */,
+				93D856722ABC7A2E007C294E /* FilterVideoView.swift in Sources */,
 				93B21BA62A30C3A000689D0F /* UIApplicationExtensions.swift in Sources */,
 				93B21B762A30C3A000689D0F /* Drive+Extension.swift in Sources */,
 				93B21B7C2A30C3A000689D0F /* PropertyWapper.swift in Sources */,
@@ -1280,7 +1311,6 @@
 				93BA31922A7E4F7C004A0D2B /* Selections.swift in Sources */,
 				93B21B952A30C3A000689D0F /* UIStoryboardExtensions.swift in Sources */,
 				93B21B8F2A30C3A000689D0F /* UIStackViewExtensions.swift in Sources */,
-				93AED4B02A47FAE300215827 /* ImagePicker.swift in Sources */,
 				93B21B872A30C3A000689D0F /* LabelExtension.swift in Sources */,
 				93B21B9E2A30C3A000689D0F /* UINavigationControllerExtensions.swift in Sources */,
 				93B21B822A30C3A000689D0F /* StringExtension.swift in Sources */,
@@ -1308,6 +1338,7 @@
 				93B21B6B2A30C3A000689D0F /* UIWindow+Extension.swift in Sources */,
 				93B21BA42A30C3A000689D0F /* UISwitchExtensions.swift in Sources */,
 				93B21B6C2A30C3A000689D0F /* UILableExtension.swift in Sources */,
+				93D856782ABC9111007C294E /* FilterVideoCell.swift in Sources */,
 				93B21B7F2A30C3A000689D0F /* Font+Extension.swift in Sources */,
 				93550AA02A3227BB007E30A4 /* AVPlayerManager.swift in Sources */,
 				93C15BB12ABB297A0001BE56 /* EditorVideoVC.swift in Sources */,
@@ -1331,6 +1362,7 @@
 				93B21B9A2A30C3A000689D0F /* UIActivityExtensions.swift in Sources */,
 				93B21BEB2A30C45700689D0F /* ManageApp.swift in Sources */,
 				93B21B6F2A30C3A000689D0F /* NumberExtension.swift in Sources */,
+				93D856742ABC83F8007C294E /* FilterManager.swift in Sources */,
 				93CAEC972AA77665009AE911 /* PaddingLabel.swift in Sources */,
 				93B21B922A30C3A000689D0F /* UIImage+Extensions.swift in Sources */,
 				93B21B912A30C3A000689D0F /* UICollectionViewExtensions.swift in Sources */,

@@ -14,8 +14,6 @@ import EasyBaseAudio
 
 class HomeVCVC: BaseVC, SetupTableView, NavigationProtocol {
     
-    var imagePicker: ImagePicker!
-    
     enum HomeType: Int, CaseIterable {
         case liveStream, screen, facecam, videoEditor, commentary
         
@@ -78,7 +76,7 @@ extension HomeVCVC {
         setupTableView(tableView: tableView,
                        delegate: self,
                        name: HomeCell.self)
-        imagePicker = ImagePicker(presentationController: self, delegate: self)
+//        imagePicker = ImagePicker(presentationController: self, delegate: self)
     }
     
     private func setupRX() {
@@ -99,22 +97,17 @@ extension HomeVCVC {
                 case .screen:
                     let vc = ScreenRecorderVC.createVC()
                     owner.navigationController?.pushViewController(vc)
-                case .commentary, .facecam, .liveStream, .videoEditor:
-                    owner.imagePicker.presentGallery(type: ["public.movie"])
+                    
+                case .commentary, .facecam, .liveStream: break
+                case .videoEditor:
+                    let vc = UIImagePickerController()
+                    vc.sourceType = .photoLibrary
+                    vc.mediaTypes = ["public.movie"]
+                    vc.delegate = self
+                    self.present(vc, animated: true, completion: nil)
                 }
                 
             }.disposed(by: disposeBag)
-    }
-}
-extension HomeVCVC: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.1
-    }
-}
-extension HomeVCVC: ImagePickerDelegate {
-    func didSelect(image: UIImage?) {
-        //
     }
     
     func didSelectVideo(url: URL) {
@@ -124,3 +117,30 @@ extension HomeVCVC: ImagePickerDelegate {
         self.navigationController?.pushViewController(faceCameVc)
     }
 }
+extension HomeVCVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        self.dismiss(animated: true) {
+            let videoURL = info[UIImagePickerController.InfoKey.mediaURL] as! URL
+            AudioManage.shared.converVideofromPhotoLibraryToMP4(videoURL: videoURL, folderName: ConstantApp.FolderName.editVideo.rawValue) { [weak self] outputURL in
+                guard let wSelf = self else { return }
+                DispatchQueue.main.async {
+                    picker.dismiss(animated: true) {
+                        wSelf.didSelectVideo(url: outputURL)
+                    }
+                }
+            }
+        }
+    }
+}
+extension HomeVCVC: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.1
+    }
+}
+//extension HomeVCVC: ImagePickerDelegate {
+//    func didSelect(image: UIImage?) {
+//        //
+//    }
+//
+//}
