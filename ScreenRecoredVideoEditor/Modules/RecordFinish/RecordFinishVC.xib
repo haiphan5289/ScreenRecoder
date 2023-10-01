@@ -17,6 +17,7 @@
                 <outlet property="faceCamButton" destination="kqb-KM-Sq2" id="vvs-HM-2Sw"/>
                 <outlet property="filterButton" destination="Sey-dI-xMj" id="klh-aA-Cjz"/>
                 <outlet property="mainEditView" destination="OhP-Ev-rjm" id="c8y-Bg-utt"/>
+                <outlet property="rotateButton" destination="xzA-4c-I0i" id="iSh-oo-gYz"/>
                 <outlet property="sectionContentView" destination="k2O-DA-UVb" id="JjS-hd-QCj"/>
                 <outlet property="shareButton" destination="pX6-Ei-XRc" id="tvD-HS-z6u"/>
                 <outlet property="trimActionButton" destination="GhI-qm-Ric" id="p4b-PM-dpc"/>
@@ -302,8 +303,8 @@
                                                                 <constraint firstAttribute="width" secondItem="3Bx-Ob-BMA" secondAttribute="height" id="auO-5m-NlE"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trim" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sbf-WD-Oqo">
-                                                            <rect key="frame" x="27" y="28" width="22" height="22"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rotate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sbf-WD-Oqo">
+                                                            <rect key="frame" x="22" y="28" width="32.5" height="22"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>

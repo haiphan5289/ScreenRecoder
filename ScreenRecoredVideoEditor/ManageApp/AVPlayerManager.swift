@@ -104,6 +104,13 @@ final class AVPlayerManager {
     
     func loadVideoURL(videoURL: URL, videoView: UIView) {
         do {
+            videoView.subviews.forEach { view in
+                view.removeFromSuperview()
+            }
+            videoView.layer.sublayers?.forEach({ layer in
+                layer.removeFromSuperlayer()
+            })
+            
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
             self.videoURL = videoURL
             let asset = AVAsset(url: videoURL)

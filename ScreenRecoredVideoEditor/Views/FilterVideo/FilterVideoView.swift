@@ -70,6 +70,8 @@ extension FilterVideoView {
         self.currentURL = url
     }
     
+    
+    
     func handleInputURL(inputVideo: URL, filter: CIFilter) {
         self.isProcessing?(true)
         let asset = AVAsset(url: inputVideo)
