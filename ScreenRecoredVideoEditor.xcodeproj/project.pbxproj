@@ -20,8 +20,6 @@
 		93776C8D2AA4AA6200283140 /* ListFontDefaultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93776C8A2AA4AA6200283140 /* ListFontDefaultVC.swift */; };
 		937F66A62ACC4C20000FC4BA /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937F66A52ACC4C20000FC4BA /* CanvasView.swift */; };
 		937F66A82ACC4C2D000FC4BA /* CanvasView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 937F66A72ACC4C2D000FC4BA /* CanvasView.xib */; };
-		937F66AC2ACC4E22000FC4BA /* CanvasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937F66AA2ACC4E22000FC4BA /* CanvasCell.swift */; };
-		937F66AD2ACC4E22000FC4BA /* CanvasCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 937F66AB2ACC4E22000FC4BA /* CanvasCell.xib */; };
 		937F66B22ACC4F40000FC4BA /* CanvasFrame11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937F66B02ACC4F40000FC4BA /* CanvasFrame11.swift */; };
 		937F66B32ACC4F40000FC4BA /* CanvasFrame11.xib in Resources */ = {isa = PBXBuildFile; fileRef = 937F66B12ACC4F40000FC4BA /* CanvasFrame11.xib */; };
 		937F66B72ACC4F80000FC4BA /* CanvasFrame45.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937F66B52ACC4F80000FC4BA /* CanvasFrame45.swift */; };
@@ -30,6 +28,8 @@
 		937F66BD2ACC4FD7000FC4BA /* CanvasFrame169.xib in Resources */ = {isa = PBXBuildFile; fileRef = 937F66BB2ACC4FD7000FC4BA /* CanvasFrame169.xib */; };
 		937F66C12ACC5032000FC4BA /* CanvasFrame916.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937F66BF2ACC5032000FC4BA /* CanvasFrame916.swift */; };
 		937F66C22ACC5032000FC4BA /* CanvasFrame916.xib in Resources */ = {isa = PBXBuildFile; fileRef = 937F66C02ACC5032000FC4BA /* CanvasFrame916.xib */; };
+		93A90E6C2AE15909002287D2 /* CanvasCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93A90E6A2AE15909002287D2 /* CanvasCell.xib */; };
+		93A90E6D2AE15909002287D2 /* CanvasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A90E6B2AE15909002287D2 /* CanvasCell.swift */; };
 		93B21B602A30C3A000689D0F /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B0D2A30C39700689D0F /* Storage.swift */; };
 		93B21B612A30C3A000689D0F /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B0E2A30C39700689D0F /* AppSettings.swift */; };
 		93B21B632A30C3A000689D0F /* GetHeightSafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B112A30C39700689D0F /* GetHeightSafeArea.swift */; };
@@ -241,8 +241,6 @@
 		93776C8A2AA4AA6200283140 /* ListFontDefaultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFontDefaultVC.swift; sourceTree = "<group>"; };
 		937F66A52ACC4C20000FC4BA /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		937F66A72ACC4C2D000FC4BA /* CanvasView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CanvasView.xib; sourceTree = "<group>"; };
-		937F66AA2ACC4E22000FC4BA /* CanvasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasCell.swift; sourceTree = "<group>"; };
-		937F66AB2ACC4E22000FC4BA /* CanvasCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CanvasCell.xib; sourceTree = "<group>"; };
 		937F66B02ACC4F40000FC4BA /* CanvasFrame11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasFrame11.swift; sourceTree = "<group>"; };
 		937F66B12ACC4F40000FC4BA /* CanvasFrame11.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CanvasFrame11.xib; sourceTree = "<group>"; };
 		937F66B52ACC4F80000FC4BA /* CanvasFrame45.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasFrame45.swift; sourceTree = "<group>"; };
@@ -251,6 +249,8 @@
 		937F66BB2ACC4FD7000FC4BA /* CanvasFrame169.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CanvasFrame169.xib; sourceTree = "<group>"; };
 		937F66BF2ACC5032000FC4BA /* CanvasFrame916.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasFrame916.swift; sourceTree = "<group>"; };
 		937F66C02ACC5032000FC4BA /* CanvasFrame916.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CanvasFrame916.xib; sourceTree = "<group>"; };
+		93A90E6A2AE15909002287D2 /* CanvasCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CanvasCell.xib; sourceTree = "<group>"; };
+		93A90E6B2AE15909002287D2 /* CanvasCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasCell.swift; sourceTree = "<group>"; };
 		93B21B0D2A30C39700689D0F /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		93B21B0E2A30C39700689D0F /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		93B21B112A30C39700689D0F /* GetHeightSafeArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetHeightSafeArea.swift; sourceTree = "<group>"; };
@@ -499,19 +499,9 @@
 				937F66B92ACC4FC2000FC4BA /* Frame169 */,
 				937F66B42ACC4F70000FC4BA /* Frame45 */,
 				937F66AF2ACC4F27000FC4BA /* Frame11 */,
-				937F66AE2ACC4F09000FC4BA /* Noframe */,
+				93A90E692AE15909002287D2 /* Noframe */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		937F66AE2ACC4F09000FC4BA /* Noframe */ = {
-			isa = PBXGroup;
-			children = (
-				937F66AA2ACC4E22000FC4BA /* CanvasCell.swift */,
-				937F66AB2ACC4E22000FC4BA /* CanvasCell.xib */,
-			);
-			name = Noframe;
-			path = "Noảme";
 			sourceTree = "<group>";
 		};
 		937F66AF2ACC4F27000FC4BA /* Frame11 */ = {
@@ -548,6 +538,15 @@
 				937F66C02ACC5032000FC4BA /* CanvasFrame916.xib */,
 			);
 			path = Frame916;
+			sourceTree = "<group>";
+		};
+		93A90E692AE15909002287D2 /* Noframe */ = {
+			isa = PBXGroup;
+			children = (
+				93A90E6A2AE15909002287D2 /* CanvasCell.xib */,
+				93A90E6B2AE15909002287D2 /* CanvasCell.swift */,
+			);
+			path = Noframe;
 			sourceTree = "<group>";
 		};
 		93B21B0B2A30C39700689D0F /* Common */ = {
@@ -1224,6 +1223,7 @@
 				93B7688A2AB0A624000EC8AE /* TrimVideoView.xib in Resources */,
 				937F66A82ACC4C2D000FC4BA /* CanvasView.xib in Resources */,
 				93550A972A321351007E30A4 /* video_check.mp4 in Resources */,
+				93A90E6C2AE15909002287D2 /* CanvasCell.xib in Resources */,
 				937F66BD2ACC4FD7000FC4BA /* CanvasFrame169.xib in Resources */,
 				93CC364E2A234CDB00DC2E4D /* Main.storyboard in Resources */,
 				93B21BED2A30C45700689D0F /* FontsFree-Net-SFProText-Regular.ttf in Resources */,
@@ -1233,7 +1233,6 @@
 				93B21BE62A30C45700689D0F /* ScreenRecorderVC.xib in Resources */,
 				93C15BAF2ABB297A0001BE56 /* EditorVideoVC.xib in Resources */,
 				93B21BDF2A30C45700689D0F /* HomeVCVC.xib in Resources */,
-				937F66AD2ACC4E22000FC4BA /* CanvasCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1391,7 +1390,6 @@
 				93B21BA82A30C3A000689D0F /* UIRefreshControlExtensions.swift in Sources */,
 				93D539982A9E2A6600A894FE /* StreamCameraVM.swift in Sources */,
 				93B21BE92A30C45700689D0F /* VideoEditorView.swift in Sources */,
-				937F66AC2ACC4E22000FC4BA /* CanvasCell.swift in Sources */,
 				93B21B902A30C3A000689D0F /* UIView+Extension.swift in Sources */,
 				93B21B8D2A30C3A000689D0F /* UILayoutPriorityExtensions.swift in Sources */,
 				93B21BEC2A30C45700689D0F /* Assets-Gen.swift in Sources */,
@@ -1430,6 +1428,7 @@
 				93BA31952A7E4F7C004A0D2B /* VideoPostprocessor.swift in Sources */,
 				93B21B752A30C3A000689D0F /* CustomSegment.swift in Sources */,
 				93B21B642A30C3A000689D0F /* SettingDefaultFont.swift in Sources */,
+				93A90E6D2AE15909002287D2 /* CanvasCell.swift in Sources */,
 				93B21B942A30C3A000689D0F /* UIBarButtonItemExtensions.swift in Sources */,
 				93D539A62A9E2C5800A894FE /* AudioSession.swift in Sources */,
 				93B21B7E2A30C3A000689D0F /* UIAllertVC+Extension.swift in Sources */,
