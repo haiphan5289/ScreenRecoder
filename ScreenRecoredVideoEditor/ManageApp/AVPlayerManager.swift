@@ -9,6 +9,7 @@ import Foundation
 import AVFoundation
 import UIKit
 import RxSwift
+import EasyBaseAudio
 
 protocol AVPlayerManagerDelegate: AnyObject {
     func didFinishAVPlayer()
@@ -102,7 +103,7 @@ final class AVPlayerManager {
         return videoURL.getDuration()
     }
     
-    func loadVideoURL(videoURL: URL, videoView: UIView) {
+    func loadVideoURL(videoURL: URL, videoView: UIView, frame: CanvasView.CanasViewType = .noFrame) {
         do {
             videoView.subviews.forEach { view in
                 view.removeFromSuperview()
@@ -119,9 +120,61 @@ final class AVPlayerManager {
             
             //3. Create AVPlayerLayer object
             let playerLayer = AVPlayerLayer(player: self.player)
-            playerLayer.frame = videoView.bounds //bounds of the view in which AVPlayer should be displayed
+            playerLayer.frame = videoView.bounds//bounds of the view in which AVPlayer should be displayed
+            
+            switch frame {
+            case .noFrame: break
+            case .oneone:
+                let width = videoView.bounds.size.width
+                playerLayer.frame.size = CGSize(width: width, height: width)
+            case .fourfive:
+                let width = videoView.bounds.size.width
+                let height = width * (5/4)
+                playerLayer.frame.size = CGSize(width: width, height: height)
+            case .sixteennine:
+                let width = videoView.bounds.size.width
+                var height = width * (16/9)
+                
+                if height >= videoView.bounds.size.height {
+                    height = videoView.bounds.size.height
+                }
+                
+                playerLayer.frame.size = CGSize(width: width, height: height)
+            case .ninesixteeen:
+                let width = videoView.bounds.size.width
+                var height = width * (9/16)
+                
+                if height >= videoView.bounds.size.height {
+                    height = videoView.bounds.size.height
+                }
+                
+                playerLayer.frame.size = CGSize(width: width, height: height)
+            }
+            
             playerLayer.videoGravity = .resizeAspect
             playerLayer.player?.volume = 1
+            
+//            var scaleX: CGFloat = 1
+//            var scaleY: CGFloat = 1
+//            
+//            let sizeVideo = videoURL.getVideoResolution() ?? .zero
+//            
+//            let ratio = sizeVideo.width / sizeVideo.height
+//            
+//            if ratio < 1 && sizeVideo.width > videoView.frame.width {
+//                scaleX = videoView.frame.width / sizeVideo.width
+//            }
+//            
+//            if ratio > 1 && sizeVideo.height > videoView.frame.height {
+//                scaleY = videoView.frame.height / sizeVideo.height
+//            }
+//            
+//            
+//            let transform = CGAffineTransform.init(scaleX: scaleX, y: scaleY)
+//            playerLayer.setAffineTransform(transform)
+//            playerLayer.videoGravity = AVLayerVideoGravity.resize
+            videoView.layoutIfNeeded()
+            playerLayer.layoutIfNeeded()
             
             //4. Add playerLayer to view's layer
             videoView.layer.addSublayer(playerLayer)

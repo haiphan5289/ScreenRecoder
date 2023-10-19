@@ -18,6 +18,18 @@
 		93776C8B2AA4AA6200283140 /* ListFontDefaultVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93776C882AA4AA6200283140 /* ListFontDefaultVC.xib */; };
 		93776C8C2AA4AA6200283140 /* ListFontDefaultVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93776C892AA4AA6200283140 /* ListFontDefaultVM.swift */; };
 		93776C8D2AA4AA6200283140 /* ListFontDefaultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93776C8A2AA4AA6200283140 /* ListFontDefaultVC.swift */; };
+		937F66A62ACC4C20000FC4BA /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937F66A52ACC4C20000FC4BA /* CanvasView.swift */; };
+		937F66A82ACC4C2D000FC4BA /* CanvasView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 937F66A72ACC4C2D000FC4BA /* CanvasView.xib */; };
+		937F66AC2ACC4E22000FC4BA /* CanvasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937F66AA2ACC4E22000FC4BA /* CanvasCell.swift */; };
+		937F66AD2ACC4E22000FC4BA /* CanvasCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 937F66AB2ACC4E22000FC4BA /* CanvasCell.xib */; };
+		937F66B22ACC4F40000FC4BA /* CanvasFrame11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937F66B02ACC4F40000FC4BA /* CanvasFrame11.swift */; };
+		937F66B32ACC4F40000FC4BA /* CanvasFrame11.xib in Resources */ = {isa = PBXBuildFile; fileRef = 937F66B12ACC4F40000FC4BA /* CanvasFrame11.xib */; };
+		937F66B72ACC4F80000FC4BA /* CanvasFrame45.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937F66B52ACC4F80000FC4BA /* CanvasFrame45.swift */; };
+		937F66B82ACC4F80000FC4BA /* CanvasFrame45.xib in Resources */ = {isa = PBXBuildFile; fileRef = 937F66B62ACC4F80000FC4BA /* CanvasFrame45.xib */; };
+		937F66BC2ACC4FD7000FC4BA /* CanvasFrame169.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937F66BA2ACC4FD7000FC4BA /* CanvasFrame169.swift */; };
+		937F66BD2ACC4FD7000FC4BA /* CanvasFrame169.xib in Resources */ = {isa = PBXBuildFile; fileRef = 937F66BB2ACC4FD7000FC4BA /* CanvasFrame169.xib */; };
+		937F66C12ACC5032000FC4BA /* CanvasFrame916.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937F66BF2ACC5032000FC4BA /* CanvasFrame916.swift */; };
+		937F66C22ACC5032000FC4BA /* CanvasFrame916.xib in Resources */ = {isa = PBXBuildFile; fileRef = 937F66C02ACC5032000FC4BA /* CanvasFrame916.xib */; };
 		93B21B602A30C3A000689D0F /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B0D2A30C39700689D0F /* Storage.swift */; };
 		93B21B612A30C3A000689D0F /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B0E2A30C39700689D0F /* AppSettings.swift */; };
 		93B21B632A30C3A000689D0F /* GetHeightSafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B112A30C39700689D0F /* GetHeightSafeArea.swift */; };
@@ -227,6 +239,18 @@
 		93776C882AA4AA6200283140 /* ListFontDefaultVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListFontDefaultVC.xib; sourceTree = "<group>"; };
 		93776C892AA4AA6200283140 /* ListFontDefaultVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFontDefaultVM.swift; sourceTree = "<group>"; };
 		93776C8A2AA4AA6200283140 /* ListFontDefaultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFontDefaultVC.swift; sourceTree = "<group>"; };
+		937F66A52ACC4C20000FC4BA /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		937F66A72ACC4C2D000FC4BA /* CanvasView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CanvasView.xib; sourceTree = "<group>"; };
+		937F66AA2ACC4E22000FC4BA /* CanvasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasCell.swift; sourceTree = "<group>"; };
+		937F66AB2ACC4E22000FC4BA /* CanvasCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CanvasCell.xib; sourceTree = "<group>"; };
+		937F66B02ACC4F40000FC4BA /* CanvasFrame11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasFrame11.swift; sourceTree = "<group>"; };
+		937F66B12ACC4F40000FC4BA /* CanvasFrame11.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CanvasFrame11.xib; sourceTree = "<group>"; };
+		937F66B52ACC4F80000FC4BA /* CanvasFrame45.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasFrame45.swift; sourceTree = "<group>"; };
+		937F66B62ACC4F80000FC4BA /* CanvasFrame45.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CanvasFrame45.xib; sourceTree = "<group>"; };
+		937F66BA2ACC4FD7000FC4BA /* CanvasFrame169.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasFrame169.swift; sourceTree = "<group>"; };
+		937F66BB2ACC4FD7000FC4BA /* CanvasFrame169.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CanvasFrame169.xib; sourceTree = "<group>"; };
+		937F66BF2ACC5032000FC4BA /* CanvasFrame916.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasFrame916.swift; sourceTree = "<group>"; };
+		937F66C02ACC5032000FC4BA /* CanvasFrame916.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CanvasFrame916.xib; sourceTree = "<group>"; };
 		93B21B0D2A30C39700689D0F /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		93B21B0E2A30C39700689D0F /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		93B21B112A30C39700689D0F /* GetHeightSafeArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetHeightSafeArea.swift; sourceTree = "<group>"; };
@@ -458,6 +482,74 @@
 			path = ListFont;
 			sourceTree = "<group>";
 		};
+		937F66A42ACC4BFD000FC4BA /* Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				937F66A92ACC4E0B000FC4BA /* Cell */,
+				937F66A52ACC4C20000FC4BA /* CanvasView.swift */,
+				937F66A72ACC4C2D000FC4BA /* CanvasView.xib */,
+			);
+			path = Canvas;
+			sourceTree = "<group>";
+		};
+		937F66A92ACC4E0B000FC4BA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				937F66BE2ACC501F000FC4BA /* Frame916 */,
+				937F66B92ACC4FC2000FC4BA /* Frame169 */,
+				937F66B42ACC4F70000FC4BA /* Frame45 */,
+				937F66AF2ACC4F27000FC4BA /* Frame11 */,
+				937F66AE2ACC4F09000FC4BA /* Noframe */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		937F66AE2ACC4F09000FC4BA /* Noframe */ = {
+			isa = PBXGroup;
+			children = (
+				937F66AA2ACC4E22000FC4BA /* CanvasCell.swift */,
+				937F66AB2ACC4E22000FC4BA /* CanvasCell.xib */,
+			);
+			name = Noframe;
+			path = "Noảme";
+			sourceTree = "<group>";
+		};
+		937F66AF2ACC4F27000FC4BA /* Frame11 */ = {
+			isa = PBXGroup;
+			children = (
+				937F66B02ACC4F40000FC4BA /* CanvasFrame11.swift */,
+				937F66B12ACC4F40000FC4BA /* CanvasFrame11.xib */,
+			);
+			path = Frame11;
+			sourceTree = "<group>";
+		};
+		937F66B42ACC4F70000FC4BA /* Frame45 */ = {
+			isa = PBXGroup;
+			children = (
+				937F66B52ACC4F80000FC4BA /* CanvasFrame45.swift */,
+				937F66B62ACC4F80000FC4BA /* CanvasFrame45.xib */,
+			);
+			path = Frame45;
+			sourceTree = "<group>";
+		};
+		937F66B92ACC4FC2000FC4BA /* Frame169 */ = {
+			isa = PBXGroup;
+			children = (
+				937F66BA2ACC4FD7000FC4BA /* CanvasFrame169.swift */,
+				937F66BB2ACC4FD7000FC4BA /* CanvasFrame169.xib */,
+			);
+			path = Frame169;
+			sourceTree = "<group>";
+		};
+		937F66BE2ACC501F000FC4BA /* Frame916 */ = {
+			isa = PBXGroup;
+			children = (
+				937F66BF2ACC5032000FC4BA /* CanvasFrame916.swift */,
+				937F66C02ACC5032000FC4BA /* CanvasFrame916.xib */,
+			);
+			path = Frame916;
+			sourceTree = "<group>";
+		};
 		93B21B0B2A30C39700689D0F /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -653,6 +745,7 @@
 		93B21BC02A30C44400689D0F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				937F66A42ACC4BFD000FC4BA /* Canvas */,
 				93D8566E2ABC7A0D007C294E /* FilterVideo */,
 				93B768862AB0A5DB000EC8AE /* TrimVideo */,
 				93B21C022A30EB2A00689D0F /* VideoPlay */,
@@ -1112,13 +1205,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				937F66B82ACC4F80000FC4BA /* CanvasFrame45.xib in Resources */,
 				93B21BDD2A30C45700689D0F /* RecordFinishVC.xib in Resources */,
 				93B21BF02A30C45700689D0F /* FontsFree-Net-SFProDisplay-Bold.ttf in Resources */,
 				93CC36532A234CDD00DC2E4D /* LaunchScreen.storyboard in Resources */,
 				93B21BEA2A30C45700689D0F /* VideoEditorView.xib in Resources */,
+				937F66C22ACC5032000FC4BA /* CanvasFrame916.xib in Resources */,
 				93B21C062A30EB8200689D0F /* VideoPlayView.xib in Resources */,
 				93D539972A9E2A6600A894FE /* StreamCameraVC.xib in Resources */,
 				93CC36502A234CDD00DC2E4D /* Assets.xcassets in Resources */,
+				937F66B32ACC4F40000FC4BA /* CanvasFrame11.xib in Resources */,
 				93B21BE82A30C45700689D0F /* swiftgen.yml in Resources */,
 				93B91FAD2A474BFD001BC81E /* DeviceList.plist in Resources */,
 				93550A9C2A322013007E30A4 /* FacecamVC.xib in Resources */,
@@ -1126,7 +1222,9 @@
 				93776C8B2AA4AA6200283140 /* ListFontDefaultVC.xib in Resources */,
 				93B21BEE2A30C45700689D0F /* FontsFree-Net-SFProText-Semibold.ttf in Resources */,
 				93B7688A2AB0A624000EC8AE /* TrimVideoView.xib in Resources */,
+				937F66A82ACC4C2D000FC4BA /* CanvasView.xib in Resources */,
 				93550A972A321351007E30A4 /* video_check.mp4 in Resources */,
+				937F66BD2ACC4FD7000FC4BA /* CanvasFrame169.xib in Resources */,
 				93CC364E2A234CDB00DC2E4D /* Main.storyboard in Resources */,
 				93B21BED2A30C45700689D0F /* FontsFree-Net-SFProText-Regular.ttf in Resources */,
 				93D856792ABC9111007C294E /* FilterVideoCell.xib in Resources */,
@@ -1135,6 +1233,7 @@
 				93B21BE62A30C45700689D0F /* ScreenRecorderVC.xib in Resources */,
 				93C15BAF2ABB297A0001BE56 /* EditorVideoVC.xib in Resources */,
 				93B21BDF2A30C45700689D0F /* HomeVCVC.xib in Resources */,
+				937F66AD2ACC4E22000FC4BA /* CanvasCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1272,10 +1371,13 @@
 				93D5399C2A9E2AD700A894FE /* StartStreamView.swift in Sources */,
 				93B21B7D2A30C3A000689D0F /* ViewExtension.swift in Sources */,
 				93B21B992A30C3A000689D0F /* UINavigationBarExtensions.swift in Sources */,
+				937F66A62ACC4C20000FC4BA /* CanvasView.swift in Sources */,
 				93B21BA32A30C3A000689D0F /* UILabelExtensions.swift in Sources */,
 				93776C8D2AA4AA6200283140 /* ListFontDefaultVC.swift in Sources */,
+				937F66B72ACC4F80000FC4BA /* CanvasFrame45.swift in Sources */,
 				93B21BF52A30C45700689D0F /* NavigationProtocol.swift in Sources */,
 				93B21B792A30C3A000689D0F /* URL+Extension.swift in Sources */,
+				937F66B22ACC4F40000FC4BA /* CanvasFrame11.swift in Sources */,
 				93B21B982A30C3A000689D0F /* ColorExtensions.swift in Sources */,
 				93CC36472A234CDB00DC2E4D /* AppDelegate.swift in Sources */,
 				93B21BFE2A30E70B00689D0F /* ResultURLModel.swift in Sources */,
@@ -1289,6 +1391,7 @@
 				93B21BA82A30C3A000689D0F /* UIRefreshControlExtensions.swift in Sources */,
 				93D539982A9E2A6600A894FE /* StreamCameraVM.swift in Sources */,
 				93B21BE92A30C45700689D0F /* VideoEditorView.swift in Sources */,
+				937F66AC2ACC4E22000FC4BA /* CanvasCell.swift in Sources */,
 				93B21B902A30C3A000689D0F /* UIView+Extension.swift in Sources */,
 				93B21B8D2A30C3A000689D0F /* UILayoutPriorityExtensions.swift in Sources */,
 				93B21BEC2A30C45700689D0F /* Assets-Gen.swift in Sources */,
@@ -1313,6 +1416,7 @@
 				93B21B8F2A30C3A000689D0F /* UIStackViewExtensions.swift in Sources */,
 				93B21B872A30C3A000689D0F /* LabelExtension.swift in Sources */,
 				93B21B9E2A30C3A000689D0F /* UINavigationControllerExtensions.swift in Sources */,
+				937F66BC2ACC4FD7000FC4BA /* CanvasFrame169.swift in Sources */,
 				93B21B822A30C3A000689D0F /* StringExtension.swift in Sources */,
 				93B21B772A30C3A000689D0F /* DecimalNumber+Extension.swift in Sources */,
 				93550A9D2A322013007E30A4 /* FaceCamVM.swift in Sources */,
@@ -1336,6 +1440,7 @@
 				93B21BF32A30C45700689D0F /* SetUpBase.swift in Sources */,
 				93B21B832A30C3A000689D0F /* CodableExtension.swift in Sources */,
 				93B21B6B2A30C3A000689D0F /* UIWindow+Extension.swift in Sources */,
+				937F66C12ACC5032000FC4BA /* CanvasFrame916.swift in Sources */,
 				93B21BA42A30C3A000689D0F /* UISwitchExtensions.swift in Sources */,
 				93B21B6C2A30C3A000689D0F /* UILableExtension.swift in Sources */,
 				93D856782ABC9111007C294E /* FilterVideoCell.swift in Sources */,

@@ -38,6 +38,7 @@ class RecordFinishVC: BaseVC, PlayVideoProtocel, NavigationProtocol {
     @IBOutlet weak var trimActionButton: UIButton!
     @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var rotateButton: UIButton!
+    @IBOutlet weak var canvasButton: UIButton!
     // Add here your view model
     private var viewModel: RecordFinishVM = RecordFinishVM()
     private let videoPlayView: VideoPlayView = .loadXib()
@@ -170,6 +171,14 @@ extension RecordFinishVC {
                 case .pi4:
                     owner.rotateVideo(inputVideo: inputVideo, rotate: .pi4)
                     owner.rotateCurrent = .pi
+                }
+            }.disposed(by: disposeBag)
+        
+        canvasButton.rx.tap
+            .withUnretained(self)
+            .bind { owner, _ in
+                if let url = owner.inputURL {
+                    owner.moveToEditorVideo(inputURL: url, delegate: owner, editorVideoType: .canvas)
                 }
             }.disposed(by: disposeBag)
         

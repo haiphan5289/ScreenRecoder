@@ -22,7 +22,7 @@ protocol EditorVideoDelegate: AnyObject {
 class EditorVideoVC: BaseVC, PlayVideoProtocel {
     
     enum EditorVideoType {
-        case trim, filter
+        case trim, filter, canvas
     }
     
     //delegate
@@ -34,10 +34,12 @@ class EditorVideoVC: BaseVC, PlayVideoProtocel {
     @IBOutlet weak var contentVideo: UIView!
     @IBOutlet weak var trimContentVideo: UIView!
     @IBOutlet weak var filterContentView: UIView!
+    @IBOutlet weak var canvasContentView: UIView!
     private let videoPlayView: VideoPlayView = .loadXib()
     private var playVideo: AVPlayer = AVPlayer()
     private let trimEditorView: TrimVideoView = .loadXib()
     private let filterVideoView: FilterVideoView = .loadXib()
+    private let canvasView: CanvasView = .loadXib()
     
     // Add here your view model
     private var viewModel: EditorVideoVM = EditorVideoVM()
@@ -83,8 +85,14 @@ extension EditorVideoVC {
         trimEditorView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        
         filterContentView.addSubview(filterVideoView)
         filterVideoView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        canvasContentView.addSubview(canvasView)
+        canvasView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         switch editorVideoType {
@@ -95,13 +103,14 @@ extension EditorVideoVC {
             }
             trimEditorView.updateInputVideo = { [weak self] outputVideo in
                 guard let self = self else { return }
-                videoPlayView.playURL(url: outputVideo)
+                self.videoPlayView.playURL(url: outputVideo)
             }
             trimEditorView.outputVideo = { [weak self] outputVideo in
                 guard let self = self else { return }
                 self.handlePopViewController(outputVideo: outputVideo)
             }
         case .filter:
+            filterContentView.isHidden = false
             if let inputVideo = self.inputVideo {
                 filterVideoView.setCurrentURL(url: inputVideo)
             }
@@ -112,12 +121,20 @@ extension EditorVideoVC {
             }
             filterVideoView.videoFilter = { [weak self] outputURL in
                 guard let self = self else { return }
-                videoPlayView.playURL(url: outputURL)
+                self.videoPlayView.playURL(url: outputURL)
             }
             filterVideoView.isProcessing = { [weak self] isLoading in
                 guard let self = self else { return }
                 self.loadingTrigger.accept(isLoading)
             }
+        case .canvas:
+            canvasView.isHidden = false
+            canvasView.inputVideo = self.inputVideo
+            canvasView.changeVideoURL = { [weak self] changeVideo, type in
+                guard let self = self else { return }
+                self.videoPlayView.playURL(url: changeVideo, frame: type)
+            }
+            
         }
     }
     

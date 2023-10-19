@@ -71,11 +71,11 @@ extension VideoPlayView {
 //            }.disposed(by: disposeBag)
     }
     
-    func playURL(url: URL) {
+    func playURL(url: URL, frame: CanvasView.CanasViewType = .noFrame) {
         pauseVideo()
         layoutIfNeeded()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            self.avplayerManager.loadVideoURL(videoURL: url, videoView: self.videoView)
+            self.avplayerManager.loadVideoURL(videoURL: url, videoView: self.videoView, frame: frame)
             self.avplayerManager.doAVPlayer(action: .play)
         }
     }

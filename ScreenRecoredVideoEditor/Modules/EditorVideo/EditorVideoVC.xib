@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditorVideoVC" customModule="ScreenRecoredVideoEditor" customModuleProvider="target">
             <connections>
+                <outlet property="canvasContentView" destination="v5C-51-84k" id="Ut6-Cc-176"/>
                 <outlet property="contentVideo" destination="Nqi-cd-iRp" id="6fr-zX-Fmu"/>
                 <outlet property="filterContentView" destination="4rv-RG-EMT" id="Usu-22-L2r"/>
                 <outlet property="trimContentVideo" destination="8Jx-S8-c9f" id="uIY-tF-nSQ"/>
@@ -54,11 +55,18 @@
                                 <constraint firstAttribute="height" constant="50" placeholder="YES" id="1RK-qg-hf3"/>
                             </constraints>
                         </view>
-                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rv-RG-EMT">
+                        <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rv-RG-EMT">
                             <rect key="frame" x="0.0" y="764" width="414" height="50"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" placeholder="YES" id="2gJ-MO-nrm"/>
+                            </constraints>
+                        </view>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v5C-51-84k">
+                            <rect key="frame" x="0.0" y="764" width="414" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" placeholder="YES" id="7FD-X7-vT4"/>
                             </constraints>
                         </view>
                     </subviews>

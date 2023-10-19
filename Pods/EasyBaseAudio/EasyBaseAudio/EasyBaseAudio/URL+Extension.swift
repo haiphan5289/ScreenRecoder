@@ -17,6 +17,12 @@ public extension URL {
         return self.deletingPathExtension().lastPathComponent
     }
     
+    func getVideoResolution() -> CGSize? {
+        guard let track = AVURLAsset(url: self).tracks(withMediaType: AVMediaType.video).first else { return nil }
+           let size = track.naturalSize.applying(track.preferredTransform)
+           return CGSize(width: abs(size.width), height: abs(size.height))
+    }
+    
     func getThumbnailImage() -> UIImage? {
         let asset: AVAsset = AVAsset(url: self)
         let imageGenerator = AVAssetImageGenerator(asset: asset)

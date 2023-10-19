@@ -555,6 +555,115 @@ public class AudioManage {
         })
         return
     }
+    
+    public func suqareCropVideo(videoURL: URL, withSide sideLength: CGFloat, completion: @escaping (_ resultURL: URL?, _ error: Error?) -> ()) {
+
+//        let videoAssetTrack = AVAsset(url: videoURL)
+//        if var videoTrack = videoAssetTrack.tracks(withMediaType: .video).last {
+//
+//            //transform video
+//                let rotationTransform = CGAffineTransform(rotationAngle: .pi)
+////                videoTrack.preferredTransform = rotationTransform;
+//
+//                let layerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
+//            layerInstruction.setTransform(videoAssetTrack.preferredTransform, at: .zero)
+//
+//                let videoCompositionInstruction = AVMutableVideoCompositionInstruction()
+//            videoCompositionInstruction.timeRange = CMTimeRangeMake(start: .zero, duration: videoAssetTrack.duration)
+//                videoCompositionInstruction.layerInstructions = [layerInstruction]
+//
+//                let videoComposition = AVMutableVideoComposition()
+//                videoComposition.instructions = [videoCompositionInstruction]
+//                videoComposition.frameDuration = CMTime(value: 1, timescale: 30)
+//                videoComposition.renderSize = CGSize(width: 200, height: 200)
+//
+//                //saving...
+//                guard let exportSession = AVAssetExportSession(asset: videoComposition, presetName: AVAssetExportPresetMediumQuality) else { return }
+//                //exportSession.outputURL = your output url
+//                exportSession.videoComposition = videoComposition
+//
+//            if let export = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetHighestQuality) {
+//                export.videoComposition = videoComposition
+//                export.outputURL = NSURL.fileURL(withPath: "\(NSTemporaryDirectory())\(NSUUID().uuidString).mp4")
+//                export.outputFileType = AVFileType.mp4
+//                export.shouldOptimizeForNetworkUse = true
+//                export.exportAsynchronously {
+//                    DispatchQueue.main.async {
+//                        if export.status == .completed {
+//                            completion(export.outputURL, nil)
+//                        } else {
+//                            completion(nil, export.error)
+//                        }
+//                    }
+//                }
+//            } else {
+//                completion(nil, nil)
+//            }
+//        }
+
+    }
+    
+    public func changeSizeVideo(videoUrl: URL,
+                             folderName: String,
+                             success: @escaping ((URL) -> Void), failure: @escaping ((Error?) -> Void))
+    {
+        let videoAsset = AVAsset(url: videoUrl) as AVAsset
+        let clipVideoTrack = videoAsset.tracks(withMediaType: AVMediaType.video).first! as AVAssetTrack
+
+                let composition = AVMutableComposition()
+        composition.addMutableTrack(withMediaType: AVMediaType.video, preferredTrackID: CMPersistentTrackID())
+
+                let videoComposition = AVMutableVideoComposition()
+        videoComposition.renderSize = clipVideoTrack.naturalSize
+        videoComposition.frameDuration = CMTimeMake(value: 1, timescale: 30)
+
+                let instruction = AVMutableVideoCompositionInstruction()
+        instruction.timeRange = CMTimeRangeMake(start: CMTime.zero, duration: CMTimeMakeWithSeconds(180, preferredTimescale: 30))
+
+                let transformer : AVMutableVideoCompositionLayerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: clipVideoTrack)
+
+//                let t1 = CGAffineTransformMakeTranslation(360, 0)
+//                let t2 = CGAffineTransformRotate(t1, CGFloat(M_PI_2))
+        //        let t2 = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
+        let t2 = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        transformer.setTransform(t2, at: CMTime.zero)
+                instruction.layerInstructions = [transformer]
+                videoComposition.instructions = [instruction]
+
+
+        let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+                let date = NSDate()
+
+        let outputURL = self.createURL(folder: folderName, name: "ádasd", type: .mp4)
+        
+        do { // delete old video
+                try FileManager.default.removeItem(at: outputURL)
+            } catch { print(error.localizedDescription) }
+
+                let exporter = AVAssetExportSession(asset: videoAsset, presetName: AVAssetExportPresetHighestQuality)
+                exporter!.videoComposition = videoComposition
+                exporter!.outputURL = outputURL
+        exporter?.outputFileType = AVFileType.mov
+        exporter!.exportAsynchronously { () -> Void in
+            DispatchQueue.main.async {
+                switch exporter!.status {
+                
+                case AVAssetExportSession.Status.completed:
+                    
+                    //Uncomment this if u want to store your video in asset
+                    
+                    //let assetsLib = ALAssetsLibrary()
+                    //assetsLib.writeVideoAtPathToSavedPhotosAlbum(savePathUrl, completionBlock: nil)
+                    UISaveVideoAtPathToSavedPhotosAlbum(outputURL.path,nil, nil, nil)
+                    success(outputURL)
+                default:
+                    failure(exporter!.error)
+                }
+            }
+        }
+    }
+    
     /// Merges video and sound while keeping sound of the video too
     ///
     /// - Parameters:
