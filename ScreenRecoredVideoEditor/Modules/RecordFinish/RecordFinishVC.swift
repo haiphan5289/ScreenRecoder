@@ -39,6 +39,7 @@ class RecordFinishVC: BaseVC, PlayVideoProtocel, NavigationProtocol {
     @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var rotateButton: UIButton!
     @IBOutlet weak var canvasButton: UIButton!
+    @IBOutlet weak var speedButton: UIButton!
     // Add here your view model
     private var viewModel: RecordFinishVM = RecordFinishVM()
     private let videoPlayView: VideoPlayView = .loadXib()
@@ -149,6 +150,14 @@ extension RecordFinishVC {
             .bind { owner, _ in
                 if let url = owner.inputURL {
                     owner.moveToEditorVideo(inputURL: url, delegate: owner, editorVideoType: .filter)
+                }
+            }.disposed(by: disposeBag)
+        
+        speedButton.rx.tap
+            .withUnretained(self)
+            .bind { owner, _ in
+                if let url = owner.inputURL {
+                    owner.moveToEditorVideo(inputURL: url, delegate: owner, editorVideoType: .speed)
                 }
             }.disposed(by: disposeBag)
         

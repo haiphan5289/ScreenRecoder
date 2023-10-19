@@ -166,6 +166,12 @@ public class WaveformZoomable : UIView {
     }
     
     public func listPointtoDraw(file: URL, colorShow: UIColor, colorDisappear: UIColor, viewSoundWave: ViewSoundWave, comlention: ((([PointWave]) -> Void)?) ) {
+        let viewWidth = bounds.width
+        
+        guard viewWidth > 0 else {
+            return
+        }
+        
         self.clipsToBounds = true
         self.isLoading = true
         self.colorShow = colorShow
@@ -196,13 +202,18 @@ public class WaveformZoomable : UIView {
         
         //        if !readFile.populated { return }
         
-        let viewWidth = bounds.width
+        
         
         let sampleCount = Int(Float(readFile.floatValuesLeft.count) * zoomFactor)
         //        print(sampleCount)
         
         // grab every nth sample (samplesPerPixel)
-        var  samplesPerPixel = Int(floor(Float(sampleCount) / Float(viewWidth)))
+        var samplesPerPixel = 0
+        
+        if !(Float(sampleCount).isNaN || Float(sampleCount).isInfinite)  {
+            samplesPerPixel = Int(floor(Float(sampleCount) / Float(viewWidth)))
+        }
+        
         //        print(samplesPerPixel)
         
         // the expected sample count

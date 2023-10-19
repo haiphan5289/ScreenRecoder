@@ -22,7 +22,7 @@ protocol EditorVideoDelegate: AnyObject {
 class EditorVideoVC: BaseVC, PlayVideoProtocel {
     
     enum EditorVideoType {
-        case trim, filter, canvas
+        case trim, filter, canvas, speed
     }
     
     //delegate
@@ -35,11 +35,13 @@ class EditorVideoVC: BaseVC, PlayVideoProtocel {
     @IBOutlet weak var trimContentVideo: UIView!
     @IBOutlet weak var filterContentView: UIView!
     @IBOutlet weak var canvasContentView: UIView!
+    @IBOutlet weak var speedCotainerView: UIView!
     private let videoPlayView: VideoPlayView = .loadXib()
     private var playVideo: AVPlayer = AVPlayer()
     private let trimEditorView: TrimVideoView = .loadXib()
     private let filterVideoView: FilterVideoView = .loadXib()
     private let canvasView: CanvasView = .loadXib()
+    private let speedView: SpeedVideo = .loadXib()
     
     // Add here your view model
     private var viewModel: EditorVideoVM = EditorVideoVM()
@@ -95,6 +97,12 @@ extension EditorVideoVC {
         canvasView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        
+        speedCotainerView.addSubview(speedView)
+        speedView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
         switch editorVideoType {
         case .trim:
             trimContentVideo.isHidden = false
@@ -128,11 +136,24 @@ extension EditorVideoVC {
                 self.loadingTrigger.accept(isLoading)
             }
         case .canvas:
-            canvasView.isHidden = false
+            canvasContentView.isHidden = false
             canvasView.inputVideo = self.inputVideo
             canvasView.changeVideoURL = { [weak self] changeVideo, type in
                 guard let self = self else { return }
                 self.videoPlayView.playURL(url: changeVideo, frame: type)
+            }
+        case .speed:
+            speedCotainerView.isHidden = false
+            if let inputVideo = self.inputVideo {
+                speedView.setupVideo(url: inputVideo)
+            }
+            speedView.changeVideo = { [weak self] outputVideo in
+                guard let self = self else { return }
+                self.videoPlayView.playURL(url: outputVideo)
+            }
+            speedView.outputVideo = { [weak self] outputURL in
+                guard let self = self else { return }
+                self.handlePopViewController(outputVideo: outputURL)
             }
             
         }

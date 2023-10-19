@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="FontsFree-Net-SFProDisplay-Bold.ttf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SpeedVideo" customModule="ScreenRecoredVideoEditor" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="t9o-Tp-r6k">
+                    <rect key="frame" x="16" y="13" width="361" height="790"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lGE-wt-wDW">
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="740"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXo-ZU-HZI">
+                                    <rect key="frame" x="0.0" y="363" width="337" height="14.333333333333314"/>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxO-51-mTf">
+                                    <rect key="frame" x="337" y="358" width="24" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="24" id="7fT-N9-Ncb"/>
+                                        <constraint firstAttribute="height" constant="24" id="Nie-ms-vnY"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="ic_done"/>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVf-Or-Mrt">
+                            <rect key="frame" x="0.0" y="740" width="361" height="50"/>
+                            <subviews>
+                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="MD9-8l-5i2">
+                                    <rect key="frame" x="-2" y="0.0" width="365" height="51"/>
+                                </slider>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="MD9-8l-5i2" firstAttribute="top" secondItem="wVf-Or-Mrt" secondAttribute="top" id="2SR-4f-j21"/>
+                                <constraint firstAttribute="trailing" secondItem="MD9-8l-5i2" secondAttribute="trailing" id="ASX-71-cvo"/>
+                                <constraint firstItem="MD9-8l-5i2" firstAttribute="leading" secondItem="wVf-Or-Mrt" secondAttribute="leading" id="Z0c-FH-rgB"/>
+                                <constraint firstAttribute="bottom" secondItem="MD9-8l-5i2" secondAttribute="bottom" id="zdq-d9-3r9"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="t9o-Tp-r6k" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="13" id="Tne-rT-zW4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="t9o-Tp-r6k" secondAttribute="trailing" constant="16" id="bWX-dn-rnl"/>
+                <constraint firstItem="t9o-Tp-r6k" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="cLr-6r-bzV"/>
+                <constraint firstAttribute="bottom" secondItem="t9o-Tp-r6k" secondAttribute="bottom" constant="49" id="yeE-kv-1m5"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="doneButton" destination="rxO-51-mTf" id="ada-No-sWi"/>
+                <outlet property="speedSlider" destination="MD9-8l-5i2" id="N97-u6-3tJ"/>
+            </connections>
+            <point key="canvasLocation" x="138" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_done" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

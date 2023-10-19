@@ -433,6 +433,67 @@ public class AudioManage {
         UISaveVideoAtPathToSavedPhotosAlbum(savePathUrl.path,nil, nil, nil)
     }
     
+    public func speedUpVideo(url: URL, speed: Float, completion: @escaping (_ url: URL) -> Void) {
+            do {
+                let asset = AVAsset(url: url)
+                
+                guard let videoTrack = asset.tracks(withMediaType: .video).first else { return }
+                guard let audioTrack = asset.tracks(withMediaType: .audio).first else { return }
+                
+                let speedComposition = AVMutableComposition()
+                let speedVideoTrack = speedComposition.addMutableTrack(withMediaType: .video, preferredTrackID: kCMPersistentTrackID_Invalid)
+                let speedAudioTrack = speedComposition.addMutableTrack(withMediaType: .audio, preferredTrackID: kCMPersistentTrackID_Invalid)
+                
+                speedVideoTrack?.preferredTransform = videoTrack.preferredTransform
+                
+                let assetTimeRange = CMTimeRange(start: .zero, duration: asset.duration)
+                
+                try speedVideoTrack?.insertTimeRange(assetTimeRange, of: videoTrack, at: .zero)
+                try speedAudioTrack?.insertTimeRange(assetTimeRange, of: audioTrack, at: .zero)
+                
+                var multiplier = speed
+                
+                if speed >= 1 {
+                    multiplier = 1 / speed
+                }
+                
+                if speed < 1 && speed > 0.5 {
+                    multiplier = 1.5
+                }
+                
+                if speed <= 0.5 {
+                    multiplier = 2
+                }
+                
+                let newDuration = CMTimeMultiplyByFloat64(assetTimeRange.duration, multiplier: Float64(multiplier))
+                
+                speedVideoTrack?.scaleTimeRange(assetTimeRange, toDuration: newDuration)
+                speedAudioTrack?.scaleTimeRange(assetTimeRange, toDuration: newDuration)
+                
+                let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateStyle = .long
+                dateFormatter.timeStyle = .long
+                let date = dateFormatter.string(from: NSDate() as Date)
+                let savePath = (documentDirectory as NSString).appendingPathComponent("storySocial-\(date).mp4")
+                let url = NSURL(fileURLWithPath: savePath)
+                
+                guard let exporter = AVAssetExportSession(asset: speedComposition, presetName: AVAssetExportPreset1920x1080) else { return }
+                exporter.outputURL = url as URL
+                exporter.outputFileType = .mp4
+                exporter.shouldOptimizeForNetworkUse = true
+                exporter.exportAsynchronously {
+                    guard let url = exporter.outputURL else {
+                        print("ERROR")
+                        return
+                    }
+                    completion(url)
+                }
+            } catch {
+                print("ERRRRROOORRRR")
+            }
+        }
+    
     
     //MARK: Merge AUDIO
     public func cropVideo(sourceURL: URL,

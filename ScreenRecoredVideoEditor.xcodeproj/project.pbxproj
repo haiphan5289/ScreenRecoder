@@ -30,6 +30,8 @@
 		937F66C22ACC5032000FC4BA /* CanvasFrame916.xib in Resources */ = {isa = PBXBuildFile; fileRef = 937F66C02ACC5032000FC4BA /* CanvasFrame916.xib */; };
 		93A90E6C2AE15909002287D2 /* CanvasCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93A90E6A2AE15909002287D2 /* CanvasCell.xib */; };
 		93A90E6D2AE15909002287D2 /* CanvasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A90E6B2AE15909002287D2 /* CanvasCell.swift */; };
+		93A90E702AE159EF002287D2 /* SpeedVideo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93A90E6F2AE159EF002287D2 /* SpeedVideo.xib */; };
+		93A90E722AE159FA002287D2 /* SpeedVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A90E712AE159FA002287D2 /* SpeedVideo.swift */; };
 		93B21B602A30C3A000689D0F /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B0D2A30C39700689D0F /* Storage.swift */; };
 		93B21B612A30C3A000689D0F /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B0E2A30C39700689D0F /* AppSettings.swift */; };
 		93B21B632A30C3A000689D0F /* GetHeightSafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21B112A30C39700689D0F /* GetHeightSafeArea.swift */; };
@@ -251,6 +253,8 @@
 		937F66C02ACC5032000FC4BA /* CanvasFrame916.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CanvasFrame916.xib; sourceTree = "<group>"; };
 		93A90E6A2AE15909002287D2 /* CanvasCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CanvasCell.xib; sourceTree = "<group>"; };
 		93A90E6B2AE15909002287D2 /* CanvasCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasCell.swift; sourceTree = "<group>"; };
+		93A90E6F2AE159EF002287D2 /* SpeedVideo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeedVideo.xib; sourceTree = "<group>"; };
+		93A90E712AE159FA002287D2 /* SpeedVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedVideo.swift; sourceTree = "<group>"; };
 		93B21B0D2A30C39700689D0F /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		93B21B0E2A30C39700689D0F /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		93B21B112A30C39700689D0F /* GetHeightSafeArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetHeightSafeArea.swift; sourceTree = "<group>"; };
@@ -549,6 +553,15 @@
 			path = Noframe;
 			sourceTree = "<group>";
 		};
+		93A90E6E2AE159DB002287D2 /* Speed */ = {
+			isa = PBXGroup;
+			children = (
+				93A90E6F2AE159EF002287D2 /* SpeedVideo.xib */,
+				93A90E712AE159FA002287D2 /* SpeedVideo.swift */,
+			);
+			path = Speed;
+			sourceTree = "<group>";
+		};
 		93B21B0B2A30C39700689D0F /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -744,6 +757,7 @@
 		93B21BC02A30C44400689D0F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				93A90E6E2AE159DB002287D2 /* Speed */,
 				937F66A42ACC4BFD000FC4BA /* Canvas */,
 				93D8566E2ABC7A0D007C294E /* FilterVideo */,
 				93B768862AB0A5DB000EC8AE /* TrimVideo */,
@@ -1207,6 +1221,7 @@
 				937F66B82ACC4F80000FC4BA /* CanvasFrame45.xib in Resources */,
 				93B21BDD2A30C45700689D0F /* RecordFinishVC.xib in Resources */,
 				93B21BF02A30C45700689D0F /* FontsFree-Net-SFProDisplay-Bold.ttf in Resources */,
+				93A90E702AE159EF002287D2 /* SpeedVideo.xib in Resources */,
 				93CC36532A234CDD00DC2E4D /* LaunchScreen.storyboard in Resources */,
 				93B21BEA2A30C45700689D0F /* VideoEditorView.xib in Resources */,
 				937F66C22ACC5032000FC4BA /* CanvasFrame916.xib in Resources */,
@@ -1402,6 +1417,7 @@
 				93BA318F2A7E4F7C004A0D2B /* MixerConvert.m in Sources */,
 				93B21BA02A30C3A000689D0F /* UIGestureRecognizerExtensions.swift in Sources */,
 				93B21B882A30C3A000689D0F /* DateExtension.swift in Sources */,
+				93A90E722AE159FA002287D2 /* SpeedVideo.swift in Sources */,
 				93B21BAB2A30C3A000689D0F /* UIDatePickerExtensions.swift in Sources */,
 				93B21B682A30C3A000689D0F /* RowDetailGeneric.swift in Sources */,
 				93B21B892A30C3A000689D0F /* UISearchBarExtensions.swift in Sources */,
