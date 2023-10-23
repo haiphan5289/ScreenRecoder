@@ -18,6 +18,7 @@ class TrimVideoView: UIView {
     
     @IBOutlet weak var videoRanger: ABVideoRangeSlider!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var headerStackView: UIStackView!
     private var trimVideoTrigger: PublishSubject<RangeTimeSlider> = PublishSubject.init()
     private var trimURL: URL?
     private var outputURL: URL?
@@ -63,6 +64,10 @@ extension TrimVideoView {
                 }
                 owner.outputVideo?(url)
             }.disposed(by: disposeBag)
+    }
+    
+    func hiddenHeaderStackView(isHidden: Bool) {
+        headerStackView.isHidden = isHidden
     }
     
     func updateURLVideo(url: URL) {

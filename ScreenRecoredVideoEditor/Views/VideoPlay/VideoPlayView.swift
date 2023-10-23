@@ -18,6 +18,7 @@ class VideoPlayView: UIView, PlayVideoProtocel {
     
     var didFinishAVPlayerHandler: (() -> Void)?
     var timeProcessHandler: ((Double) -> Void)?
+    var getDuration: ((Double) -> Void)?
     
     @IBOutlet weak var bgVideoImage: UIImageView!
     @IBOutlet weak var bgContentView: UIView!
@@ -80,6 +81,14 @@ extension VideoPlayView {
         }
     }
     
+    func handleEndPlayer() {
+        self.avplayerManager.handeEndPlayer()
+    }
+    
+    func playToTime(value: Float) {
+        self.avplayerManager.playToTime(value: value)
+    }
+    
     func pauseVideo() {
         self.avplayerManager.doAVPlayer(action: .pause)
         self.bgVideoImage.isHidden = true
@@ -122,6 +131,6 @@ extension VideoPlayView: AVPlayerManagerDelegate {
     }
     
     func getDuration(value: Double) {
-        
+        self.getDuration?(value)
     }
 }

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="FontsFree-Net-SFProText-Medium.ttf">
+            <string>SFProText-Medium</string>
+        </array>
+        <array key="FontsFree-Net-SFProText-Semibold.ttf">
+            <string>SFProText-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PresentCommentaryVC" customModule="ScreenRecoredVideoEditor" customModuleProvider="target">
+            <connections>
+                <outlet property="cameraButton" destination="DGn-iW-Jvv" id="pZd-si-nCR"/>
+                <outlet property="containerDataView" destination="7Zr-eP-Czs" id="lql-Dh-XUs"/>
+                <outlet property="myRecordingButton" destination="7dc-eW-SJa" id="RS4-8l-7gI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Zr-eP-Czs">
+                    <rect key="frame" x="0.0" y="464" width="414" height="432"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="C9I-p2-ib0">
+                            <rect key="frame" x="16" y="16" width="382" height="384"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ocA-V5-5Up">
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="128"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="s8t-fH-DrW">
+                                            <rect key="frame" x="16" y="12" width="350" height="90"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select video source" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tln-Z8-vBU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="61"/>
+                                                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add commentary to videos from Screen Recordings or Camera Roll" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gL-Ij-cAW">
+                                                    <rect key="frame" x="0.0" y="61" width="350" height="29"/>
+                                                    <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="12"/>
+                                                    <color key="textColor" name="939597"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="s8t-fH-DrW" secondAttribute="bottom" constant="26" id="72X-w7-DIX"/>
+                                        <constraint firstItem="s8t-fH-DrW" firstAttribute="leading" secondItem="ocA-V5-5Up" secondAttribute="leading" constant="16" id="AQC-yj-Yqi"/>
+                                        <constraint firstItem="s8t-fH-DrW" firstAttribute="top" secondItem="ocA-V5-5Up" secondAttribute="top" constant="12" id="Aa3-Ep-RsO"/>
+                                        <constraint firstAttribute="trailing" secondItem="s8t-fH-DrW" secondAttribute="trailing" constant="16" id="res-xE-Gwm"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ve-Nx-zVy">
+                                    <rect key="frame" x="0.0" y="128" width="382" height="128"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qjd-DW-pMG">
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="1"/>
+                                            <color key="backgroundColor" name="C1C1C1"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="KQL-1Q-lHd"/>
+                                            </constraints>
+                                        </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dc-eW-SJa">
+                                            <rect key="frame" x="133.5" y="17" width="115" height="94"/>
+                                            <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="My Recordings">
+                                                <color key="titleColor" name="177CEF"/>
+                                            </state>
+                                        </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqV-az-hOS">
+                                            <rect key="frame" x="0.0" y="127" width="382" height="1"/>
+                                            <color key="backgroundColor" name="C1C1C1"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="f7J-Em-qg3"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="7dc-eW-SJa" firstAttribute="top" secondItem="Qjd-DW-pMG" secondAttribute="bottom" constant="16" id="AQA-08-Shh"/>
+                                        <constraint firstItem="Qjd-DW-pMG" firstAttribute="top" secondItem="0ve-Nx-zVy" secondAttribute="top" id="NDb-5q-PoY"/>
+                                        <constraint firstItem="qqV-az-hOS" firstAttribute="leading" secondItem="0ve-Nx-zVy" secondAttribute="leading" id="VKw-Rr-UZx"/>
+                                        <constraint firstAttribute="bottom" secondItem="qqV-az-hOS" secondAttribute="bottom" id="Xf0-md-Zmu"/>
+                                        <constraint firstAttribute="trailing" secondItem="Qjd-DW-pMG" secondAttribute="trailing" id="Yvh-i3-IwW"/>
+                                        <constraint firstItem="qqV-az-hOS" firstAttribute="top" secondItem="7dc-eW-SJa" secondAttribute="bottom" constant="16" id="ne2-Xj-cjn"/>
+                                        <constraint firstItem="Qjd-DW-pMG" firstAttribute="leading" secondItem="0ve-Nx-zVy" secondAttribute="leading" id="tcE-If-z7X"/>
+                                        <constraint firstAttribute="trailing" secondItem="qqV-az-hOS" secondAttribute="trailing" id="uKR-fB-LE9"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y3E-WW-eom">
+                                    <rect key="frame" x="0.0" y="256" width="382" height="128"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGn-iW-Jvv">
+                                            <rect key="frame" x="144.5" y="16" width="93" height="95"/>
+                                            <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Camera Roll">
+                                                <color key="titleColor" name="177CEF"/>
+                                            </state>
+                                        </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M4E-Qv-70g">
+                                            <rect key="frame" x="0.0" y="127" width="382" height="1"/>
+                                            <color key="backgroundColor" name="C1C1C1"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="Jix-N5-R96"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="DGn-iW-Jvv" firstAttribute="top" secondItem="y3E-WW-eom" secondAttribute="top" constant="16" id="944-yU-HmE"/>
+                                        <constraint firstAttribute="trailing" secondItem="M4E-Qv-70g" secondAttribute="trailing" id="kjU-lh-2Zv"/>
+                                        <constraint firstAttribute="bottom" secondItem="M4E-Qv-70g" secondAttribute="bottom" id="l21-fA-3Up"/>
+                                        <constraint firstItem="M4E-Qv-70g" firstAttribute="leading" secondItem="y3E-WW-eom" secondAttribute="leading" id="v9X-rw-0KH"/>
+                                        <constraint firstItem="M4E-Qv-70g" firstAttribute="top" secondItem="DGn-iW-Jvv" secondAttribute="bottom" constant="16" id="xsN-g9-0AK"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="C9I-p2-ib0" firstAttribute="leading" secondItem="7Zr-eP-Czs" secondAttribute="leading" constant="16" id="Ova-Sl-y6j"/>
+                        <constraint firstAttribute="bottom" secondItem="C9I-p2-ib0" secondAttribute="bottom" constant="32" id="P9a-We-ohW"/>
+                        <constraint firstItem="C9I-p2-ib0" firstAttribute="top" secondItem="7Zr-eP-Czs" secondAttribute="top" constant="16" id="ayo-O5-vfm"/>
+                        <constraint firstAttribute="trailing" secondItem="C9I-p2-ib0" secondAttribute="trailing" constant="16" id="cdv-c7-hTY"/>
+                        <constraint firstItem="DGn-iW-Jvv" firstAttribute="centerX" secondItem="7Zr-eP-Czs" secondAttribute="centerX" id="dBD-Cj-knC"/>
+                        <constraint firstItem="7dc-eW-SJa" firstAttribute="centerX" secondItem="7Zr-eP-Czs" secondAttribute="centerX" id="xCM-hD-ZuF"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7Zr-eP-Czs" secondAttribute="trailing" id="G7N-2n-ETg"/>
+                <constraint firstAttribute="bottom" secondItem="7Zr-eP-Czs" secondAttribute="bottom" id="dXg-1r-A6e"/>
+                <constraint firstItem="7Zr-eP-Czs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eiv-gw-alb"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="141"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="177CEF">
+            <color red="0.090196078431372548" green="0.48627450980392156" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="939597">
+            <color red="0.57647058823529407" green="0.58431372549019611" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="C1C1C1">
+            <color red="0.75686274509803919" green="0.75686274509803919" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

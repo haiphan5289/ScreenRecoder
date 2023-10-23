@@ -18,7 +18,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="T2r-Xj-wff">
                     <rect key="frame" x="16" y="13" width="361" height="90"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iy8-0W-zDP">
+                        <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iy8-0W-zDP">
                             <rect key="frame" x="0.0" y="0.0" width="361" height="24"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trim" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3O-so-DeO">
@@ -77,6 +77,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="headerStackView" destination="Iy8-0W-zDP" id="hff-Vu-7W2"/>
                 <outlet property="saveButton" destination="0We-S2-C2d" id="nWj-0Z-Dyz"/>
                 <outlet property="videoRanger" destination="VkT-37-DWL" id="F5A-Bw-iXg"/>
             </connections>

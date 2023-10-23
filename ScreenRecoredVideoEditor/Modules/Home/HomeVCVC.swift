@@ -98,16 +98,35 @@ extension HomeVCVC {
                     let vc = ScreenRecorderVC.createVC()
                     owner.navigationController?.pushViewController(vc)
                     
-                case .commentary, .facecam, .liveStream: break
+                case .liveStream: break
+                case .facecam:
+                    let vc = FacecamVC.createVC()
+                    owner.navigationController?.pushViewController(vc)
+                case .commentary:
+                    let vc = PresentCommentaryVC.createVC()
+                    vc.didSelectVideo = { [weak self] outputURL in
+                        guard let self = self else { return }
+                        vc.dismiss(animated: true) {
+                            self.moveToCommentary(outputURL: outputURL)
+                        }
+                    }
+                    vc.modalPresentationStyle = .overFullScreen
+                    owner.present(vc, animated: true)
                 case .videoEditor:
                     let vc = UIImagePickerController()
                     vc.sourceType = .photoLibrary
                     vc.mediaTypes = ["public.movie"]
                     vc.delegate = self
-                    self.present(vc, animated: true, completion: nil)
+                    owner.present(vc, animated: true, completion: nil)
                 }
                 
             }.disposed(by: disposeBag)
+    }
+    
+    private func moveToCommentary(outputURL: URL) {
+        let vc = CommentaryVC.createVC()
+        vc.inputURL = outputURL
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func didSelectVideo(url: URL) {

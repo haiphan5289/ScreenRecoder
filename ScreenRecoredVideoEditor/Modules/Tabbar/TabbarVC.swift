@@ -23,7 +23,7 @@ class TabbarVC: UITabBarController {
         
         var image: UIImage? {
             switch self {
-            case .home: return Asset.iconHome.image
+            case .home: return Asset.icHomeCamera.image
             case .video: return Asset.iconVideo.image
             case .more: return Asset.iconMore.image
             }
@@ -68,15 +68,45 @@ extension TabbarVC {
         }
         
         self.viewControllers = TabbarType.allCases.map { $0.viewController }
+        self.delegate = self
         
         TabbarType.allCases.forEach { [weak self] type in
             guard let wSelf = self else { return }
             if let vc = wSelf.viewControllers?[type.rawValue] {
                 vc.tabBarItem.title = type.text
                 vc.tabBarItem.image = type.image
-                vc.tabBarItem.selectedImage = Asset.video.image
             }
         }
+        DispatchQueue.main.async {
+            self.setupIamge()
+        }
+        
     }
     
+    private func setupIamge() {
+        guard let tabbar = self.tabBar.items?.first,
+              let view = tabbar.value(forKey: "view") as? UIView,
+              let keyWindow = UIApplication.shared.keyWindow?.rootViewController?.view else  { return }
+        
+        let frame = view.frame
+//        let convetframe = self.view.convert(view.frame, to: <#T##UICoordinateSpace#>)
+//        let buttonFrame = self.view.convert(view.frame, from: view.superview)
+        let buttonFrame = view.convert(self.tabBar.frame, to: view.superview)
+        print("buttonFrame \(buttonFrame)")
+        let checkView = UIView(frame: CGRect(origin: CGPoint(x: buttonFrame.width / 2, y: buttonFrame.origin.y - 20), size: CGSize(width: 50, height: 50)))
+        checkView.backgroundColor = .red
+        self.view.bringSubviewToFront(checkView)
+        self.view.addSubview(checkView)
+    }
+    
+}
+extension TabbarVC: UITabBarControllerDelegate {
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        print()
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        
+    }
 }

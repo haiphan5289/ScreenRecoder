@@ -71,9 +71,26 @@ final class AVPlayerManager {
         }
     }
     
+    func handeEndPlayer() {
+        guard let player = self.player else {
+            return
+        }
+        self.player?.seek(to: .zero)
+        self.doAVPlayer(action: .pause)
+        self.delegate?.didFinishAVPlayer()
+        self.disAudoRun()
+        self.delegate?.timeProcess(time: 0)
+        self.delegate?.getRate(rate: player.rate)
+    }
+    
     
     func playToTime(value: Float) {
-        player?.seek(to: CMTime(value: CMTimeValue(value * 1000), timescale: 1000))
+        DispatchQueue.main.async {[weak self] in
+            guard let wSelf = self else { return }
+            wSelf.player?.seek(to: CMTime(value: CMTimeValue(value * 1000), timescale: 1000))
+            wSelf.player?.play()
+            wSelf.autoRun()
+        }
     }
     
     func rewindVideo(by seconds: Float64) {
