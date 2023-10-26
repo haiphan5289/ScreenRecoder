@@ -77,9 +77,9 @@ extension TabbarVC {
                 vc.tabBarItem.image = type.image
             }
         }
-        DispatchQueue.main.async {
-            self.setupIamge()
-        }
+//        DispatchQueue.main.async {
+//            self.setupIamge()
+//        }
         
     }
     

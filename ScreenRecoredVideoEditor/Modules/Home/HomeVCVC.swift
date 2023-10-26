@@ -47,6 +47,16 @@ class HomeVCVC: BaseVC, SetupTableView, NavigationProtocol {
             }
         }
         
+        var image: UIImage? {
+            switch self {
+            case .liveStream: return Asset.icLiveStream.image
+            case .screen: return Asset.icScreenRecorder.image
+            case .facecam: return Asset.icFaceCamHome.image
+            case .videoEditor: return Asset.icVideoEditor.image
+            case .commentary: return Asset.icCommentary.image
+            }
+        }
+        
     }
     
     // Add here outlets

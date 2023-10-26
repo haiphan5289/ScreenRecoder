@@ -12,6 +12,7 @@ class HomeCell: UITableViewCell {
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var subTitle: UILabel!
+    @IBOutlet weak var icImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -31,6 +32,7 @@ extension HomeCell {
         bgView.backgroundColor = model.bgColor
         title.text = model.title
         subTitle.text = model.description
+        icImage.image = model.image
     }
     
 }
