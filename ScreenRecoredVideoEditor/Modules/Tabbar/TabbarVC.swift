@@ -99,14 +99,74 @@ extension TabbarVC {
         self.view.addSubview(checkView)
     }
     
+    private func showLibrary() {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.mediaTypes = ["public.movie"]
+        vc.delegate = self
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    func didSelectVideo(url: URL) {
+        let faceCameVc = RecordFinishVC.createVC()
+        faceCameVc.modalPresentationStyle = .fullScreen
+        faceCameVc.inputURL = url
+        self.navigationController?.pushViewController(faceCameVc)
+    }
+    
+    private func showActionSheet() {
+        let alert = UIAlertController(title: "Select video source", message: "Edit video from Screen Recordings or Camera Roll", preferredStyle: .actionSheet)
+            
+            alert.addAction(UIAlertAction(title: "My Recordings", style: .default , handler:{ (UIAlertAction)in
+                self.showLibrary()
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Camera Roll", style: .default , handler:{ (UIAlertAction)in
+                self.showLibrary()
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
+                print("User click Dismiss button")
+            }))
+
+            //uncomment for iPad Support
+            //alert.popoverPresentationController?.sourceView = self.view
+
+            self.present(alert, animated: true, completion: {
+                print("completion block")
+            })
+    }
+    
 }
 extension TabbarVC: UITabBarControllerDelegate {
+    
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         print()
     }
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        guard let selectedIndex = tabBarController.viewControllers?.firstIndex(of: viewController) else {
+            return
+        }
         
+        if selectedIndex == 1 {
+            self.showActionSheet()
+        }
+    }
+}
+extension TabbarVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        self.dismiss(animated: true) {
+            let videoURL = info[UIImagePickerController.InfoKey.mediaURL] as! URL
+            AudioManage.shared.converVideofromPhotoLibraryToMP4(videoURL: videoURL, folderName: ConstantApp.FolderName.editVideo.rawValue) { [weak self] outputURL in
+                guard let wSelf = self else { return }
+                DispatchQueue.main.async {
+                    picker.dismiss(animated: true) {
+                        wSelf.didSelectVideo(url: outputURL)
+                    }
+                }
+            }
+        }
     }
 }

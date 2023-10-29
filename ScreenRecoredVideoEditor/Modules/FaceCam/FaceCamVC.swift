@@ -63,12 +63,6 @@ class FacecamVC: BaseVC {
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.mainView = self
-        
-        //This is important
-        //Create FW and create View = code, donot must use sotryboard
-        // App will creash with bug "exc_bad_access (code=2, address=0x1f3cb31e0)" && exc_bad_instruction
-//        self.displayUI()
-//        self.recordButtonUI(state: 0)
         setupUI()
         setupRX()
     }
@@ -159,8 +153,8 @@ class FacecamVC: BaseVC {
                     PHPhotoLibrary.shared().performChanges({
                         PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: recordURL)
                     }) { [weak self] saved, error in
-                        guard let self = self else { return }
-                        if saved {
+                        guard let self = self, saved else { return }
+                        DispatchQueue.main.async {
                             self.showAlert(title: nil, message: "Your video is save PhotoAlbum")
                         }
                     }

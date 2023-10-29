@@ -117,7 +117,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zjV-Iz-Gtu">
                                                                     <rect key="frame" x="31" y="1" width="76" height="48"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4dX-vh-EXQ">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_video_editor" translatesAutoresizingMaskIntoConstraints="NO" id="4dX-vh-EXQ">
                                                                             <rect key="frame" x="26" y="0.0" width="24" height="24"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" secondItem="4dX-vh-EXQ" secondAttribute="height" id="BWy-8m-Zs6"/>
@@ -153,7 +153,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Znn-4K-kUh">
                                                                     <rect key="frame" x="51" y="1" width="36" height="48"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QiJ-kh-kXk">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_share_video" translatesAutoresizingMaskIntoConstraints="NO" id="QiJ-kh-kXk">
                                                                             <rect key="frame" x="6" y="0.0" width="24" height="24"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="24" id="Efp-ew-kE8"/>
@@ -218,7 +218,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="kma-9k-Jal">
                                                     <rect key="frame" x="0.0" y="0.0" width="76.5" height="50"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UNw-To-vfz">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_trim_editor" translatesAutoresizingMaskIntoConstraints="NO" id="UNw-To-vfz">
                                                             <rect key="frame" x="26" y="0.0" width="24" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="Ffc-b2-CEx"/>
@@ -258,7 +258,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="QbE-za-yXk">
                                                     <rect key="frame" x="0.0" y="0.0" width="76.5" height="50"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AEp-7V-Zmu">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_filter_editor" translatesAutoresizingMaskIntoConstraints="NO" id="AEp-7V-Zmu">
                                                             <rect key="frame" x="26" y="0.0" width="24" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="B55-yy-hHv"/>
@@ -298,7 +298,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="FgM-Gg-8Z5">
                                                     <rect key="frame" x="0.0" y="0.0" width="76" height="50"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Bx-Ob-BMA">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_rotate_editor" translatesAutoresizingMaskIntoConstraints="NO" id="3Bx-Ob-BMA">
                                                             <rect key="frame" x="26" y="0.0" width="24" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="BZq-3W-lNS"/>
@@ -338,7 +338,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="pfl-FN-YOX">
                                                     <rect key="frame" x="0.0" y="0.0" width="76.5" height="50"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gfd-hR-v4N">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_canvas_editor" translatesAutoresizingMaskIntoConstraints="NO" id="gfd-hR-v4N">
                                                             <rect key="frame" x="26.5" y="0.0" width="24" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="gfd-hR-v4N" secondAttribute="height" id="TpG-qS-7Uy"/>
@@ -378,7 +378,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="VpG-kB-nuz">
                                                     <rect key="frame" x="0.0" y="0.0" width="76.5" height="50"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1jt-ez-lSb">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_speed_editor" translatesAutoresizingMaskIntoConstraints="NO" id="1jt-ez-lSb">
                                                             <rect key="frame" x="26.5" y="0.0" width="24" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="4PT-Lw-ees"/>
@@ -446,7 +446,14 @@
         </view>
     </objects>
     <resources>
+        <image name="ic_canvas_editor" width="24" height="24"/>
         <image name="ic_face_cam" width="24" height="24"/>
+        <image name="ic_filter_editor" width="24" height="24"/>
+        <image name="ic_rotate_editor" width="24" height="24"/>
+        <image name="ic_share_video" width="24" height="24"/>
+        <image name="ic_speed_editor" width="24" height="24"/>
+        <image name="ic_trim_editor" width="24" height="24"/>
+        <image name="ic_video_editor" width="24" height="24"/>
         <namedColor name="F8F8F8">
             <color red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
