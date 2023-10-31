@@ -52,7 +52,7 @@ class HomeVCVC: BaseVC, SetupTableView, NavigationProtocol {
             case .liveStream: return Asset.icLiveStream.image
             case .screen: return Asset.icScreenRecorder.image
             case .facecam: return Asset.icFaceCamHome.image
-            case .videoEditor: return Asset.icVideoEditor.image
+            case .videoEditor: return Asset.icVideoEditorHome.image
             case .commentary: return Asset.icCommentary.image
             }
         }

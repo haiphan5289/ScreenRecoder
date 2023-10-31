@@ -17,7 +17,7 @@ class TabbarVC: UITabBarController {
             switch self {
             case .home: return HomeVCVC.createVC()
             case .video: return HomeVCVC.createVC()
-            case .more: return HomeVCVC.createVC()
+            case .more: return MoreActionVC.createVC()
             }
         }
         
