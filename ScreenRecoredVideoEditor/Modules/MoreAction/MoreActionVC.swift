@@ -63,11 +63,10 @@ extension MoreActionVC {
                             delegate: self,
                             name: MoreActionCell.self)
         collectionView.dataSource = self
-        collectionView.register(MoreActionHeaderView.self,
-                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                withReuseIdentifier: MoreActionHeaderView.identifier)
-
-        
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
     }
     
     private func setupRX() {
@@ -80,32 +79,28 @@ extension MoreActionVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MoreActionCell.identifier, for: indexPath) as? MoreActionCell else {
+        guard let item = MoreActionType.allCases.safe[indexPath.row],
+              let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MoreActionCell.identifier, for: indexPath) as? MoreActionCell else {
             return UICollectionViewCell()
         }
-        
-        cell.backgroundColor = .red
-        
+        cell.bindModel(type: item)
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                       viewForSupplementaryElementOfKind kind: String,
-                       at indexPath: IndexPath) -> UICollectionReusableView {
-
-       switch kind {
-
-       case UICollectionView.elementKindSectionHeader:
-           let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MoreActionCell.identifier, for: indexPath)
-           headerView.backgroundColor = UIColor.blue
-           return headerView
-       default:
-           assert(false, "Unexpected element kind")
-       }
-   }
     
     
 }
 extension MoreActionVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (collectionView.frame.width - 32 - 16) / 2
+        return CGSize(width: width, height: 110)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 16
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 16
+    }
 }

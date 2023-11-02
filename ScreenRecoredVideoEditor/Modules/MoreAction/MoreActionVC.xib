@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="FontsFree-Net-SFProDisplay-Bold.ttf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoreActionVC" customModule="ScreenRecoredVideoEditor" customModuleProvider="target">
             <connections>
@@ -20,24 +25,47 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="LTR-Ri-fsu">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QLW-Xb-nJ4">
                     <rect key="frame" x="0.0" y="48" width="414" height="814"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wC2-YI-zUH">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbx-wm-YGe">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pb-SC-WAm">
+                                    <rect key="frame" x="16" y="16" width="382" height="4"/>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="27"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="2pb-SC-WAm" secondAttribute="trailing" constant="16" id="HS7-Ky-tAi"/>
+                                <constraint firstItem="2pb-SC-WAm" firstAttribute="leading" secondItem="fbx-wm-YGe" secondAttribute="leading" constant="16" id="aAB-Yn-BSK"/>
+                                <constraint firstItem="2pb-SC-WAm" firstAttribute="top" secondItem="fbx-wm-YGe" secondAttribute="top" constant="16" id="cKd-rZ-wTu"/>
+                                <constraint firstAttribute="bottom" secondItem="2pb-SC-WAm" secondAttribute="bottom" constant="30" id="sak-2q-P5J"/>
+                            </constraints>
+                        </view>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="LTR-Ri-fsu">
+                            <rect key="frame" x="0.0" y="50" width="414" height="764"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wC2-YI-zUH">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="LTR-Ri-fsu" secondAttribute="bottom" id="GdY-OM-ycl"/>
-                <constraint firstItem="LTR-Ri-fsu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="QBp-Xa-wCX"/>
-                <constraint firstItem="LTR-Ri-fsu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cf8-FR-uek"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LTR-Ri-fsu" secondAttribute="trailing" id="uOj-Tn-Y77"/>
+                <constraint firstItem="QLW-Xb-nJ4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="AYq-LI-xhX"/>
+                <constraint firstItem="QLW-Xb-nJ4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Bdx-p4-L4Z"/>
+                <constraint firstItem="QLW-Xb-nJ4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Tj1-tc-Pw8"/>
+                <constraint firstItem="QLW-Xb-nJ4" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="ykL-MW-N7m"/>
             </constraints>
             <point key="canvasLocation" x="139" y="141"/>
         </view>
