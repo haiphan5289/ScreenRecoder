@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EFDAEE82AF4D61A0086F634 /* PremiumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFDAEE62AF4D61A0086F634 /* PremiumVC.swift */; };
+		3EFDAEE92AF4D61A0086F634 /* PremiumVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EFDAEE72AF4D61A0086F634 /* PremiumVC.xib */; };
 		421B7AD1046F77D61996D225 /* Pods_BroadCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E03D2C17C567B7B28866EAE /* Pods_BroadCast.framework */; };
 		668FB62CC5F5E8C461E98E73 /* Pods_BroadCastSetupUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4561AA083BC4F84FDD64CC6C /* Pods_BroadCastSetupUI.framework */; };
 		93550A972A321351007E30A4 /* video_check.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 93550A962A321351007E30A4 /* video_check.mp4 */; };
@@ -238,6 +240,8 @@
 
 /* Begin PBXFileReference section */
 		21AA58133A78B5F4EA235439 /* Pods-BroadCastSetupUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroadCastSetupUI.release.xcconfig"; path = "Target Support Files/Pods-BroadCastSetupUI/Pods-BroadCastSetupUI.release.xcconfig"; sourceTree = "<group>"; };
+		3EFDAEE62AF4D61A0086F634 /* PremiumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumVC.swift; sourceTree = "<group>"; };
+		3EFDAEE72AF4D61A0086F634 /* PremiumVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PremiumVC.xib; sourceTree = "<group>"; };
 		42DC62B07AE25215191370D9 /* Pods-BroadCastSetupUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroadCastSetupUI.debug.xcconfig"; path = "Target Support Files/Pods-BroadCastSetupUI/Pods-BroadCastSetupUI.debug.xcconfig"; sourceTree = "<group>"; };
 		4561AA083BC4F84FDD64CC6C /* Pods_BroadCastSetupUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BroadCastSetupUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E03D2C17C567B7B28866EAE /* Pods_BroadCast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BroadCast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -483,6 +487,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EFDAEE52AF4D5FE0086F634 /* Premium */ = {
+			isa = PBXGroup;
+			children = (
+				3EFDAEE62AF4D61A0086F634 /* PremiumVC.swift */,
+				3EFDAEE72AF4D61A0086F634 /* PremiumVC.xib */,
+			);
+			path = Premium;
+			sourceTree = "<group>";
+		};
 		93550A982A321FFD007E30A4 /* FaceCam */ = {
 			isa = PBXGroup;
 			children = (
@@ -738,6 +751,7 @@
 		93B21BAD2A30C43B00689D0F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3EFDAEE52AF4D5FE0086F634 /* Premium */,
 				93C0C78B2AEE1B7200936B92 /* MoreAction */,
 				93C303CE2AE2C32100B2A472 /* PresentCommentary */,
 				93C303C72AE2C28400B2A472 /* Commentary */,
@@ -1303,6 +1317,7 @@
 				93B21BF02A30C45700689D0F /* FontsFree-Net-SFProDisplay-Bold.ttf in Resources */,
 				93A90E702AE159EF002287D2 /* SpeedVideo.xib in Resources */,
 				93CC36532A234CDD00DC2E4D /* LaunchScreen.storyboard in Resources */,
+				3EFDAEE92AF4D61A0086F634 /* PremiumVC.xib in Resources */,
 				93B21BEA2A30C45700689D0F /* VideoEditorView.xib in Resources */,
 				937F66C22ACC5032000FC4BA /* CanvasFrame916.xib in Resources */,
 				93B21C062A30EB8200689D0F /* VideoPlayView.xib in Resources */,
@@ -1568,6 +1583,7 @@
 				93B21B962A30C3A000689D0F /* UITabBarExtensions.swift in Sources */,
 				93B21B9F2A30C3A000689D0F /* UIViewExtensions.swift in Sources */,
 				93B21B9D2A30C3A000689D0F /* UIImageExtensions.swift in Sources */,
+				3EFDAEE82AF4D61A0086F634 /* PremiumVC.swift in Sources */,
 				93B21B732A30C3A000689D0F /* UIColor+Extensions.swift in Sources */,
 				93B21BAC2A30C3A000689D0F /* UITextField+Extensions.swift in Sources */,
 				93B21B9A2A30C3A000689D0F /* UIActivityExtensions.swift in Sources */,

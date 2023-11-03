@@ -87,6 +87,19 @@ extension MoreActionVC: UICollectionViewDataSource {
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let item = MoreActionType.allCases.safe[indexPath.row] else {
+            return
+        }
+        switch item {
+        case .getPremium:
+            let premiumVC = PremiumVC.createVC()
+            premiumVC.modalPresentationStyle = .overFullScreen
+            self.present(premiumVC, animated: true)
+        default: break
+        }
+    }
+    
     
 }
 extension MoreActionVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
