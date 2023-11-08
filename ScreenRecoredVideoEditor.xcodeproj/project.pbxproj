@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EC4ADAB2AF91AB700CC49B5 /* MoveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4ADAA2AF91AB700CC49B5 /* MoveView.swift */; };
+		3EC4ADAD2AF91ABF00CC49B5 /* MoveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC4ADAC2AF91ABF00CC49B5 /* MoveView.xib */; };
+		3EC4ADAF2AF92B4A00CC49B5 /* VideoRecordingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4ADAE2AF92B4A00CC49B5 /* VideoRecordingVM.swift */; };
+		3ECE4B1C2AF74BCF003007A7 /* VideoRecordingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE4B1A2AF74BCF003007A7 /* VideoRecordingVC.swift */; };
+		3ECE4B1D2AF74BCF003007A7 /* VideoRecordingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ECE4B1B2AF74BCF003007A7 /* VideoRecordingVC.xib */; };
+		3EED31B02AFB340E0043CE4D /* VideoRecordingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EED31AE2AFB340E0043CE4D /* VideoRecordingCell.swift */; };
+		3EED31B12AFB340E0043CE4D /* VideoRecordingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EED31AF2AFB340E0043CE4D /* VideoRecordingCell.xib */; };
 		3EFDAEE82AF4D61A0086F634 /* PremiumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFDAEE62AF4D61A0086F634 /* PremiumVC.swift */; };
 		3EFDAEE92AF4D61A0086F634 /* PremiumVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EFDAEE72AF4D61A0086F634 /* PremiumVC.xib */; };
 		421B7AD1046F77D61996D225 /* Pods_BroadCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E03D2C17C567B7B28866EAE /* Pods_BroadCast.framework */; };
@@ -240,6 +247,13 @@
 
 /* Begin PBXFileReference section */
 		21AA58133A78B5F4EA235439 /* Pods-BroadCastSetupUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroadCastSetupUI.release.xcconfig"; path = "Target Support Files/Pods-BroadCastSetupUI/Pods-BroadCastSetupUI.release.xcconfig"; sourceTree = "<group>"; };
+		3EC4ADAA2AF91AB700CC49B5 /* MoveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveView.swift; sourceTree = "<group>"; };
+		3EC4ADAC2AF91ABF00CC49B5 /* MoveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoveView.xib; sourceTree = "<group>"; };
+		3EC4ADAE2AF92B4A00CC49B5 /* VideoRecordingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRecordingVM.swift; sourceTree = "<group>"; };
+		3ECE4B1A2AF74BCF003007A7 /* VideoRecordingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRecordingVC.swift; sourceTree = "<group>"; };
+		3ECE4B1B2AF74BCF003007A7 /* VideoRecordingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoRecordingVC.xib; sourceTree = "<group>"; };
+		3EED31AE2AFB340E0043CE4D /* VideoRecordingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRecordingCell.swift; sourceTree = "<group>"; };
+		3EED31AF2AFB340E0043CE4D /* VideoRecordingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoRecordingCell.xib; sourceTree = "<group>"; };
 		3EFDAEE62AF4D61A0086F634 /* PremiumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumVC.swift; sourceTree = "<group>"; };
 		3EFDAEE72AF4D61A0086F634 /* PremiumVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PremiumVC.xib; sourceTree = "<group>"; };
 		42DC62B07AE25215191370D9 /* Pods-BroadCastSetupUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroadCastSetupUI.debug.xcconfig"; path = "Target Support Files/Pods-BroadCastSetupUI/Pods-BroadCastSetupUI.debug.xcconfig"; sourceTree = "<group>"; };
@@ -487,6 +501,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EC4ADA92AF91AA200CC49B5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3EC4ADAA2AF91AB700CC49B5 /* MoveView.swift */,
+				3EC4ADAC2AF91ABF00CC49B5 /* MoveView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3ECE4B192AF74BB2003007A7 /* VideoRecording */ = {
+			isa = PBXGroup;
+			children = (
+				3EED31AD2AFB33F40043CE4D /* Cell */,
+				3EC4ADA92AF91AA200CC49B5 /* Views */,
+				3EC4ADAE2AF92B4A00CC49B5 /* VideoRecordingVM.swift */,
+				3ECE4B1A2AF74BCF003007A7 /* VideoRecordingVC.swift */,
+				3ECE4B1B2AF74BCF003007A7 /* VideoRecordingVC.xib */,
+			);
+			path = VideoRecording;
+			sourceTree = "<group>";
+		};
+		3EED31AD2AFB33F40043CE4D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3EED31AE2AFB340E0043CE4D /* VideoRecordingCell.swift */,
+				3EED31AF2AFB340E0043CE4D /* VideoRecordingCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		3EFDAEE52AF4D5FE0086F634 /* Premium */ = {
 			isa = PBXGroup;
 			children = (
@@ -751,6 +795,7 @@
 		93B21BAD2A30C43B00689D0F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3ECE4B192AF74BB2003007A7 /* VideoRecording */,
 				3EFDAEE52AF4D5FE0086F634 /* Premium */,
 				93C0C78B2AEE1B7200936B92 /* MoreAction */,
 				93C303CE2AE2C32100B2A472 /* PresentCommentary */,
@@ -1324,6 +1369,8 @@
 				93D539972A9E2A6600A894FE /* StreamCameraVC.xib in Resources */,
 				93CC36502A234CDD00DC2E4D /* Assets.xcassets in Resources */,
 				937F66B32ACC4F40000FC4BA /* CanvasFrame11.xib in Resources */,
+				3EED31B12AFB340E0043CE4D /* VideoRecordingCell.xib in Resources */,
+				3EC4ADAD2AF91ABF00CC49B5 /* MoveView.xib in Resources */,
 				93B21BE82A30C45700689D0F /* swiftgen.yml in Resources */,
 				93B91FAD2A474BFD001BC81E /* DeviceList.plist in Resources */,
 				93550A9C2A322013007E30A4 /* FacecamVC.xib in Resources */,
@@ -1346,6 +1393,7 @@
 				93B21BE22A30C45700689D0F /* HomeCell.xib in Resources */,
 				93B21BE62A30C45700689D0F /* ScreenRecorderVC.xib in Resources */,
 				93C15BAF2ABB297A0001BE56 /* EditorVideoVC.xib in Resources */,
+				3ECE4B1D2AF74BCF003007A7 /* VideoRecordingVC.xib in Resources */,
 				93B21BDF2A30C45700689D0F /* HomeVCVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1464,6 +1512,7 @@
 				93B21B712A30C3A000689D0F /* Collection+Extension.swift in Sources */,
 				93776C8C2AA4AA6200283140 /* ListFontDefaultVM.swift in Sources */,
 				93B21BAA2A30C3A000689D0F /* UIFontExtensions.swift in Sources */,
+				3EED31B02AFB340E0043CE4D /* VideoRecordingCell.swift in Sources */,
 				93D856722ABC7A2E007C294E /* FilterVideoView.swift in Sources */,
 				93B21BA62A30C3A000689D0F /* UIApplicationExtensions.swift in Sources */,
 				93B21B762A30C3A000689D0F /* Drive+Extension.swift in Sources */,
@@ -1532,6 +1581,7 @@
 				93B21B8F2A30C3A000689D0F /* UIStackViewExtensions.swift in Sources */,
 				93B21B872A30C3A000689D0F /* LabelExtension.swift in Sources */,
 				93B21B9E2A30C3A000689D0F /* UINavigationControllerExtensions.swift in Sources */,
+				3EC4ADAF2AF92B4A00CC49B5 /* VideoRecordingVM.swift in Sources */,
 				937F66BC2ACC4FD7000FC4BA /* CanvasFrame169.swift in Sources */,
 				93B21B822A30C3A000689D0F /* StringExtension.swift in Sources */,
 				93B21B772A30C3A000689D0F /* DecimalNumber+Extension.swift in Sources */,
@@ -1560,6 +1610,7 @@
 				93B21B832A30C3A000689D0F /* CodableExtension.swift in Sources */,
 				93B21B6B2A30C3A000689D0F /* UIWindow+Extension.swift in Sources */,
 				937F66C12ACC5032000FC4BA /* CanvasFrame916.swift in Sources */,
+				3ECE4B1C2AF74BCF003007A7 /* VideoRecordingVC.swift in Sources */,
 				93B21BA42A30C3A000689D0F /* UISwitchExtensions.swift in Sources */,
 				93B21B6C2A30C3A000689D0F /* UILableExtension.swift in Sources */,
 				93D856782ABC9111007C294E /* FilterVideoCell.swift in Sources */,
@@ -1577,6 +1628,7 @@
 				93B21B6D2A30C3A000689D0F /* CALayerExtension.swift in Sources */,
 				93D539A42A9E2C2000A894FE /* PermissionChecker.swift in Sources */,
 				93C15BB02ABB297A0001BE56 /* EditorVideoVM.swift in Sources */,
+				3EC4ADAB2AF91AB700CC49B5 /* MoveView.swift in Sources */,
 				93B21B7A2A30C3A000689D0F /* UITextField_Extension.swift in Sources */,
 				93B21B8E2A30C3A000689D0F /* UINavigationItemExtensions.swift in Sources */,
 				93C303D42AE2C34300B2A472 /* PresentCommentaryVC.swift in Sources */,

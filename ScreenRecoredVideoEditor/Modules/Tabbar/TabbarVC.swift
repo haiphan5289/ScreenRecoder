@@ -16,7 +16,7 @@ class TabbarVC: UITabBarController {
         var viewController: UIViewController {
             switch self {
             case .home: return HomeVCVC.createVC()
-            case .video: return HomeVCVC.createVC()
+            case .video: return VideoRecordingVC.createVC()
             case .more: return MoreActionVC.createVC()
             }
         }
@@ -115,26 +115,26 @@ extension TabbarVC {
     }
     
     private func showActionSheet() {
-        let alert = UIAlertController(title: "Select video source", message: "Edit video from Screen Recordings or Camera Roll", preferredStyle: .actionSheet)
-            
-            alert.addAction(UIAlertAction(title: "My Recordings", style: .default , handler:{ (UIAlertAction)in
-                self.showLibrary()
-            }))
-            
-            alert.addAction(UIAlertAction(title: "Camera Roll", style: .default , handler:{ (UIAlertAction)in
-                self.showLibrary()
-            }))
-            
-            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
-                print("User click Dismiss button")
-            }))
-
-            //uncomment for iPad Support
-            //alert.popoverPresentationController?.sourceView = self.view
-
-            self.present(alert, animated: true, completion: {
-                print("completion block")
-            })
+//        let alert = UIAlertController(title: "Select video source", message: "Edit video from Screen Recordings or Camera Roll", preferredStyle: .actionSheet)
+//
+//            alert.addAction(UIAlertAction(title: "My Recordings", style: .default , handler:{ (UIAlertAction)in
+//                self.showLibrary()
+//            }))
+//
+//            alert.addAction(UIAlertAction(title: "Camera Roll", style: .default , handler:{ (UIAlertAction)in
+//                self.showLibrary()
+//            }))
+//
+//            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
+//                print("User click Dismiss button")
+//            }))
+//
+//            //uncomment for iPad Support
+//            //alert.popoverPresentationController?.sourceView = self.view
+//
+//            self.present(alert, animated: true, completion: {
+//                print("completion block")
+//            })
     }
     
 }
